@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - vide
+  - glue
+  - Enemy2
+  - Enemy1
+  - Credit
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Obstacles
+    uniqueID: 4046923515
+    locked: 0
+  - name: Coin
+    uniqueID: 1347140803
+    locked: 0
+  - name: Player
+    uniqueID: 2485608405
+    locked: 0
+  - name: Enemies
+    uniqueID: 978620431
+    locked: 0
+  - name: UI
+    uniqueID: 371916547
+    locked: 0
