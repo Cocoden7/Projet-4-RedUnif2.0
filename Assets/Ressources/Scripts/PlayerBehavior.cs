@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class PlayerBehavior : MonoBehaviour
 	private int nbCredit = 0;
     int creditsNeeded = 5;
     public GameObject NextLevelUI;
-
 
 
     /*float dirX, dirY;
@@ -40,7 +40,7 @@ public class PlayerBehavior : MonoBehaviour
  
    void FixedUpdate()
     {
-        print(movement);
+        //print(movement);
     	rb.MovePosition(rb.position += movement * moveSpeed * Time.fixedDeltaTime);
     }
 
@@ -49,7 +49,7 @@ public class PlayerBehavior : MonoBehaviour
         // Collision avec le vide
     	if(col.gameObject.CompareTag("vide"))
     	{
-    		print("collision");
+    		//print("collision");
             Dead();
     	}
     }
@@ -59,6 +59,10 @@ public class PlayerBehavior : MonoBehaviour
     	nbCredit++;
     	if (nbCredit >= creditsNeeded)
     	{
+    		if(20 - PlayerPrefs.GetInt("note",0) > PlayerPrefs.GetInt("HighScore"))
+    		{
+    			PlayerPrefs.SetInt("HighScore", 20 - PlayerPrefs.GetInt("note",0));
+    		}
             SetUINextLevel();
         }
     }
@@ -79,6 +83,7 @@ public class PlayerBehavior : MonoBehaviour
 
     void Dead()
     {
+    	PlayerPrefs.SetInt("note", PlayerPrefs.GetInt("note") + 1);
         dead = true;
     }
 }

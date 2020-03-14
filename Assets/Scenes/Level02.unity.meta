@@ -1,28 +1,8 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<<< Updated upstream:RedUnif/Assets/Scenes/Level02.unity.meta
-guid: 83b0f80dd0ed1b74585d19a57e0456af
-========
-guid: 77440e6a7481cd748955ba3b8b1eee1f
-folderAsset: yes
->>>>>>>> Stashed changes:RedUnif/Assets/Ressources/Prefabs/New Blocs.meta
-=======
-guid: 83b0f80dd0ed1b74585d19a57e0456af
->>>>>>> Stashed changes
-DefaultImporter:
-  externalObjects: {}
-=======
-<<<<<<< Updated upstream:RedUnif/Assets/Ressources/Animation/NextLevelUIPanel.controller.meta
-guid: 4c991c84156b06a4e8bf01f7824af825
-NativeFormatImporter:
-=======
 guid: 83b0f80dd0ed1b74585d19a57e0456af
 DefaultImporter:
->>>>>>> Stashed changes:RedUnif/Assets/Scenes/Level02.unity.meta
   externalObjects: {}
   mainObjectFileID: 9100000
->>>>>>> Stashed changes
   userData: 
   assetBundleName: 
   assetBundleVariant: 
