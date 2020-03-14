@@ -70,7 +70,6 @@ public class PlayerBehavior : MonoBehaviour
         FindObjectOfType<CameraBehavior>().incr = new Vector3(0, 0, 0); // Arrête la caméra
         NextLevelUI.SetActive(true); // L'appel de la méthode se fait dans l'animation du UI
         Time.timeScale = 1.0f;
-        print("ui active");
     }
 
     void OnGUI()
