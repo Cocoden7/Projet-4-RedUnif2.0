@@ -20,11 +20,11 @@ public class DeadMenu : MonoBehaviour
         }
     }
 
-    // Methode appelée lorsqu'on appuie sur quit
-    public void Quit()
+    // Methode appelée lorsqu'on appuie sur main menu
+    public void MainMenu()
     {
-        print("quit");
-        Application.Quit();
+        Time.timeScale = 1f; // Unfreeze le jeu
+        SceneManager.LoadScene("StartMenu"); ;
     }
 
     // Methode appelée lorsqu'on appuie sur retry
