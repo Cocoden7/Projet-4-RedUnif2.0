@@ -40,7 +40,6 @@ public class PlayerBehavior : MonoBehaviour
  
    void FixedUpdate()
     {
-        print(movement);
     	rb.MovePosition(rb.position += movement * moveSpeed * Time.fixedDeltaTime);
     }
 
