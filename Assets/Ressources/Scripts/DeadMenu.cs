@@ -24,7 +24,7 @@ public class DeadMenu : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f; // Unfreeze le jeu
-        SceneManager.LoadScene("StartMenu"); ;
+        SceneManager.LoadScene("StartMenu"); 
     }
 
     // Methode appelée lorsqu'on appuie sur retry
