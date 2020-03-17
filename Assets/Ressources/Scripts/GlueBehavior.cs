@@ -6,9 +6,12 @@ public class GlueBehavior : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D col)
     {
-    	print("yo");
-    	PlayerBehavior rb = col.gameObject.GetComponent<PlayerBehavior>();
-    	rb.moveSpeed -= 3;
-    	Destroy(gameObject);
+        PlayerBehavior rb = col.gameObject.GetComponent<PlayerBehavior>();
+        float speed = rb.moveSpeed;
+        rb.moveSpeed = 0;
+        gameObject.SetActive(false);
+        //Attendre 2.5s
+        rb.moveSpeed = speed;
+        Destroy(gameObject);
     }
 }
