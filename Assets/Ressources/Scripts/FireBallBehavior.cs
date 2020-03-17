@@ -27,7 +27,7 @@ public class FireBallBehavior : MonoBehaviour
     IEnumerator Movement()
     {
         List<int> tabl = QuelTabl();
-        float vitesse = 1.0f;
+        float vitesse = 2.0f;
         int a = 0;
         while (true)
         {
@@ -78,19 +78,19 @@ public class FireBallBehavior : MonoBehaviour
             }
             if (tabl[0] == 1)
             {
-                rb.MovePosition(rb.position -= movementX * 2);
+                rb.MovePosition(rb.position -= movementX * 3);
             }
             else if (tabl[0] == 2)
             {
-                rb.MovePosition(rb.position += movementX * 2);
+                rb.MovePosition(rb.position += movementX * 3);
             }
             else if (tabl[0] == 3)
             {
-                rb.MovePosition(rb.position -= movementY * 2);
+                rb.MovePosition(rb.position -= movementY * 3);
             }
             else if (tabl[0] == 4)
             {
-                rb.MovePosition(rb.position += movementY * 2);
+                rb.MovePosition(rb.position += movementY * 3);
             }
             test = false;
             yield return new WaitForSeconds(3.0f);
@@ -115,9 +115,11 @@ public class FireBallBehavior : MonoBehaviour
         {
             tabl.Add(1);
             tabl.Add(1);
+            tabl.Add(1);
         }
         else if (rb.tag == "fireball2")
         {
+            tabl.Add(2);
             tabl.Add(2);
             tabl.Add(2);
         }
@@ -125,9 +127,11 @@ public class FireBallBehavior : MonoBehaviour
         {
             tabl.Add(3);
             tabl.Add(3);
+            tabl.Add(3);
         }
         else if (rb.tag == "fireball4")
         {
+            tabl.Add(4);
             tabl.Add(4);
             tabl.Add(4);
         }
