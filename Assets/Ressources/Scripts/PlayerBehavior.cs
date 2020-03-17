@@ -15,7 +15,11 @@ public class PlayerBehavior : MonoBehaviour
     int creditsNeeded = 5;
     public GameObject NextLevelUI;
 
+
     // Méthode appelée pour avoir les input du joueur
+
+    int ratio = 0;
+
     void Update()
     {
         if(!dead)
@@ -60,20 +64,35 @@ public class PlayerBehavior : MonoBehaviour
     }
 
 
+
+    /*
+    Fonction qui gère le ramassage des pièces ainsi que la fin du niveau (quand on a assez de pièces)
+    */
     void AddCredit()
     {
     	nbCredit++;
-    	if (nbCredit >= creditsNeeded)
+    	if (nbCredit >= creditsNeeded) //si on a ramasse assez de credits
     	{
-    		if(20 - PlayerPrefs.GetInt("note",0) > PlayerPrefs.GetInt("HighScore"))
-    		{
-    			PlayerPrefs.SetInt("HighScore", 20 - PlayerPrefs.GetInt("note",0));
-    		}
+            if(PlayerPrefs.GetInt("nbMorts",0) > 10) // si on est mort plus de 10 fois
+            {
+                if( 10 > PlayerPrefs.GetInt("HighScore",0)) // si le score est meilleur que le precedent
+                {
+                    PlayerPrefs.SetInt("HighScore", 10);   
+                }
+            }
+            else{
+                if( 20 - PlayerPrefs.GetInt("nbMorts",0) > PlayerPrefs.GetInt("HighScore",0))
+                {
+                    PlayerPrefs.SetInt("HighScore", 20 - PlayerPrefs.GetInt("nbMorts",0));   
+                }
+            }
             SetUINextLevel();
         }
     }
 
-    // Affiche le UI du next level et lance la méthode loadLevel
+    /*
+    Affiche le UI du next level et lance la méthode loadLevel
+    */
     void SetUINextLevel()
     {
         rb.constraints = RigidbodyConstraints2D.FreezePosition;
@@ -87,9 +106,17 @@ public class PlayerBehavior : MonoBehaviour
     	GUI.Label(new Rect (10, 10, 100, 20), " Credit : " + nbCredit);
     }
 
+    /*
+    Fonction à appeler dès que le joueur meurt !!IMPORTANT, il faut appeler celle-ci
+    */
     void Dead()
     {
-    	PlayerPrefs.SetInt("note", PlayerPrefs.GetInt("note") + 1);
+        PlayerPrefs.SetInt("nbMorts", PlayerPrefs.GetInt("nbMorts") + 1);
+        ratio = (nbCredit*10) / 6;
+        if(ratio > PlayerPrefs.GetInt("HighScore",0))
+        {
+            PlayerPrefs.SetInt("HighScore", ratio);
+        }
         dead = true;
     }
 }
