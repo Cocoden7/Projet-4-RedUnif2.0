@@ -31,6 +31,7 @@ public class ElecTrap : MonoBehaviour
     public void offCol()
     {
     	electriccol.enabled = false;
+        audio.Stop();
     	test = false;
     }
     void OnTriggerEnter2D(Collider2D col)
