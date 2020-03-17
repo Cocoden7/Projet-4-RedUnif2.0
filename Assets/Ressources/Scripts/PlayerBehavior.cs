@@ -22,7 +22,6 @@ public class PlayerBehavior : MonoBehaviour
 
     // Méthode appelée pour avoir les input du joueur
 
-
     void Update()
     {
         rightScore = "HighScore" + (SceneManager.GetActiveScene().buildIndex).ToString();
