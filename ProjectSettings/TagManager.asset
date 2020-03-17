@@ -66,6 +66,9 @@ TagManager:
   - name: Enemies
     uniqueID: 978620431
     locked: 0
+  - name: Lights
+    uniqueID: 3305209367
+    locked: 0
   - name: UI
     uniqueID: 371916547
     locked: 0
