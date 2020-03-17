@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -13,7 +14,9 @@ public class PlayerBehavior : MonoBehaviour
     int creditsNeeded = 5;
     public GameObject NextLevelUI;
 
-    int ratio = 0;
+    private int ratio = 0;
+
+    string rightScore;
 
     /*float dirX, dirY;
 
@@ -24,6 +27,7 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rightScore = "HighScore" + (SceneManager.GetActiveScene().buildIndex).ToString();
         if(!dead)
     	{
             // Retourne -1 ou 1
@@ -51,6 +55,7 @@ public class PlayerBehavior : MonoBehaviour
     	if(col.gameObject.CompareTag("vide"))
     	{
     		//print("collision");
+            print(rightScore);
             Dead();
     	}
     }
@@ -63,19 +68,23 @@ public class PlayerBehavior : MonoBehaviour
     	nbCredit++;
     	if (nbCredit >= creditsNeeded) //si on a ramasse assez de credits
     	{
+            print("AllCoins");
             if(PlayerPrefs.GetInt("nbMorts",0) > 10) // si on est mort plus de 10 fois
             {
-                if( 10 > PlayerPrefs.GetInt("HighScore",0)) // si le score est meilleur que le precedent
+                if( 10 > PlayerPrefs.GetInt(rightScore,0)) // si le score est meilleur que le precedent
                 {
-                    PlayerPrefs.SetInt("HighScore", 10);   
+                    PlayerPrefs.SetInt(rightScore, 10);   
                 }
             }
             else{
-                if( 20 - PlayerPrefs.GetInt("nbMorts",0) > PlayerPrefs.GetInt("HighScore",0))
+                print("dans le else");
+                if( 20 - PlayerPrefs.GetInt("nbMorts",0) > PlayerPrefs.GetInt(rightScore,0))
                 {
-                    PlayerPrefs.SetInt("HighScore", 20 - PlayerPrefs.GetInt("nbMorts",0));   
+                    print("Set HighScore");
+                    PlayerPrefs.SetInt(rightScore, 20 - PlayerPrefs.GetInt("nbMorts",0));   
                 }
             }
+            PlayerPrefs.SetInt("nbMorts",0);
             SetUINextLevel();
         }
     }
@@ -103,9 +112,9 @@ public class PlayerBehavior : MonoBehaviour
     {
         PlayerPrefs.SetInt("nbMorts", PlayerPrefs.GetInt("nbMorts") + 1);
         ratio = (nbCredit*10) / 6;
-        if(ratio > PlayerPrefs.GetInt("HighScore",0))
+        if(ratio > PlayerPrefs.GetInt(rightScore,0))
         {
-            PlayerPrefs.SetInt("HighScore", ratio);
+            PlayerPrefs.SetInt(rightScore, ratio);
         }
         dead = true;
     }

@@ -6,12 +6,15 @@ using UnityEngine.UI;
 
 public class ButtonsScript : MonoBehaviour
 {
-	public Text highScore;
+	public Text highScore0;
+	public Text highScore1;
 
     public void Start()
     {	
-        //PlayerPrefs.SetInt("HighScore",0);  // Permet de remettre le highscore à 0
-    	highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        //PlayerPrefs.SetInt("HighScore0",0);  // Permet de remettre le highscore à 0
+        //PlayerPrefs.SetInt("highScore1",0);  // Permet de remettre le highscore à 0
+    	highScore0.text = PlayerPrefs.GetInt("HighScore0", 0).ToString();
+    	highScore1.text = PlayerPrefs.GetInt("HighScore1",0).ToString();
     }
 
 	// OnClick du bouton Play
