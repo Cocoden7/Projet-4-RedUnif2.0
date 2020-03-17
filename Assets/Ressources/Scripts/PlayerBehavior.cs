@@ -22,7 +22,6 @@ public class PlayerBehavior : MonoBehaviour
 
     // Méthode appelée pour avoir les input du joueur
 
-    int ratio = 0;
 
     void Update()
     {

@@ -127,7 +127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &56609881
 Transform:
   m_ObjectHideFlags: 0
@@ -142,7 +142,6 @@ Transform:
   - {fileID: 2138814158}
   m_Father: {fileID: 0}
   m_RootOrder: 11
-
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &59435181 stripped
 Transform:
@@ -295,8 +294,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.45454547, y: 1}
-
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.45454547, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1923,7 +1921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &821956236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2007,7 +2005,7 @@ Transform:
   m_LocalScale: {x: 14.513031, y: 0.19243646, z: 1.160469}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &821956240
 MonoBehaviour:
