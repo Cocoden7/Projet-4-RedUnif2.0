@@ -7,9 +7,25 @@ using UnityEngine;
 public class RedLineBehavior : MonoBehaviour
 {
     public float speed;
-    // Update is called once per frame
+    public float acce;
+    private bool seuil = false;
     void Update()
     {
+        if (!seuil)
+        {
+            speed += acce;
+            if(speed >= 0.01)
+            {
+                seuil = true;
+            }
+        }
+        float posYPlayer = FindObjectOfType<PlayerBehavior>().transform.position.y;
+
+        // Si la ligne est trop loin du joueur, on la remet à une distance raisonnable du joueur 
+        if (posYPlayer - transform.position.y > 10)
+        {
+            transform.position = new Vector2(transform.position.x, posYPlayer - 10);
+        }
         transform.Translate(new Vector2(0f, speed));
     }
 }
