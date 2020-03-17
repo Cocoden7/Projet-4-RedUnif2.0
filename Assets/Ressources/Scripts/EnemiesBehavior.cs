@@ -25,7 +25,7 @@ public class EnemiesBehavior : MonoBehaviour
     IEnumerator Movement()
     {
     	List<int> tabl = QuelTabl();
-        float vitesse = QuelVitesse();
+        float vitesse = QuelleVitesse();
         int a = 0;
     	while(true)
     	{
@@ -85,7 +85,7 @@ public class EnemiesBehavior : MonoBehaviour
         }
     }
 
-    float QuelVitesse()
+    float QuelleVitesse()
     {
         if(rb.tag == "Enemy1")
         {
@@ -127,6 +127,15 @@ public class EnemiesBehavior : MonoBehaviour
             tabl.Add(2);
             tabl.Add(2);
             tabl.Add(2);
+        }
+        else if(rb.tag == "Enemy4")
+        {
+            tabl.Add(4);
+            tabl.Add(4);
+            tabl.Add(4);
+            tabl.Add(3);
+            tabl.Add(3);
+            tabl.Add(3);
         }
         else
         {
