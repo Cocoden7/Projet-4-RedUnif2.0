@@ -10,7 +10,7 @@ public class ButtonsScript : MonoBehaviour
 
     public void Start()
     {	
-        //PlayerPrefs.SetInt("HighScore",0);
+        //PlayerPrefs.SetInt("HighScore",0);  // Permet de remettre le highscore à 0
     	highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 
@@ -18,6 +18,6 @@ public class ButtonsScript : MonoBehaviour
     public void play()
     {
         SceneManager.LoadScene(0);
-        PlayerPrefs.SetInt("note",0);
+        PlayerPrefs.SetInt("nbMorts",0); // remet la variable à 0 dans la bdd (indispensable car pas remis à 0 tout seul)
     }
 }
