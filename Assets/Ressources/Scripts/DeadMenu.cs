@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Active le UI du dead menu
+// Contient aussi les "OnClick()" du dead menu
+
 public class DeadMenu : MonoBehaviour
 {
     bool gameHasEnded = false;

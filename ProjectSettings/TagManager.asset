@@ -15,6 +15,7 @@ TagManager:
   - fireball2
   - fireball3
   - fireball4
+  - RedLine
   layers:
   - Default
   - TransparentFX

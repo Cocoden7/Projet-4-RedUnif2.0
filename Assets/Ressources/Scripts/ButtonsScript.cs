@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+// Gère les boutons du menu principal, gère aussi le HighScore
+
 public class ButtonsScript : MonoBehaviour
 {
 	public Text highScore;

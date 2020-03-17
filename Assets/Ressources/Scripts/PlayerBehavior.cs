@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Gère toutes les collisions du joueur, ses mouvements (clavier), sa mort, la collecte de crédits, lance le niveau suivant lorsque nécessaire
+
 public class PlayerBehavior : MonoBehaviour
 {
 	public float moveSpeed = 5f;
@@ -13,14 +15,7 @@ public class PlayerBehavior : MonoBehaviour
     int creditsNeeded = 5;
     public GameObject NextLevelUI;
 
-
-    /*float dirX, dirY;
-
-    // Move speed variable can be set in Inspector with slider
-    [Range(1f, 20f)]
-    public float moveSpeed = 5f;
-*/
-    // Update is called once per frame
+    // Méthode appelée pour avoir les input du joueur
     void Update()
     {
         if(!dead)
@@ -37,7 +32,8 @@ public class PlayerBehavior : MonoBehaviour
             FindObjectOfType<DeadMenu>().GameOver();
         }
     }
- 
+   
+   // Méthode appelée pour appliquer les inputs au perso
    void FixedUpdate()
     {
         //print(movement);
@@ -49,10 +45,20 @@ public class PlayerBehavior : MonoBehaviour
         // Collision avec le vide
     	if(col.gameObject.CompareTag("vide"))
     	{
-    		//print("collision");
             Dead();
     	}
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        // La ligne rouge rattrape le joueur
+        if (col.gameObject.CompareTag("RedLine"))
+        {
+            print("Vous avez pris trop de retard !");
+            Dead();
+        }
+    }
+
 
     void AddCredit()
     {
@@ -72,7 +78,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         rb.constraints = RigidbodyConstraints2D.FreezePosition;
         FindObjectOfType<CameraBehavior>().incr = new Vector3(0, 0, 0); // Arrête la caméra
-        NextLevelUI.SetActive(true); // L'appel de la méthode se fait dans l'animation du UI
+        NextLevelUI.SetActive(true); // L'appel de la méthode LoadLevel() se fait dans l'animation du UI
         Time.timeScale = 1.0f;
     }
 
