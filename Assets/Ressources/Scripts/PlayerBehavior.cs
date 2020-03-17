@@ -117,6 +117,7 @@ public class PlayerBehavior : MonoBehaviour
     */
     void Dead()
     {
+        print(SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.SetInt("nbMorts", PlayerPrefs.GetInt("nbMorts") + 1);
         ratio = (nbCredit*10) / 6;
         if(ratio > PlayerPrefs.GetInt(rightScore,0))
