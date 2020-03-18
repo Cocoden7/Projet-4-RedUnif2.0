@@ -13,10 +13,9 @@ public class ButtonsScript : MonoBehaviour
 
     public void Start()
     {	
-    	print("AAAAAAAAAAAAAAAAAAAAAAAAA");
-    	print(SceneManager.GetActiveScene().buildIndex);
+    	Screen.orientation = ScreenOrientation.LandscapeRight;
         //PlayerPrefs.SetInt("HighScore0",0);  // Permet de remettre le highscore à 0
-        //PlayerPrefs.SetInt("highScore1",0);  // Permet de remettre le highscore à 0
+        //PlayerPrefs.SetInt("HighScore1",0);  // Permet de remettre le highscore à 0
     	highScore0.text = PlayerPrefs.GetInt("HighScore0", 0).ToString();
     	highScore1.text = PlayerPrefs.GetInt("HighScore1",0).ToString();
     }

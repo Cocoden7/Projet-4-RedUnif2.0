@@ -17,6 +17,10 @@ TagManager:
   - fireball4
   - RedLine
   - Enemy4
+  - PistonDroite
+  - PistonGauche
+  - PistonHaut
+  - PistonBas
   layers:
   - Default
   - TransparentFX
@@ -26,7 +30,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Plus haut
   - 
   - 
   - 
