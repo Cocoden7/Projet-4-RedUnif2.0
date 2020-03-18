@@ -2925,7 +2925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &653308090
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18263,7 +18263,7 @@ PrefabInstance:
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
       propertyPath: debutMilieu.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
@@ -18286,13 +18286,13 @@ PrefabInstance:
         type: 3}
       propertyPath: debutMilieu.Array.data[2]
       value: 
-      objectReference: {fileID: 7340046436183286988, guid: fd74d593a08cdd6458209668e96e89c2,
+      objectReference: {fileID: 1293014558994604245, guid: fd74d593a08cdd6458209668e96e89c2,
         type: 3}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
       propertyPath: debutMilieu.Array.data[3]
       value: 
-      objectReference: {fileID: 7340046436183286988, guid: fd74d593a08cdd6458209668e96e89c2,
+      objectReference: {fileID: 1198113669785899786, guid: 1230d854e1e9c89408d64bb2738807eb,
         type: 3}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
