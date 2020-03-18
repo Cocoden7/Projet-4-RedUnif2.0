@@ -13,6 +13,7 @@ public class ButtonsScript : MonoBehaviour
 
     public void Start()
     {	
+    	Screen.orientation = ScreenOrientation.LandscapeRight;
         //PlayerPrefs.SetInt("HighScore0",0);  // Permet de remettre le highscore à 0
         //PlayerPrefs.SetInt("HighScore1",0);  // Permet de remettre le highscore à 0
     	highScore0.text = PlayerPrefs.GetInt("HighScore0", 0).ToString();
