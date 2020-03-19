@@ -5,41 +5,56 @@ using UnityEngine;
 public class ElecTrap : MonoBehaviour
 {
 	Collider2D electriccol;
-	AudioSource audio;
-	bool test;
+	AudioSource audioSource;
+	bool active;
+    bool onScreen = false;  // Deja apparu a l'ecrant
+    bool offScreen = true;  // Pas encore sortit de l'ecran
 
     // Start is called before the first frame update
     void Start()
     {
         electriccol = this.GetComponent<Collider2D>();
-        audio = this.GetComponent<AudioSource>();
+        audioSource = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
+    { }
+
+    void Fin()
     {
-        
+        offScreen = false;
     }
 
     public void onCol()
     {
-    	electriccol.enabled = true;
-    	audio.Play();
-    	test = true;
+        if (onScreen && offScreen)
+        {
+            electriccol.enabled = true;
+            audioSource.Play();
+            active = true;
+        }
     }
 
     public void offCol()
     {
-    	electriccol.enabled = false;
-        audio.Stop();
-    	test = false;
+        if (onScreen && offScreen)
+        {
+            electriccol.enabled = false;
+            audioSource.Stop();
+            active = false;
+        }
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-    	if(test && col.tag == "Player")
+    	if(active && col.tag == "Player")
     	{
             // Appelle la fonction  Dead() de col
     		col.SendMessageUpwards("Dead", SendMessageOptions.DontRequireReceiver);
     	}
+        else if(col.tag == "MainCamera")
+        {
+            onScreen = true;
+        }
     }
 }

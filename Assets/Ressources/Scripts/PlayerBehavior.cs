@@ -55,18 +55,6 @@ public class PlayerBehavior : MonoBehaviour
     	}
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        // La ligne rouge rattrape le joueur
-        if (col.gameObject.CompareTag("RedLine"))
-        {
-            print("Vous avez pris trop de retard !");
-            Dead();
-        }
-    }
-
-
-
     /*
     Fonction qui gère le ramassage des pièces ainsi que la fin du niveau (quand on a assez de pièces)
     */

@@ -28,4 +28,13 @@ public class RedLineBehavior : MonoBehaviour
         }
         transform.Translate(new Vector2(0f, speed));
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Player")
+        {
+            print("Vous avez pris trop de retard !");
+            col.SendMessageUpwards("Dead", SendMessageOptions.DontRequireReceiver);
+        }
+    }
 }
