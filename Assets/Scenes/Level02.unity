@@ -1707,7 +1707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &818470540
 Transform:
   m_ObjectHideFlags: 0
@@ -1977,6 +1977,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8451cff577a2446ad13b0cfd5a5178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upButton: {fileID: 0}
+  downButton: {fileID: 0}
+  rightButton: {fileID: 0}
+  leftButton: {fileID: 0}
 --- !u!19719996 &936530429
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -6257,7 +6261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508743780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1291606, y: 2.48, z: -0.12674071}
+  m_LocalPosition: {x: 1.6, y: 2.6, z: -0.12674071}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 764270322}
@@ -6275,6 +6279,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8451cff577a2446ad13b0cfd5a5178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upButton: {fileID: 0}
+  downButton: {fileID: 0}
+  rightButton: {fileID: 0}
+  leftButton: {fileID: 0}
 --- !u!19719996 &1508743783
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -6860,7 +6868,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812301640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.98, y: 6.9, z: -0.12674071}
+  m_LocalPosition: {x: 1.6, y: 6.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 764270322}
@@ -6878,6 +6886,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8451cff577a2446ad13b0cfd5a5178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upButton: {fileID: 0}
+  downButton: {fileID: 0}
+  rightButton: {fileID: 0}
+  leftButton: {fileID: 0}
 --- !u!19719996 &1812301643
 TilemapCollider2D:
   m_ObjectHideFlags: 0
