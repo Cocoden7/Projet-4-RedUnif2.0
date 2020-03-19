@@ -12,10 +12,15 @@ public class DeadMenu : MonoBehaviour
     //bool restart = false;
     public float restartDelay = 1f;
     public GameObject deadMenuUI;
+    public GameObject PauseButton;
+    public GameObject MotionsButtons;
+
     public void GameOver()
     {
         if(!gameHasEnded)
         {
+            PauseButton.SetActive(false);
+            MotionsButtons.SetActive(false);
             deadMenuUI.SetActive(true);
             Time.timeScale = 0f; // Freeze le jeu; bien pour le slow mo
             FindObjectOfType<CameraBehavior>().incr = new Vector3(0,0,0); // Arrête la caméra
