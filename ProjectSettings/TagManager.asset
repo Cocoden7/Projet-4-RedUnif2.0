@@ -17,10 +17,7 @@ TagManager:
   - fireball4
   - RedLine
   - Enemy4
-  - PistonDroite
-  - PistonGauche
-  - PistonHaut
-  - PistonBas
+  - Piston
   layers:
   - Default
   - TransparentFX
