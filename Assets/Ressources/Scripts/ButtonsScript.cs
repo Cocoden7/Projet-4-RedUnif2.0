@@ -4,20 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 // Gère les boutons du menu principal, gère aussi le HighScore
 
 public class ButtonsScript : MonoBehaviour
 {
 	public Text highScore0;
-	public Text highScore1;
 
     public void Start()
     {	
     	Screen.orientation = ScreenOrientation.LandscapeRight;
         //PlayerPrefs.SetInt("HighScore0",0);  // Permet de remettre le highscore à 0
         //PlayerPrefs.SetInt("HighScore1",0);  // Permet de remettre le highscore à 0
-    	highScore0.text = PlayerPrefs.GetInt("HighScore0", 0).ToString();
-    	highScore1.text = PlayerPrefs.GetInt("HighScore1",0).ToString();
+    	highScore0.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
     }
 
 	// OnClick du bouton Play

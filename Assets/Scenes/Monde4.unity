@@ -1662,6 +1662,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restartDelay: 1
   deadMenuUI: {fileID: 469062239}
+  PauseButton: {fileID: 0}
+  MotionsButtons: {fileID: 0}
 --- !u!4 &313902268
 Transform:
   m_ObjectHideFlags: 0
@@ -18648,7 +18650,7 @@ PrefabInstance:
         type: 3}
       propertyPath: debutMilieu.Array.data[2]
       value: 
-      objectReference: {fileID: 7340046436183286988, guid: fd74d593a08cdd6458209668e96e89c2,
+      objectReference: {fileID: 1293014558994604245, guid: fd74d593a08cdd6458209668e96e89c2,
         type: 3}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
