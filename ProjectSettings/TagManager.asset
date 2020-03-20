@@ -18,6 +18,7 @@ TagManager:
   - RedLine
   - Enemy4
   - Piston
+  - Enemy5
   layers:
   - Default
   - TransparentFX

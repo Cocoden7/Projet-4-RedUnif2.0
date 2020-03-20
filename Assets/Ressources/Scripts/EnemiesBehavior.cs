@@ -87,11 +87,7 @@ public class EnemiesBehavior : MonoBehaviour
 
     float QuelleVitesse()
     {
-        if(rb.tag == "Enemy1")
-        {
-            return 1.0f;
-        }
-        else if(rb.tag == "Enemy2")
+        if(rb.tag == "Enemy2" || rb.tag == "Enemy5")
         {
             return 2.0f;
         }
@@ -134,6 +130,17 @@ public class EnemiesBehavior : MonoBehaviour
             tabl.Add(4);
             tabl.Add(4);
             tabl.Add(3);
+            tabl.Add(3);
+            tabl.Add(3);
+        }
+        else if(rb.tag == "Enemy5")
+        {
+            tabl.Add(1);
+            tabl.Add(1);
+            tabl.Add(4);
+            tabl.Add(4);
+            tabl.Add(2);
+            tabl.Add(2);
             tabl.Add(3);
             tabl.Add(3);
         }
