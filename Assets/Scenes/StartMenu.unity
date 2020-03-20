@@ -1011,7 +1011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cce8f769c7cf44ea160c8170578100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highScore0: {fileID: 380192876}
+  CreditsStage: {fileID: 380192876}
 --- !u!4 &1886478659
 Transform:
   m_ObjectHideFlags: 0

@@ -9,14 +9,13 @@ using UnityEngine.UI;
 
 public class ButtonsScript : MonoBehaviour
 {
-	public Text highScore0;
+	public Text CreditsStage;
 
     public void Start()
     {	
     	Screen.orientation = ScreenOrientation.LandscapeRight;
-        //PlayerPrefs.SetInt("HighScore0",0);  // Permet de remettre le highscore à 0
-        //PlayerPrefs.SetInt("HighScore1",0);  // Permet de remettre le highscore à 0
-    	highScore0.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        //PlayerPrefs.DeleteAll();
+    	CreditsStage.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
     }
 
 	// OnClick du bouton Play
