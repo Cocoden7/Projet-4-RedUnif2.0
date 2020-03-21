@@ -12,7 +12,7 @@ public class PlayerBehavior : MonoBehaviour
 	public Rigidbody2D rb;
 	Vector2 movement;
 	private bool dead = false;
-	private int nbCredit = 0;
+	public int nbCredit = 0;
     int creditsNeeded = 5;
     public GameObject NextLevelUI;
     private int ratio = 0;
