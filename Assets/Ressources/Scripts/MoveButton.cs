@@ -15,35 +15,22 @@ public class MoveButton : MonoBehaviour
 
     public void Up()
     {
-        Player.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
     	Player.MovePosition(Player.position += new Vector2(0,1));
-        StartCoroutine(Attente());
+
     }
 
     public void Down()
     {
-        Player.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-        Player.MovePosition(Player.position += new Vector2(0,-1));
-        StartCoroutine(Attente());
+    	Player.MovePosition(Player.position += new Vector2(0,-1));
     }
 
     public void Left()
     {
-        Player.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-        Player.MovePosition(Player.position += new Vector2(-1,0));
-        StartCoroutine(Attente());
+    	Player.MovePosition(Player.position += new Vector2(-1,0));
     }
 
     public void Right()
     {
-        Player.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-        Player.MovePosition(Player.position += new Vector2(1,0));
-        StartCoroutine(Attente());
-    }
-
-    IEnumerator Attente()
-    {
-        yield return new WaitForSeconds(0.1f);
-        Player.constraints = RigidbodyConstraints2D.FreezeRotation;
+    	Player.MovePosition(Player.position += new Vector2(1,0));
     }
 }
