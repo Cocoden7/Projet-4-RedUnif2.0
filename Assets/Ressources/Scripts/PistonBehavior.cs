@@ -38,6 +38,7 @@ public class PistonBehavior : MonoBehaviour
             rbBout.MovePosition(rbBout.position += direction);
             rbManche.MovePosition(rbManche.position += (direction - dir16));
 
+
             // Puis on le remet normal
             yield return new WaitForSeconds(1.0f);
             rbBout.MovePosition(rbBout.position -= direction);
@@ -50,7 +51,25 @@ public class PistonBehavior : MonoBehaviour
 
     void QuelleDirection()
     {
-        direction.x = 0.5f;
-        dir16.x = 1/32f;
+        if (rb.tag == "PistonDroite")
+        {
+            direction.x = 0.5f;
+            dir16.x = 1 / 32f;
+        }
+        else if (rb.tag == "PistonGauche")
+        {
+            direction.x = -0.5f;
+            dir16.x = -1 / 32;
+        }
+        else if (rb.tag == "PistonHaut")
+        {
+            direction.y = 0.5f;
+            dir16.y = 1 / 32;
+        }
+        else if (rb.tag == "PistonBas")
+        {
+            direction.y = -0.5f;
+            dir16.y = -1 / 32;
+        }
     }
 }
