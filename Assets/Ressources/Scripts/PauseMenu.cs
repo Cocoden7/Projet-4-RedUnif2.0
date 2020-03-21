@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
     public void OnClickPause()
     {
-        Time.timeScale = 0.5f; // Freeze le jeu; (bien pour le slow mo)
+        Time.timeScale = 0f; // Freeze le jeu; (bien pour le slow mo)
         PauseMenuUI.SetActive(true);
     }
 
