@@ -79,6 +79,26 @@ public class PlayerBehavior : MonoBehaviour
                     PlayerPrefs.SetInt(rightScore, 20 - PlayerPrefs.GetInt("nbMorts",0));   
                 }
             }
+            if(rightScore == "HighScore1")
+            {
+                PlayerPrefs.SetInt("WorldPass", 1);
+            }
+            else if(rightScore == "HighScore2")
+            {
+                PlayerPrefs.SetInt("WorldPass", 2);   
+            }
+            else if(rightScore == "HighScore3")
+            {
+                PlayerPrefs.SetInt("WorldPass", 3);
+            }
+            else if(rightScore == "HighScore4")
+            {
+                PlayerPrefs.SetInt("WorldPass", 4);
+            }
+            else if(rightScore == "HighScore5")
+            {
+                PlayerPrefs.SetInt("WorldPass", 5);
+            }
             PlayerPrefs.SetInt("nbMorts",0);
             SetUINextLevel();
         }
