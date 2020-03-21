@@ -473,7 +473,11 @@ MonoBehaviour:
   HighScoreB3: {fileID: 1365523397}
   HighScoreM1: {fileID: 1476227980}
   HighScoreM2: {fileID: 97416953}
-  test: {fileID: 846692932}
+  Bac2Button: {fileID: 846692932}
+  Bac3Button: {fileID: 656319504}
+  Master1Button: {fileID: 1766354359}
+  Master2Button: {fileID: 1246135728}
+  StageButton: {fileID: 1808240103}
 --- !u!4 &310568353
 Transform:
   m_ObjectHideFlags: 0
@@ -820,8 +824,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 310568351}
-        m_MethodName: 
+      - m_Target: {fileID: 310568352}
+        m_MethodName: Bac3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1569,8 +1573,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 310568351}
-        m_MethodName: 
+      - m_Target: {fileID: 310568352}
+        m_MethodName: Master2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2079,8 +2083,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 310568351}
-        m_MethodName: 
+      - m_Target: {fileID: 310568352}
+        m_MethodName: Master1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2159,8 +2163,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -153, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -147, y: 0}
+  m_SizeDelta: {x: 50.39, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1770453115
 MonoBehaviour:
@@ -2315,8 +2319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 53, y: -159.27}
-  m_SizeDelta: {x: 154.7, y: 91.45}
+  m_AnchoredPosition: {x: 56.32, y: -159.27}
+  m_SizeDelta: {x: 110, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808240103
 MonoBehaviour:
@@ -2353,7 +2357,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1808240104}
   m_OnClick:
     m_PersistentCalls:

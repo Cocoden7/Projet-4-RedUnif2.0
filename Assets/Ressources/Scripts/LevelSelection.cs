@@ -15,17 +15,32 @@ public class LevelSelection : MonoBehaviour
 	public Text HighScoreM1;
 	public Text HighScoreM2;
 
-	public Button test;
+	public Button Bac2Button;
+    public Button Bac3Button;
+    public Button Master1Button;
+    public Button Master2Button;
+    public Button StageButton;
 
 
 	public void Start()
 	{
-		/*PlayerPrefs.SetInt("HighScore1",0);  // Permet de remettre le highscore à 0
-        PlayerPrefs.SetInt("HighScore2",0);  // Permet de remettre le highscore à 0
-        PlayerPrefs.SetInt("HighScore3",0);  // Permet de remettre le highscore à 0
-        PlayerPrefs.SetInt("HighScore4",0);  // Permet de remettre le highscore à 0
-        PlayerPrefs.SetInt("HighScore5",0);  // Permet de remettre le highscore à 0
-        */
+        if(PlayerPrefs.GetInt("WorldPass") >= 1)
+        {
+            Bac2Button.interactable = true;
+        }
+        if(PlayerPrefs.GetInt("WorldPass") >= 2)
+        {
+            Bac3Button.interactable = true;
+        }
+        if(PlayerPrefs.GetInt("WorldPass") >= 3)
+        {
+            Master1Button.interactable = true;
+            StageButton.interactable = true;
+        }
+        if(PlayerPrefs.GetInt("WorldPass") >= 4)
+        {
+            Master2Button.interactable = true;
+        }
     	HighScoreB1.text = PlayerPrefs.GetInt("HighScore1", 0).ToString();
     	HighScoreB2.text = PlayerPrefs.GetInt("HighScore2",0).ToString();
     	HighScoreB3.text = PlayerPrefs.GetInt("HighScore3",0).ToString();
