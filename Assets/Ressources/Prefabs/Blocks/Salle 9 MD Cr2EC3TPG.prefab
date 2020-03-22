@@ -1420,6 +1420,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piston
       objectReference: {fileID: 0}
+    - target: {fileID: 4738804732030965130, guid: ab68e08a885e24746a1a4e7502f80e97,
+        type: 3}
+      propertyPath: m_TagString
+      value: PistonDroite
+      objectReference: {fileID: 0}
     - target: {fileID: 4738804732030965133, guid: ab68e08a885e24746a1a4e7502f80e97,
         type: 3}
       propertyPath: m_LocalPosition.x

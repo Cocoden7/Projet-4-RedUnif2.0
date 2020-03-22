@@ -235,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6638078287659365504}
   m_Layer: 0
-  m_Name: Salle 8 DM 3E2TP2CG
+  m_Name: Salle 8 DM 3E2TP2CrG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -432,6 +432,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Piston
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738804732030965130, guid: ab68e08a885e24746a1a4e7502f80e97,
+        type: 3}
+      propertyPath: m_TagString
+      value: PistonDroite
       objectReference: {fileID: 0}
     - target: {fileID: 4738804732030965133, guid: ab68e08a885e24746a1a4e7502f80e97,
         type: 3}
