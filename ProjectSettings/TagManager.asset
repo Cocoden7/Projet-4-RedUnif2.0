@@ -18,10 +18,7 @@ TagManager:
   - RedLine
   - Enemy4
   - Enemy5
-  - PistonDroite
-  - PistonGauche
-  - PistonHaut
-  - PistonBas
+  - CoinParticles
   layers:
   - Default
   - TransparentFX

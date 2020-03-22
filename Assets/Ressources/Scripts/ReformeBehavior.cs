@@ -5,7 +5,7 @@ using UnityEngine;
 public class ReformeBehavior : MonoBehaviour
 {
     public int malus = 2;
-    public GameObject particles;
+    private ParticleSystem particles;
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Player")
@@ -14,7 +14,8 @@ public class ReformeBehavior : MonoBehaviour
             // col.SendMessageUpwards("AddCredit", SendMessageOptions.DontRequireReceiver);
             if(FindObjectOfType<PlayerBehavior>().nbCredit >= malus)
             {
-                particles.GetComponent<ParticleSystem>().Play();
+                particles = GameObject.FindGameObjectWithTag("CoinParticles").GetComponent<ParticleSystem>();
+                particles.Play();
                 FindObjectOfType<PlayerBehavior>().nbCredit -= malus;
             }
             Destroy(gameObject);
