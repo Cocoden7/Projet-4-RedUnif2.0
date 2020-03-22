@@ -16,21 +16,24 @@ public class MoveButton : MonoBehaviour
     public void Up()
     {
     	Player.MovePosition(Player.position += new Vector2(0,1));
-
+        Player.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
     }
 
     public void Down()
     {
     	Player.MovePosition(Player.position += new Vector2(0,-1));
+        Player.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
     }
 
     public void Left()
     {
     	Player.MovePosition(Player.position += new Vector2(-1,0));
+        Player.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
     }
 
     public void Right()
     {
     	Player.MovePosition(Player.position += new Vector2(1,0));
+        Player.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
     }
 }
