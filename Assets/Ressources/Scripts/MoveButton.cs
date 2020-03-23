@@ -5,9 +5,8 @@ using UnityEngine;
 public class MoveButton : MonoBehaviour
 {
 	Vector2 vec;
-	Rigidbody2D Player;
+	public Rigidbody2D Player;
 	
-    // Update is called once per frame
     void Start()
     {
         Player = FindObjectOfType<PlayerBehavior>().rb; 

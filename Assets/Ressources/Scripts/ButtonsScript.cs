@@ -15,6 +15,7 @@ public class ButtonsScript : MonoBehaviour
     {	
     	Screen.orientation = ScreenOrientation.LandscapeRight;
         //PlayerPrefs.DeleteAll();
+        //PlayerPrefs.SetInt("WorldPass", 8);
     	CreditsStage.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
     }
 
