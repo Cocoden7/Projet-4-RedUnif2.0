@@ -17156,6 +17156,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reforme
       objectReference: {fileID: 0}
+    - target: {fileID: 2392390014212763470, guid: b285577fc4fd9bf43915ac86eb25afeb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2392390014212763474, guid: b285577fc4fd9bf43915ac86eb25afeb,
         type: 3}
       propertyPath: m_LocalPosition.x
