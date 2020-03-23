@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7888604976348416763}
   - component: {fileID: 7888604976348416761}
   - component: {fileID: 7888604976348416762}
-  - component: {fileID: 7888604976348416710}
+  - component: {fileID: 5660848545984272518}
   m_Layer: 0
   m_Name: test ennemis
   m_TagString: Untagged
@@ -116,8 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7888604976348416761}
---- !u!58 &7888604976348416710
-CircleCollider2D:
+--- !u!70 &5660848545984272518
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -126,9 +126,9 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 0.4, y: 0.8}
+  m_Direction: 0
