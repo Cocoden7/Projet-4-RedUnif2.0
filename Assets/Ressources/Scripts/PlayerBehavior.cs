@@ -13,7 +13,7 @@ public class PlayerBehavior : MonoBehaviour
 	Vector2 movement;
 	private bool dead = false;
 	public int nbCredit = 0;
-    int creditsNeeded = 5;
+    int creditsNeeded = 10;
     public GameObject NextLevelUI;
     private int ratio = 0;
 
