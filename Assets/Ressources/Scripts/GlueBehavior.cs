@@ -7,34 +7,15 @@ using UnityEngine.UI;
 
 public class GlueBehavior : MonoBehaviour
 {
-    public GameObject Glue;
-    public GameObject upButton;
-    public GameObject downButton;
-    public GameObject rightButton;
-    public GameObject leftButton;
+    private Collider2D player;
 
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Player")
         {
-            StartCoroutine(Attente());
+            col.SendMessageUpwards("Stop", SendMessageOptions.DontRequireReceiver);
+            gameObject.SetActive(false);
         }
-    }
-
-    IEnumerator Attente()
-    {
-        Bouttons(false);
-        yield return new WaitForSeconds(2.0f);
-        Bouttons(true);
-        Glue.SetActive(false);
-    }
-
-    void Bouttons(bool a)
-    {
-        upButton.GetComponent<Button>().interactable = a;
-        downButton.GetComponent<Button>().interactable = a;
-        rightButton.GetComponent<Button>().interactable = a;
-        leftButton.GetComponent<Button>().interactable = a;
     }
 }

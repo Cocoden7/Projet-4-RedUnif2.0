@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BiereBehavior : MonoBehaviour
 {
-    public GameObject Biere;
-
     // Start is called before the first frame update
     void Start()
     { }
@@ -19,7 +17,7 @@ public class BiereBehavior : MonoBehaviour
         if (col.tag == "Player")
         {
             col.SendMessageUpwards("Bourre", SendMessageOptions.DontRequireReceiver);
-            Biere.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }

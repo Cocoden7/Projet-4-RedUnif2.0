@@ -16,7 +16,7 @@ public class PlayerBehavior : MonoBehaviour
     int creditsNeeded = 10;
     public GameObject NextLevelUI;
     private int ratio = 0;
-    private int bourre = 1;  // Variable pour quand le joueur est bourre
+    private int modifMouvement = 1;  // Variable pour quand le joueur est bourre
 
     string rightScore;
 
@@ -138,37 +138,53 @@ public class PlayerBehavior : MonoBehaviour
 
     void MoveUp()
     {
-        rb.MovePosition(rb.position += new Vector2(0, 1 * bourre));
+        rb.MovePosition(rb.position += new Vector2(0, 1 * modifMouvement));
         rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
     }
 
     void MoveDown()
     {
-        rb.MovePosition(rb.position += new Vector2(0, -1 * bourre));
+        rb.MovePosition(rb.position += new Vector2(0, -1 * modifMouvement));
         rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
     }
 
     void MoveRight()
     {
-        rb.MovePosition(rb.position += new Vector2(1 * bourre, 0));
+        rb.MovePosition(rb.position += new Vector2(1 * modifMouvement, 0));
         rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
     }
 
     void MoveLeft()
     {
-        rb.MovePosition(rb.position += new Vector2(-1 * bourre, 0));
+        rb.MovePosition(rb.position += new Vector2(-1 * modifMouvement, 0));
         rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
     }
+
+    // Les fonctions modifiant les deplacements appelees par les pieges sont ici dessous :
 
     void Bourre()
     {
         StartCoroutine(Drunk());
     }
 
+    void Stop()
+    {
+        StartCoroutine(BougePlus());
+    }
+
+    // Les Coroutine dont ont besoin les pieges sur les deplacement sont ici dessous :
+
     IEnumerator Drunk()
     {
-        bourre = -1;
-        yield return new WaitForSeconds(1.0f);
-        bourre = 1;
+        modifMouvement = -1;
+        yield return new WaitForSeconds(2.0f);
+        modifMouvement = 1;
+    }
+
+    IEnumerator BougePlus()
+    {
+        modifMouvement = 0;
+        yield return new WaitForSeconds(2.0f);
+        modifMouvement = 1;
     }
 }
