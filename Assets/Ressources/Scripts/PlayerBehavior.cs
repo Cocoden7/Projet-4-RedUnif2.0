@@ -13,9 +13,10 @@ public class PlayerBehavior : MonoBehaviour
 	Vector2 movement;
 	private bool dead = false;
 	public int nbCredit = 0;
-    int creditsNeeded = 5;
+    int creditsNeeded = 10;
     public GameObject NextLevelUI;
     private int ratio = 0;
+    private int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
 
     string rightScore;
 
@@ -37,13 +38,6 @@ public class PlayerBehavior : MonoBehaviour
             // Lance la methode GameOver dans GameManager
             FindObjectOfType<DeadMenu>().GameOver();
         }
-    }
-   
-   // Méthode appelée pour appliquer les inputs au perso
-   void FixedUpdate()
-    {
-        //print(movement);
-    	rb.MovePosition(rb.position += movement * moveSpeed * Time.fixedDeltaTime);
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -79,19 +73,19 @@ public class PlayerBehavior : MonoBehaviour
                     PlayerPrefs.SetInt(rightScore, 20 - PlayerPrefs.GetInt("nbMorts",0));   
                 }
             }
-            if(rightScore == "HighScore1")
+            if(rightScore == "HighScore1" && PlayerPrefs.GetInt("WorldPass", 0) < 1)
             {
                 PlayerPrefs.SetInt("WorldPass", 1);
             }
-            else if(rightScore == "HighScore2")
+            else if(rightScore == "HighScore2" && PlayerPrefs.GetInt("WorldPass", 0) < 2)
             {
                 PlayerPrefs.SetInt("WorldPass", 2);   
             }
-            else if(rightScore == "HighScore3")
+            else if(rightScore == "HighScore3" && PlayerPrefs.GetInt("WorldPass", 0) < 3)
             {
                 PlayerPrefs.SetInt("WorldPass", 3);
             }
-            else if(rightScore == "HighScore4")
+            else if(rightScore == "HighScore4" && PlayerPrefs.GetInt("WorldPass", 0) < 4)
             {
                 PlayerPrefs.SetInt("WorldPass", 4);
             }
@@ -123,7 +117,7 @@ public class PlayerBehavior : MonoBehaviour
     /*
     Fonction à appeler dès que le joueur meurt !!IMPORTANT, il faut appeler celle-ci
     */
-    void Dead()
+    void Dead(string mort = "")
     {
         print(SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.SetInt("nbMorts", PlayerPrefs.GetInt("nbMorts") + 1);
@@ -133,5 +127,58 @@ public class PlayerBehavior : MonoBehaviour
             PlayerPrefs.SetInt(rightScore, ratio);
         }
         dead = true;
+        print("La mort est due à un(e) " + mort);
+    }
+
+    void MoveUp()
+    {
+        rb.MovePosition(rb.position += new Vector2(0, 1 * modifMouvement));
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    void MoveDown()
+    {
+        rb.MovePosition(rb.position += new Vector2(0, -1 * modifMouvement));
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    void MoveRight()
+    {
+        rb.MovePosition(rb.position += new Vector2(1 * modifMouvement, 0));
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    void MoveLeft()
+    {
+        rb.MovePosition(rb.position += new Vector2(-1 * modifMouvement, 0));
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    // Les fonctions modifiant les deplacements appelees par les pieges sont ici dessous :
+
+    void Bourre()
+    {
+        StartCoroutine(Drunk());
+    }
+
+    void Stop()
+    {
+        StartCoroutine(BougePlus());
+    }
+
+    // Les Coroutine dont ont besoin les pieges sur les deplacement sont ici dessous :
+
+    IEnumerator Drunk()
+    {
+        modifMouvement = -1;
+        yield return new WaitForSeconds(2.0f);
+        modifMouvement = 1;
+    }
+
+    IEnumerator BougePlus()
+    {
+        modifMouvement = 0;
+        yield return new WaitForSeconds(2.0f);
+        modifMouvement = 1;
     }
 }

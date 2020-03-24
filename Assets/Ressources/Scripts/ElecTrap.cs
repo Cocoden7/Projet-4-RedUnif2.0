@@ -54,7 +54,7 @@ public class ElecTrap : MonoBehaviour
     	if(active==true && col.tag == "Player")
     	{
             // Appelle la fonction  Dead() de col
-    		col.SendMessageUpwards("Dead", SendMessageOptions.DontRequireReceiver);
+    		col.SendMessageUpwards("Dead", "elsecTrap", SendMessageOptions.DontRequireReceiver);
     	}
         else if(col.tag == "MainCamera")
         {

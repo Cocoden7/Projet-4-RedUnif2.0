@@ -5,9 +5,8 @@ using UnityEngine;
 public class MoveButton : MonoBehaviour
 {
 	Vector2 vec;
-	Rigidbody2D Player;
+	public Rigidbody2D Player;
 	
-    // Update is called once per frame
     void Start()
     {
         Player = FindObjectOfType<PlayerBehavior>().rb; 
@@ -15,25 +14,21 @@ public class MoveButton : MonoBehaviour
 
     public void Up()
     {
-    	Player.MovePosition(Player.position += new Vector2(0,1));
-        Player.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        Player.SendMessageUpwards("MoveUp", SendMessageOptions.DontRequireReceiver);
     }
 
     public void Down()
     {
-    	Player.MovePosition(Player.position += new Vector2(0,-1));
-        Player.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        Player.SendMessageUpwards("MoveDown", SendMessageOptions.DontRequireReceiver);
     }
 
     public void Left()
     {
-    	Player.MovePosition(Player.position += new Vector2(-1,0));
-        Player.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        Player.SendMessageUpwards("MoveLeft", SendMessageOptions.DontRequireReceiver);
     }
 
     public void Right()
     {
-    	Player.MovePosition(Player.position += new Vector2(1,0));
-        Player.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        Player.SendMessageUpwards("MoveRight", SendMessageOptions.DontRequireReceiver);
     }
 }
