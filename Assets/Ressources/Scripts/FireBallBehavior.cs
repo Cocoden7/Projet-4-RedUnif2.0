@@ -103,7 +103,7 @@ public class FireBallBehavior : MonoBehaviour
         if (col.tag == "Player" && test == true)
         {
             print("credit gagne!");
-            col.SendMessageUpwards("Dead", SendMessageOptions.DontRequireReceiver);
+            col.SendMessageUpwards("Dead", "canon", SendMessageOptions.DontRequireReceiver);
         }
     }
 

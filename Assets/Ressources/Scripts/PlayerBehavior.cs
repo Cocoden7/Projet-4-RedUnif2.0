@@ -16,7 +16,7 @@ public class PlayerBehavior : MonoBehaviour
     int creditsNeeded = 10;
     public GameObject NextLevelUI;
     private int ratio = 0;
-    private int modifMouvement = 1;  // Variable pour quand le joueur est bourre
+    private int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
 
     string rightScore;
 
@@ -38,13 +38,6 @@ public class PlayerBehavior : MonoBehaviour
             // Lance la methode GameOver dans GameManager
             FindObjectOfType<DeadMenu>().GameOver();
         }
-    }
-   
-   // Méthode appelée pour appliquer les inputs au perso
-   void FixedUpdate()
-    {
-        //print(movement);
-    	rb.MovePosition(rb.position += movement * moveSpeed * Time.fixedDeltaTime);
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -124,7 +117,7 @@ public class PlayerBehavior : MonoBehaviour
     /*
     Fonction à appeler dès que le joueur meurt !!IMPORTANT, il faut appeler celle-ci
     */
-    void Dead()
+    void Dead(string mort = "")
     {
         print(SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.SetInt("nbMorts", PlayerPrefs.GetInt("nbMorts") + 1);
@@ -134,6 +127,7 @@ public class PlayerBehavior : MonoBehaviour
             PlayerPrefs.SetInt(rightScore, ratio);
         }
         dead = true;
+        print("La mort est due à un(e) " + mort);
     }
 
     void MoveUp()

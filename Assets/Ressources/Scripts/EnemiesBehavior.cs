@@ -81,7 +81,7 @@ public class EnemiesBehavior : MonoBehaviour
         if(col.tag == "Player")
         {
             print("collision ennemi");
-    	    col.SendMessageUpwards("Dead", SendMessageOptions.DontRequireReceiver);
+    	    col.SendMessageUpwards("Dead", "ennemis", SendMessageOptions.DontRequireReceiver);
         }
     }
 
