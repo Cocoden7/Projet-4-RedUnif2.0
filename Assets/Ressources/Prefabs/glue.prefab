@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8451cff577a2446ad13b0cfd5a5178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Glue: {fileID: 3529140942319957823}
   upButton: {fileID: 0}
   downButton: {fileID: 0}
   rightButton: {fileID: 0}

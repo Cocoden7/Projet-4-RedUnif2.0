@@ -16,6 +16,7 @@ public class PlayerBehavior : MonoBehaviour
     int creditsNeeded = 10;
     public GameObject NextLevelUI;
     private int ratio = 0;
+    private int bourre = 1;  // Variable pour quand le joueur est bourre
 
     string rightScore;
 
@@ -133,5 +134,41 @@ public class PlayerBehavior : MonoBehaviour
             PlayerPrefs.SetInt(rightScore, ratio);
         }
         dead = true;
+    }
+
+    void MoveUp()
+    {
+        rb.MovePosition(rb.position += new Vector2(0, 1 * bourre));
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    void MoveDown()
+    {
+        rb.MovePosition(rb.position += new Vector2(0, -1 * bourre));
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    void MoveRight()
+    {
+        rb.MovePosition(rb.position += new Vector2(1 * bourre, 0));
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    void MoveLeft()
+    {
+        rb.MovePosition(rb.position += new Vector2(-1 * bourre, 0));
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    void Bourre()
+    {
+        StartCoroutine(Drunk());
+    }
+
+    IEnumerator Drunk()
+    {
+        bourre = -1;
+        yield return new WaitForSeconds(1.0f);
+        bourre = 1;
     }
 }

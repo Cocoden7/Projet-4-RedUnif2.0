@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class GlueBehavior : MonoBehaviour
 {
+    public GameObject Glue;
     public GameObject upButton;
     public GameObject downButton;
     public GameObject rightButton;
@@ -26,7 +27,7 @@ public class GlueBehavior : MonoBehaviour
         Bouttons(false);
         yield return new WaitForSeconds(2.0f);
         Bouttons(true);
-        gameObject.SetActive(false);
+        Glue.SetActive(false);
     }
 
     void Bouttons(bool a)
@@ -35,6 +36,5 @@ public class GlueBehavior : MonoBehaviour
         downButton.GetComponent<Button>().interactable = a;
         rightButton.GetComponent<Button>().interactable = a;
         leftButton.GetComponent<Button>().interactable = a;
-
     }
 }
