@@ -254,7 +254,7 @@ Transform:
   m_Children:
   - {fileID: 6969190927866457979}
   - {fileID: 9025701063832021613}
-  - {fileID: 3388048651906254948}
+  - {fileID: 7930262666343750962}
   - {fileID: 861738967584529751}
   - {fileID: 5991978629757611449}
   - {fileID: 7207046833503154960}
@@ -7278,11 +7278,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: glue
       objectReference: {fileID: 0}
+    - target: {fileID: 7150149225779156073, guid: 4dd36dcdb8f66be489d5426165b7fa0d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210960771957367400, guid: 4dd36dcdb8f66be489d5426165b7fa0d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210960771957367400, guid: 4dd36dcdb8f66be489d5426165b7fa0d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210960771957367400, guid: 4dd36dcdb8f66be489d5426165b7fa0d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd36dcdb8f66be489d5426165b7fa0d, type: 3}
---- !u!4 &3388048651906254948 stripped
+--- !u!4 &7930262666343750962 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3529140942319957822, guid: 4dd36dcdb8f66be489d5426165b7fa0d,
+  m_CorrespondingSourceObject: {fileID: 8210960771957367400, guid: 4dd36dcdb8f66be489d5426165b7fa0d,
     type: 3}
   m_PrefabInstance: {fileID: 2305494126870249306}
   m_PrefabAsset: {fileID: 0}

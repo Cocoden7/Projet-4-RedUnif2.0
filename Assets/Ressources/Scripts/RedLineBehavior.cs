@@ -34,7 +34,7 @@ public class RedLineBehavior : MonoBehaviour
         if (col.tag == "Player")
         {
             print("Vous avez pris trop de retard !");
-            col.SendMessageUpwards("Dead", SendMessageOptions.DontRequireReceiver);
+            col.SendMessageUpwards("Dead", "redLine", SendMessageOptions.DontRequireReceiver);
         }
     }
 }

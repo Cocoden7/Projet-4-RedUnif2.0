@@ -17,7 +17,7 @@ public class TrouBehavior : MonoBehaviour
     IEnumerator Dead()
     {
         yield return new WaitForSeconds(0.2f);
-        colider.SendMessageUpwards("Dead", SendMessageOptions.DontRequireReceiver);
+        colider.SendMessageUpwards("Dead", "trou", SendMessageOptions.DontRequireReceiver);
     }
 
     void OnTriggerEnter2D(Collider2D col)
