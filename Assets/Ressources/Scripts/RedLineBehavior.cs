@@ -19,18 +19,21 @@ public class RedLineBehavior : MonoBehaviour
                 seuil = true;
             }
         }
-        float posYPlayer = FindObjectOfType<PlayerBehavior>().transform.position.y;
+        Vector3 posPlayer = FindObjectOfType<PlayerBehavior>().transform.position;
 
-        // Si la ligne est trop loin du joueur, on la remet à une distance raisonnable du joueur 
-        if (posYPlayer - transform.position.y > 10)
+        // Si la ligne est trop loin derrière du joueur, on la remet à une distance raisonnable du joueur 
+        if (posPlayer.y - transform.position.y > 20)
         {
-            transform.position = new Vector2(transform.position.x, posYPlayer - 10);
+            transform.position = new Vector2(transform.position.x, posPlayer.y - 20);
+            print("trop loin");
         }
-        transform.Translate(new Vector2(0f, speed));
+        transform.position = new Vector3(posPlayer.x, transform.position.y, -5f);
+        transform.Translate(0f, speed*Time.deltaTime, 0f);
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        print("collisifaezsoidne");
         if (col.tag == "Player")
         {
             print("Vous avez pris trop de retard !");
