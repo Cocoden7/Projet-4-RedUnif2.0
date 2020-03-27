@@ -158,27 +158,21 @@ public class PlayerBehavior : MonoBehaviour
 
     void Bourre()
     {
-        StartCoroutine(Drunk());
+        modifMouvement = -1;
+        StartCoroutine(Attente(2.0f));
     }
 
     void Stop()
     {
-        StartCoroutine(BougePlus());
+        modifMouvement = 0;
+        StartCoroutine(Attente(2.0f));
     }
 
     // Les Coroutine dont ont besoin les pieges sur les deplacement sont ici dessous :
 
-    IEnumerator Drunk()
+    IEnumerator Attente(float temps)
     {
-        modifMouvement = -1;
-        yield return new WaitForSeconds(2.0f);
-        modifMouvement = 1;
-    }
-
-    IEnumerator BougePlus()
-    {
-        modifMouvement = 0;
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(temps);
         modifMouvement = 1;
     }
 }
