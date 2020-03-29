@@ -13,8 +13,7 @@ public class ButtonsScript : MonoBehaviour
 
     public void Start()
     {	
-    	Screen.orientation = ScreenOrientation.LandscapeRight;
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         //PlayerPrefs.SetInt("WorldPass", 8);
     	CreditsStage.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
     }
@@ -23,6 +22,12 @@ public class ButtonsScript : MonoBehaviour
     public void play()
     {
         SceneManager.LoadScene(6);
+        PlayerPrefs.SetInt("nbMorts",0); // remet la variable à 0 dans la bdd (indispensable car pas remis à 0 tout seul)
+    }
+
+    public void SlidingMenu()
+    {
+        SceneManager.LoadScene(8);
         PlayerPrefs.SetInt("nbMorts",0); // remet la variable à 0 dans la bdd (indispensable car pas remis à 0 tout seul)
     }
 }
