@@ -48,7 +48,6 @@ public class ElecTrap : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-        print("COLLISION");
         print(col.tag);
         print(active);
     	if(active==true && col.tag == "Player")

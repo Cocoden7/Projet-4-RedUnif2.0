@@ -23,6 +23,7 @@ TagManager:
   - PistonGauche
   - PistonHaut
   - PistonBas
+  - PlayerElec
   layers:
   - Default
   - TransparentFX
