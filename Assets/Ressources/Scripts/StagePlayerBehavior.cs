@@ -87,6 +87,7 @@ public class StagePlayerBehavior : MonoBehaviour
 	Vector2 movement;
 	private bool dead = false;
 	public int nbCredit = 0;
+    private int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
 
 
     // Méthode appelée pour avoir les input du joueur
@@ -144,5 +145,51 @@ public class StagePlayerBehavior : MonoBehaviour
     {
         PlayerPrefs.SetInt("CreditsStage", (PlayerPrefs.GetInt("CreditsStage",0) + nbCredit));
         dead = true;
+    }
+
+    void MoveUp()
+    {
+        rb.MovePosition(rb.position += new Vector2(0, 1 * modifMouvement));
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    void MoveDown()
+    {
+        rb.MovePosition(rb.position += new Vector2(0, -1 * modifMouvement));
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    void MoveRight()
+    {
+        rb.MovePosition(rb.position += new Vector2(1 * modifMouvement, 0));
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    void MoveLeft()
+    {
+        rb.MovePosition(rb.position += new Vector2(-1 * modifMouvement, 0));
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    // Les fonctions modifiant les deplacements appelees par les pieges sont ici dessous :
+
+    void Bourre()
+    {
+        modifMouvement = -1;
+        StartCoroutine(Attente(2.0f));
+    }
+
+    void Stop()
+    {
+        modifMouvement = 0;
+        StartCoroutine(Attente(2.0f));
+    }
+
+    // Les Coroutine dont ont besoin les pieges sur les deplacement sont ici dessous :
+
+    IEnumerator Attente(float temps)
+    {
+        yield return new WaitForSeconds(temps);
+        modifMouvement = 1;
     }
 }
