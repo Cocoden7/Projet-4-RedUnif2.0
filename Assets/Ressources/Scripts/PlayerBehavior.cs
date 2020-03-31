@@ -129,6 +129,22 @@ public class PlayerBehavior : MonoBehaviour
         {
             print("Les gens en elec ne craignent pas l'electricite");
         }
+        else if (ST.tag == "PlayerGBio" && mort == "ennemis")
+        {
+            print("Les gens en GBio connaissent les points faibles de l'anatomies des profs et sont à même de les mettre KO");
+        }
+        else if (ST.tag == "PlayerGC" && mort == "trou")
+        {
+            print("Les gens en GC ne tombent pas dans les trous du bâtiment");
+        }
+        else if (ST.tag == "Player" && mort == "")
+        {
+            print("Les gens en ");
+        }
+        else if (ST.tag == "Player" && mort == "")
+        {
+            print("Les gens en ");
+        }
         else
         {
             print(SceneManager.GetActiveScene().buildIndex);
@@ -177,8 +193,15 @@ public class PlayerBehavior : MonoBehaviour
 
     void Stop()
     {
-        modifMouvement = 0;
-        StartCoroutine(Attente(2.0f));
+        if (ST.tag == "PlayerFyKi")
+        {
+            print("Les gens en FyKi ne craignent pas les glues chimiques");
+        }
+        else
+        {
+            modifMouvement = 0;
+            StartCoroutine(Attente(2.0f));
+        }
     }
 
     // Les Coroutine dont ont besoin les pieges sur les deplacement sont ici dessous :
