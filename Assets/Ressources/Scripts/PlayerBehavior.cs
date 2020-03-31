@@ -24,7 +24,7 @@ public class PlayerBehavior : MonoBehaviour
     void Start()
     {
         // Liste des tags possibles : PlayerElec, PlayerMeca, PlayerFyki, PlayerInfo, PlayerMath, PlayerGBio, PlayerGC
-        ST.tag = "";
+        ST.tag = PlayerPrefs.GetString("TSTag", "Untagged");
     }
 
     // Méthode appelée pour avoir les input du joueur
