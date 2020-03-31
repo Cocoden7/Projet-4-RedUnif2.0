@@ -9,7 +9,7 @@ public class MoveButton : MonoBehaviour
 	
     void Start()
     {
-        Player = FindObjectOfType<PlayerBehavior>().rb;
+        Player = FindObjectOfType<PlayerBehavior>().rb; 
     }
 
     public void Up()
