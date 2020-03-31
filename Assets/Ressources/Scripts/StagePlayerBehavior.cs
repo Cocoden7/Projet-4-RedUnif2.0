@@ -89,6 +89,12 @@ public class StagePlayerBehavior : MonoBehaviour
 	public int nbCredit = 0;
     private int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
 
+    
+    void Start()
+    {
+        // Liste des tags possibles : PlayerElec, PlayerMeca, PlayerFyki, PlayerInfo, PlayerMath, PlayerGBio, PlayerGC
+        ST.tag = PlayerPrefs.GetString("TSTag", "Untagged");
+    }
 
     // Méthode appelée pour avoir les input du joueur
     void Update()
@@ -120,9 +126,9 @@ public class StagePlayerBehavior : MonoBehaviour
     /*
     Fonction qui gère le ramassage des pièces ainsi que la fin du niveau (quand on a assez de pièces)
     */
-    void AddCredit()
+    void AddCredit(int nb)
     {
-    	nbCredit++;
+    	nbCredit = nbCredit + nb;
     	
     }
 
