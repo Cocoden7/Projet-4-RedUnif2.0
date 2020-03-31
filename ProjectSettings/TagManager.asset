@@ -23,10 +23,14 @@ TagManager:
   - PistonGauche
   - PistonHaut
   - PistonBas
-
   - Video
   - PlayerElec
-
+  - PlayerMeca
+  - PlayerMath
+  - PlayerFyKi
+  - PlayerGBio
+  - PlayerGC
+  - PlayerInfo
   layers:
   - Default
   - TransparentFX

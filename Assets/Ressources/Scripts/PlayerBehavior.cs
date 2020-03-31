@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBehavior : MonoBehaviour
 {
-	public float moveSpeed = 5f;
 	public Rigidbody2D rb;
     public GameObject ST;
 	Vector2 movement;
@@ -24,7 +23,8 @@ public class PlayerBehavior : MonoBehaviour
 
     void Start()
     {
-        ST.tag = "PlayerElec";
+        // Liste des tags possibles : PlayerElec, PlayerMeca, PlayerFyki, PlayerInfo, PlayerMath, PlayerGBio, PlayerGC
+        ST.tag = "";
     }
 
     // Méthode appelée pour avoir les input du joueur
@@ -58,9 +58,9 @@ public class PlayerBehavior : MonoBehaviour
     /*
     Fonction qui gère le ramassage des pièces ainsi que la fin du niveau (quand on a assez de pièces)
     */
-    void AddCredit()
+    void AddCredit(int nb = 1)
     {
-    	nbCredit++;
+    	nbCredit = nbCredit + nb;
     	if (nbCredit >= creditsNeeded) //si on a ramasse assez de credits
     	{
             print("AllCoins");
@@ -137,13 +137,9 @@ public class PlayerBehavior : MonoBehaviour
         {
             print("Les gens en GC ne tombent pas dans les trous du bâtiment");
         }
-        else if (ST.tag == "Player" && mort == "")
+        else if (ST.tag == "Player" && mort == "canon")
         {
-            print("Les gens en ");
-        }
-        else if (ST.tag == "Player" && mort == "")
-        {
-            print("Les gens en ");
+            print("Les gens en Info ne craignent pas les canons, car ils peuvent les pirater");
         }
         else
         {

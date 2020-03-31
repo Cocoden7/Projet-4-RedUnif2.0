@@ -82,9 +82,9 @@ using UnityEngine.SceneManagement;
 
 public class StagePlayerBehavior : MonoBehaviour
 {
-	public float moveSpeed = 5f;
 	public Rigidbody2D rb;
-	Vector2 movement;
+    public GameObject ST;
+    Vector2 movement;
 	private bool dead = false;
 	public int nbCredit = 0;
     private int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
@@ -106,13 +106,6 @@ public class StagePlayerBehavior : MonoBehaviour
             // Lance la methode GameOver dans GameManager
             FindObjectOfType<DeadMenu>().GameOver();
         }
-    }
-   
-   // Méthode appelée pour appliquer les inputs au perso
-   void FixedUpdate()
-    {
-        //print(movement);
-    	rb.MovePosition(rb.position += movement * moveSpeed * Time.fixedDeltaTime);
     }
 
     void OnCollisionEnter2D(Collision2D col)
