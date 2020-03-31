@@ -131,10 +131,11 @@ public class PlayerBehavior : MonoBehaviour
         {
             print("Les gens en GC ne tombent pas dans les trous du bâtiment");
         }
-        else if (ST.tag == "Player" && mort == "canon")
+        else if (ST.tag == "PlayerInfo" && mort == "canon")
         {
             print("Les gens en Info ne craignent pas les canons, car ils peuvent les pirater");
         }
+        // Les tags Fyki, Meca et Math sont geres dans les script Glue, Piston et Reforme respectivement (plus facile comme ça)
         else
         {
             print(SceneManager.GetActiveScene().buildIndex);
@@ -149,6 +150,7 @@ public class PlayerBehavior : MonoBehaviour
         }
     }
 
+    // Les fonctions de mouvement :
     void MoveUp()
     {
         rb.MovePosition(rb.position += new Vector2(0, 1 * modifMouvement));
