@@ -13,7 +13,7 @@ public class ButtonsScript : MonoBehaviour
 
     public void Start()
     {	
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         //PlayerPrefs.SetInt("WorldPass", 8);
     	CreditsStage.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
     }
