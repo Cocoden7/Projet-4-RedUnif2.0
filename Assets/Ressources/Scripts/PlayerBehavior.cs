@@ -24,7 +24,7 @@ public class PlayerBehavior : MonoBehaviour
 
     void Start()
     {
-        ST.tag = "PlayerElec";
+        ST.tag = "PlayerMath";
     }
 
     // Méthode appelée pour avoir les input du joueur
@@ -58,9 +58,9 @@ public class PlayerBehavior : MonoBehaviour
     /*
     Fonction qui gère le ramassage des pièces ainsi que la fin du niveau (quand on a assez de pièces)
     */
-    void AddCredit()
+    void AddCredit(int nb = 1)
     {
-    	nbCredit++;
+    	nbCredit = nbCredit + nb;
     	if (nbCredit >= creditsNeeded) //si on a ramasse assez de credits
     	{
             print("AllCoins");
