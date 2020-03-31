@@ -47,13 +47,7 @@ public class PlayerBehavior : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col)
-    { 
-        // Collision avec le vide
-    	if(col.gameObject.CompareTag("vide"))
-    	{
-            Dead();
-    	}
-    }
+    { }
 
     /*
     Fonction qui gère le ramassage des pièces ainsi que la fin du niveau (quand on a assez de pièces)

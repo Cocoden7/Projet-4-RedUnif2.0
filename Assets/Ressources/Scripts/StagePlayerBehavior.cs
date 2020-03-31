@@ -120,9 +120,9 @@ public class StagePlayerBehavior : MonoBehaviour
     /*
     Fonction qui gère le ramassage des pièces ainsi que la fin du niveau (quand on a assez de pièces)
     */
-    void AddCredit()
+    void AddCredit(int nb)
     {
-    	nbCredit++;
+    	nbCredit = nbCredit + nb;
     	
     }
 
