@@ -10963,7 +10963,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Vous \xEAtes d\xE9sormais pr\xE8s \xE0 jouer. Bonne chance pour r\xE9ussir
+  m_Text: "Vous \xEAtes d\xE9sormais pr\xEAt \xE0 jouer. Bonne chance pour r\xE9ussir
     vos \xE9tudes malgr\xE9 les pi\xE8ges surnois des professeurs!"
 --- !u!222 &575876198
 CanvasRenderer:
@@ -17236,7 +17236,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "D\xE9p\xEAchez vous sinon l'\xE9chec vous rattrapera!"
+  m_Text: "D\xE9p\xEAchez-vous sinon l'\xE9chec vous rattrapera!"
 --- !u!222 &1248609421
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17848,7 +17848,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Une fois une ann\xE9e r\xE9ussie, votre score est fixe et ne peut plus
-    changer, m\xEAme si vous rejouer la m\xEAme ann\xE9e."
+    changer, m\xEAme si vous rejouez la m\xEAme ann\xE9e."
 --- !u!222 &1384248905
 CanvasRenderer:
   m_ObjectHideFlags: 0
