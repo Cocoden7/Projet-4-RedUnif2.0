@@ -10,6 +10,7 @@ public class PlayerBehavior : MonoBehaviour
 {
 	public float moveSpeed = 5f;
 	public Rigidbody2D rb;
+    public GameObject ST;
 	Vector2 movement;
 	private bool dead = false;
 	public int nbCredit = 0;
@@ -20,6 +21,12 @@ public class PlayerBehavior : MonoBehaviour
 
     string rightScore;
 
+
+    void Start()
+    {
+        ST.tag = "PlayerElec";
+        print("###########################################################");
+    }
 
     // Méthode appelée pour avoir les input du joueur
     void Update()
@@ -119,15 +126,22 @@ public class PlayerBehavior : MonoBehaviour
     */
     void Dead(string mort = "")
     {
-        print(SceneManager.GetActiveScene().buildIndex);
-        PlayerPrefs.SetInt("nbMorts", PlayerPrefs.GetInt("nbMorts") + 1);
-        ratio = (nbCredit*10) / 6;
-        if(ratio > PlayerPrefs.GetInt(rightScore,0))
+        if (ST.tag == "PlayerElec" && mort == "elsecTrap")
         {
-            PlayerPrefs.SetInt(rightScore, ratio);
+            print("Les gens en elec ne craignent pas l'electricite");
         }
-        dead = true;
-        print("La mort est due à un(e) " + mort);
+        else
+        {
+            print(SceneManager.GetActiveScene().buildIndex);
+            PlayerPrefs.SetInt("nbMorts", PlayerPrefs.GetInt("nbMorts") + 1);
+            ratio = (nbCredit * 10) / 6;
+            if (ratio > PlayerPrefs.GetInt(rightScore, 0))
+            {
+                PlayerPrefs.SetInt(rightScore, ratio);
+            }
+            dead = true;
+            print("La mort est due à un(e) " + mort);
+        }
     }
 
     void MoveUp()
