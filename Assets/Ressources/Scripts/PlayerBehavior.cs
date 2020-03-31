@@ -25,7 +25,6 @@ public class PlayerBehavior : MonoBehaviour
     void Start()
     {
         ST.tag = "PlayerElec";
-        print("###########################################################");
     }
 
     // Méthode appelée pour avoir les input du joueur
