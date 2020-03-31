@@ -21,7 +21,8 @@ public class ButtonsScript : MonoBehaviour
 	// OnClick du bouton Play
     public void play()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(6);
         PlayerPrefs.SetInt("nbMorts",0); // remet la variable à 0 dans la bdd (indispensable car pas remis à 0 tout seul)
     }
 
@@ -29,10 +30,5 @@ public class ButtonsScript : MonoBehaviour
     {
         SceneManager.LoadScene(8);
         PlayerPrefs.SetInt("nbMorts",0); // remet la variable à 0 dans la bdd (indispensable car pas remis à 0 tout seul)
-    }
-
-    public void Shop()
-    {
-    	SceneManager.LoadScene(10);
     }
 }
