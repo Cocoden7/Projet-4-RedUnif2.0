@@ -22,7 +22,14 @@ public class PistonBehavior : MonoBehaviour
         rbManche = Manche.GetComponent<Rigidbody2D>();
         rbBout = Bout.GetComponent<Rigidbody2D>();
         colDet = Detecteur.GetComponent<BoxCollider2D>();
-        StartCoroutine(Movement());
+        if (FindObjectOfType<PlayerBehavior>().ST.tag == "PlayerMeca")
+        {
+            print("Les etudiants en meca ne craignent pas les pistons");
+        }
+        else
+        {
+            StartCoroutine(Movement());
+        }
     }
 
     // Update is called once per frame
