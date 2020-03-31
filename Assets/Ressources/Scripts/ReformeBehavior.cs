@@ -10,17 +10,22 @@ public class ReformeBehavior : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            print("reforme");
-            // col.SendMessageUpwards("AddCredit", SendMessageOptions.DontRequireReceiver);
-            if(FindObjectOfType<PlayerBehavior>().nbCredit >= malus)
+            PlayerBehavior player = FindObjectOfType<PlayerBehavior>();
+            print("réforme");
+            if (player.ST.tag == "PlayerMath")
             {
-                particles = GameObject.FindGameObjectWithTag("CoinParticles").GetComponent<ParticleSystem>();
-                particles.Play();
-                FindObjectOfType<PlayerBehavior>().nbCredit -= malus;
+                print("Les étudiants en Math Appliquées ne craignenent pas la réforme, car ils savent bien calculer les crédits nécessaires");
             }
-            Destroy(gameObject);
+            else
+            {
+                if (player.nbCredit >= malus)
+                {
+                    particles = GameObject.FindGameObjectWithTag("CoinParticles").GetComponent<ParticleSystem>();
+                    particles.Play();
+                    player.nbCredit -= malus;
+                }
+                Destroy(gameObject);
+            }
         }
-
     }
-
 }

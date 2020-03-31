@@ -16,7 +16,7 @@ public class CoinBehavior : MonoBehaviour
     {
         if(col.tag == "Player")
         {
-            col.SendMessageUpwards("AddCredit", SendMessageOptions.DontRequireReceiver);
+            col.SendMessageUpwards("AddCredit", 1, SendMessageOptions.DontRequireReceiver);
             Destroy(gameObject);
         }
 
