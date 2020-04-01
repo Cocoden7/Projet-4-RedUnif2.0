@@ -781,6 +781,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e270ae182ece2f84b92922260f451f66, type: 3}
+--- !u!1 &110122266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4153652921633025451, guid: e270ae182ece2f84b92922260f451f66,
+    type: 3}
+  m_PrefabInstance: {fileID: 110122265}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &110629841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,7 +1957,8 @@ MonoBehaviour:
   restartDelay: 1
   deadMenuUI: {fileID: 472559099}
   PauseButton: {fileID: 1042651350}
-  MotionsButtons: {fileID: 0}
+  MotionsButtons: {fileID: 110122266}
+  texte: {fileID: 2046704492}
 --- !u!4 &313902268
 Transform:
   m_ObjectHideFlags: 0
@@ -2518,7 +2525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c27b7fc7191b0846a68dedc9efb71e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
   rb: {fileID: 467681023}
   ST: {fileID: 291664955}
   nbCredit: 0
