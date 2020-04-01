@@ -24,14 +24,6 @@ public class ButtonsScript : MonoBehaviour
     	CreditsStage.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
     }
 
-	// OnClick du bouton Play
-    public void play()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        //SceneManager.LoadScene(6);
-        PlayerPrefs.SetInt("nbMorts",0); // remet la variable à 0 dans la bdd (indispensable car pas remis à 0 tout seul)
-    }
-
     public void SlidingMenu()
     {
         SceneManager.LoadScene(8);
@@ -41,5 +33,9 @@ public class ButtonsScript : MonoBehaviour
     {
     	SceneManager.LoadScene(11);
         PlayerPrefs.SetInt("nbMorts",0);
+    }
+    public void Stage()
+    {
+    	SceneManager.LoadScene(7);
     }
 }
