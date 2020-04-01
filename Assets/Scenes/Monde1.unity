@@ -1804,7 +1804,7 @@ MonoBehaviour:
   deadMenuUI: {fileID: 472559099}
   PauseButton: {fileID: 1042651350}
   MotionsButtons: {fileID: 273752258}
-  raisonMort: []
+  texte: {fileID: 2046704492}
 --- !u!4 &313902268
 Transform:
   m_ObjectHideFlags: 0
@@ -3280,7 +3280,7 @@ GameObject:
   - component: {fileID: 754005855}
   - component: {fileID: 754005854}
   m_Layer: 5
-  m_Name: DeadMenu
+  m_Name: DeadMenuu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13392,8 +13392,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20, y: 106.3}
-  m_SizeDelta: {x: 781.5, y: 150.9}
+  m_AnchoredPosition: {x: 5.1, y: 180.9}
+  m_SizeDelta: {x: 668.1, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2046704492
 MonoBehaviour:
