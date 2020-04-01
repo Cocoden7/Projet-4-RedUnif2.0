@@ -37,4 +37,9 @@ public class ButtonsScript : MonoBehaviour
         SceneManager.LoadScene(8);
         PlayerPrefs.SetInt("nbMorts",0); // remet la variable à 0 dans la bdd (indispensable car pas remis à 0 tout seul)
     }
+    public void Shop()
+    {
+    	SceneManager.LoadScene(11);
+        PlayerPrefs.SetInt("nbMorts",0);
+    }
 }
