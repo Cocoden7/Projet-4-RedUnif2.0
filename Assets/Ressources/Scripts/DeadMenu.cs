@@ -14,6 +14,8 @@ public class DeadMenu : MonoBehaviour
     public GameObject deadMenuUI;
     public GameObject PauseButton;
     public GameObject MotionsButtons;
+    public GameObject[] raisonMort;
+    private int i;
 
     public void GameOver()
     {
@@ -22,6 +24,11 @@ public class DeadMenu : MonoBehaviour
             PauseButton.SetActive(false);
             MotionsButtons.SetActive(false);
             deadMenuUI.SetActive(true);
+
+            /* i = ;
+            raisonMort[i].SetActive(true); // Pour afficher les morts personnalisées
+            */
+
             Time.timeScale = 0f; // Freeze le jeu; bien pour le slow mo
             FindObjectOfType<CameraBehavior>().incr = new Vector3(0,0,0); // Arrête la caméra
             gameHasEnded = true;

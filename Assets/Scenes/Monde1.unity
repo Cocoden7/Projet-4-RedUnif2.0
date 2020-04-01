@@ -1804,6 +1804,7 @@ MonoBehaviour:
   deadMenuUI: {fileID: 472559099}
   PauseButton: {fileID: 1042651350}
   MotionsButtons: {fileID: 273752258}
+  raisonMort: []
 --- !u!4 &313902268
 Transform:
   m_ObjectHideFlags: 0
@@ -2370,7 +2371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c27b7fc7191b0846a68dedc9efb71e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
   rb: {fileID: 467681023}
   ST: {fileID: 1245189767}
   nbCredit: 0
