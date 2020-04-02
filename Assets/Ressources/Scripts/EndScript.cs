@@ -9,6 +9,7 @@ public class EndScript : MonoBehaviour
 
     public Text Score;
     public Text Distinction;
+    public GameObject ScoreboardEntry;
     private float points;
     private float score1;
     private float score2;
@@ -24,8 +25,11 @@ public class EndScript : MonoBehaviour
         score3 = (float)PlayerPrefs.GetInt("HighScore3", 0);
         score4 = (float)PlayerPrefs.GetInt("HighScore4", 0);
         score5 = (float)PlayerPrefs.GetInt("HighScore5", 0);
-        points = (score1 + score2 + score3 + score4 + score5) / 5.0f;
+        points= (score1 + score2 + score3 + score4 + score5) / 5.0f;
         Score.text = points + "/20" ;
+
+        List<string> liste = new List<string> { points.ToString(), "" };
+        ScoreboardEntry.SendMessageUpwards("AddEntry", liste, SendMessageOptions.DontRequireReceiver);
 
         if(points < 12.0f)
         {
