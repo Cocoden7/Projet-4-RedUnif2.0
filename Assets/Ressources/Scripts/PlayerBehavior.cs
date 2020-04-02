@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -26,7 +27,6 @@ public class PlayerBehavior : MonoBehaviour
     {
         // Liste des tags possibles : PlayerElec, PlayerMeca, PlayerFyki, PlayerInfo, PlayerMath, PlayerGBio, PlayerGC
         ST.tag = PlayerPrefs.GetString("TSTag", "Untagged");
-        StartCoroutine(Mouvement());
     }
 
     // Méthode appelée pour avoir les input du joueur
@@ -162,30 +162,44 @@ public class PlayerBehavior : MonoBehaviour
     // Les fonctions de mouvement :
     void MoveUp()
     {
-        rb.MovePosition(rb.position += new Vector2(0, 1 * modifMouvement));
         rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        rb.MovePosition(rb.position += new Vector2(0, 1 * modifMouvement));
         direction = "Haut";
+        Centrer();
     }
 
     void MoveDown()
     {
-        rb.MovePosition(rb.position += new Vector2(0, -1 * modifMouvement));
         rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        rb.MovePosition(rb.position += new Vector2(0, -1 * modifMouvement));
         direction = "Bas";
+        Centrer();
     }
 
     void MoveRight()
     {
-        rb.MovePosition(rb.position += new Vector2(1 * modifMouvement, 0));
         rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        rb.MovePosition(rb.position += new Vector2(1 * modifMouvement, 0));
         direction = "Droite";
+        Centrer();
     }
 
     void MoveLeft()
     {
-        rb.MovePosition(rb.position += new Vector2(-1 * modifMouvement, 0));
         rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        rb.MovePosition(rb.position += new Vector2(-1 * modifMouvement, 0));
         direction = "Gauche";
+        Centrer();
+    }
+
+    void Centrer()
+    {
+        RigidbodyConstraints2D constr = rb.constraints;
+        rb.constraints = RigidbodyConstraints2D.None;
+        float x = (float)(System.Math.Round(rb.position.x / 5.0f, 1) * 5.0);
+        float y = (float)(System.Math.Round(rb.position.y / 5.0f, 1) * 5.0);
+        rb.MovePosition(new Vector2(x, y));
+        rb.constraints = constr;
     }
 
     // Les fonctions modifiant les deplacements appelees par les pieges sont ici dessous :

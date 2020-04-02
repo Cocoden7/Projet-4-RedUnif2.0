@@ -40,7 +40,7 @@ public class PistonBehavior : MonoBehaviour
             }
             // On etend le piston
             yield return new WaitForSeconds(1.0f);
-            colDet.enabled = false;
+            colDet.enabled = true;
             rbBout.MovePosition(rbBout.position += direction);
             rbManche.MovePosition(rbManche.position += (direction - dir16));
             yield return new WaitForSeconds(0.05f);
@@ -48,13 +48,13 @@ public class PistonBehavior : MonoBehaviour
             rbManche.MovePosition(rbManche.position += (direction - dir16));
 
             // Puis on le remet normal
+            colDet.enabled = false;
             yield return new WaitForSeconds(1.0f);
             rbBout.MovePosition(rbBout.position -= direction);
             rbManche.MovePosition(rbManche.position -= (direction - dir16));
             yield return new WaitForSeconds(0.05f);
             rbBout.MovePosition(rbBout.position -= direction);
             rbManche.MovePosition(rbManche.position -= (direction - dir16));
-            colDet.enabled = true;
         }
     }
 
