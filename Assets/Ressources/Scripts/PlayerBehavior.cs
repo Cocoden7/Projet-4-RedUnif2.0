@@ -229,26 +229,26 @@ public class PlayerBehavior : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         int i = 0;
-        while(i < 10)
+        while(i < 5)
         {
             if (direction == "Haut")
             {
-                rb.MovePosition(rb.position += new Vector2(0, 0.1f));
+                rb.MovePosition(rb.position += new Vector2(0, 0.2f));
             }
             else if (direction == "Bas")
             {
-                rb.MovePosition(rb.position += new Vector2(0, -0.1f));
+                rb.MovePosition(rb.position += new Vector2(0, -0.2f));
             }
             else if (direction == "Droite")
             {
-                rb.MovePosition(rb.position += new Vector2(0.1f, 0));
+                rb.MovePosition(rb.position += new Vector2(0.2f, 0));
             }
             else if (direction == "Gauche")
             {
-                rb.MovePosition(rb.position += new Vector2(-0.1f, 0));
+                rb.MovePosition(rb.position += new Vector2(-0.2f, 0));
             }
             i++;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.02f);
         }
     }
 }
