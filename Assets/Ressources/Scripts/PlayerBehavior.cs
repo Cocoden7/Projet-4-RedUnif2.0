@@ -98,6 +98,7 @@ public class PlayerBehavior : MonoBehaviour
             else if(rightScore == "HighScore5")
             {
                 PlayerPrefs.SetInt("WorldPass", 5);
+                SceneManager.LoadScene(12);
             }
             PlayerPrefs.SetInt("nbMorts",0);
             SetUINextLevel();
