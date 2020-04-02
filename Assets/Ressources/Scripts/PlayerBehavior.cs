@@ -17,6 +17,7 @@ public class PlayerBehavior : MonoBehaviour
     public GameObject NextLevelUI;
     private int ratio = 0;
     private int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
+    private string direction = "Haut";  // Variable indiquant dans quelle direction le joueur regarde (Haut, Bas, Droite, Gauche)
 
     string rightScore;
 
@@ -25,6 +26,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         // Liste des tags possibles : PlayerElec, PlayerMeca, PlayerFyki, PlayerInfo, PlayerMath, PlayerGBio, PlayerGC
         ST.tag = PlayerPrefs.GetString("TSTag", "Untagged");
+        StartCoroutine(Mouvement());
     }
 
     // Méthode appelée pour avoir les input du joueur
@@ -162,34 +164,40 @@ public class PlayerBehavior : MonoBehaviour
     {
         rb.MovePosition(rb.position += new Vector2(0, 1 * modifMouvement));
         rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        direction = "Haut";
     }
 
     void MoveDown()
     {
         rb.MovePosition(rb.position += new Vector2(0, -1 * modifMouvement));
         rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        direction = "Bas";
     }
 
     void MoveRight()
     {
         rb.MovePosition(rb.position += new Vector2(1 * modifMouvement, 0));
         rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        direction = "Droite";
     }
 
     void MoveLeft()
     {
         rb.MovePosition(rb.position += new Vector2(-1 * modifMouvement, 0));
         rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        direction = "Gauche";
     }
 
     // Les fonctions modifiant les deplacements appelees par les pieges sont ici dessous :
 
+    // Fonction pour la biere
     void Bourre()
     {
         modifMouvement = -1;
         StartCoroutine(Attente(2.0f));
     }
 
+    // Fonction pour la glue
     void Stop()
     {
         if (ST.tag == "PlayerFyKi")
@@ -203,11 +211,44 @@ public class PlayerBehavior : MonoBehaviour
         }
     }
 
+    // Fonction pour la glace
+    public void Avance()
+    {
+        StartCoroutine(Mouvement());
+    }
+
     // Les Coroutine dont ont besoin les pieges sur les deplacement sont ici dessous :
 
     IEnumerator Attente(float temps)
     {
         yield return new WaitForSeconds(temps);
         modifMouvement = 1;
+    }
+
+    IEnumerator Mouvement()
+    {
+        yield return new WaitForSeconds(0.1f);
+        int i = 0;
+        while(i < 10)
+        {
+            if (direction == "Haut")
+            {
+                rb.MovePosition(rb.position += new Vector2(0, 0.1f));
+            }
+            else if (direction == "Bas")
+            {
+                rb.MovePosition(rb.position += new Vector2(0, -0.1f));
+            }
+            else if (direction == "Droite")
+            {
+                rb.MovePosition(rb.position += new Vector2(0.1f, 0));
+            }
+            else if (direction == "Gauche")
+            {
+                rb.MovePosition(rb.position += new Vector2(-0.1f, 0));
+            }
+            i++;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }
