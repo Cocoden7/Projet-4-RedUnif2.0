@@ -38,4 +38,9 @@ public class ButtonsScript : MonoBehaviour
     {
     	SceneManager.LoadScene(7);
     }
+
+    public void GoToStart()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
