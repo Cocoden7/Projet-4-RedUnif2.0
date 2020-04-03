@@ -24,7 +24,7 @@ public class EndScript : MonoBehaviour
         score3 = (float)PlayerPrefs.GetInt("HighScore3", 0);
         score4 = (float)PlayerPrefs.GetInt("HighScore4", 0);
         score5 = (float)PlayerPrefs.GetInt("HighScore5", 0);
-        points= (score1 + score2 + score3 + score4 + score5) / 5.0f;
+        points = (score1 + score2 + score3 + score4 + score5) / 5.0f;
         Score.text = points + "/20" ;
 
         if(points < 12.0f)
@@ -51,7 +51,7 @@ public class EndScript : MonoBehaviour
         {
             Distinction.text = "Avec les félicitations du jury";
         }
-        string date = "03/04/2020";
+        string date = System.DateTime.UtcNow.ToString("dd/MM/yyyy");
         AddEntry(points, date);
     }
 
