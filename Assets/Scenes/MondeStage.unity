@@ -6112,7 +6112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restartDelay: 1
   deadMenuUI: {fileID: 472559099}
-  PauseButton: {fileID: 0}
+  PauseButton: {fileID: 1211635831}
   MotionsButtons: {fileID: 629187649}
   texte: {fileID: 2046704492}
 --- !u!4 &313902268
