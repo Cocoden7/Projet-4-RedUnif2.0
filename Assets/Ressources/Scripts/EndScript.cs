@@ -9,7 +9,6 @@ public class EndScript : MonoBehaviour
 
     public Text Score;
     public Text Distinction;
-    public GameObject ScoreboardEntry;
     private float points;
     private float score1;
     private float score2;
@@ -25,11 +24,8 @@ public class EndScript : MonoBehaviour
         score3 = (float)PlayerPrefs.GetInt("HighScore3", 0);
         score4 = (float)PlayerPrefs.GetInt("HighScore4", 0);
         score5 = (float)PlayerPrefs.GetInt("HighScore5", 0);
-        points= (score1 + score2 + score3 + score4 + score5) / 5.0f;
+        points = (score1 + score2 + score3 + score4 + score5) / 5.0f;
         Score.text = points + "/20" ;
-
-        List<string> liste = new List<string> { points.ToString(), "" };
-        ScoreboardEntry.SendMessageUpwards("AddEntry", liste, SendMessageOptions.DontRequireReceiver);
 
         if(points < 12.0f)
         {
@@ -55,6 +51,8 @@ public class EndScript : MonoBehaviour
         {
             Distinction.text = "Avec les félicitations du jury";
         }
+        string date = System.DateTime.UtcNow.ToString("dd/MM/yyyy");
+        AddEntry(points, date);
     }
 
     public void Restart()
@@ -70,5 +68,45 @@ public class EndScript : MonoBehaviour
     public void Scoreboard()
     {
         SceneManager.LoadScene(13);
+    }
+
+
+    private void AddEntry(float score, string date)
+    {
+        HighscoreEntry highscoreEntry = new HighscoreEntry
+        {
+            score = score,
+            date = date
+        };
+
+        string jsonString = PlayerPrefs.GetString("highscoreTable");
+        Highscores highscores;
+        if (jsonString.Length == 0)
+        {
+            highscores = new Highscores() { highscoreEntryList = new List<HighscoreEntry>() };
+        }
+        else
+        {
+            highscores = JsonUtility.FromJson<Highscores>(jsonString);
+        }
+
+        highscores.highscoreEntryList.Add(highscoreEntry);
+
+        string json = JsonUtility.ToJson(highscores);
+        PlayerPrefs.SetString("highscoreTable", json);
+        PlayerPrefs.Save();
+    }
+
+    [System.Serializable]
+    private class Highscores
+    {
+        public List<HighscoreEntry> highscoreEntryList;
+    }
+
+    [System.Serializable]
+    private class HighscoreEntry
+    {
+        public float score;
+        public string date;
     }
 }
