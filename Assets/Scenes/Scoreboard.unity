@@ -822,7 +822,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -159, y: 154.00009}
+  m_AnchoredPosition: {x: -159, y: 160.6}
   m_SizeDelta: {x: 175.6, y: 51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &912164817
@@ -856,7 +856,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 
 --- !u!222 &912164818
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1050,7 +1050,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 96, y: 154.1001}
+  m_AnchoredPosition: {x: 96, y: 160.70001}
   m_SizeDelta: {x: 121.8, y: 51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1173699576
@@ -1078,13 +1078,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20/20
+  m_Text: 
 --- !u!222 &1173699577
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1334,7 +1334,7 @@ GameObject:
   - component: {fileID: 1657597992}
   - component: {fileID: 1657597991}
   m_Layer: 0
-  m_Name: Back
+  m_Name: back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1356,8 +1356,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 78.2, y: 155.2}
-  m_SizeDelta: {x: 660.7, y: 76.6}
+  m_AnchoredPosition: {x: 78.2, y: 163.6}
+  m_SizeDelta: {x: 660.7, y: 59.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1657597991
 MonoBehaviour:
@@ -1536,7 +1536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 321, y: 154}
+  m_AnchoredPosition: {x: 321, y: 160.59991}
   m_SizeDelta: {x: 200, y: 51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1842833273
@@ -1570,7 +1570,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 05/02/2020
+  m_Text: 
 --- !u!222 &1842833274
 CanvasRenderer:
   m_ObjectHideFlags: 0

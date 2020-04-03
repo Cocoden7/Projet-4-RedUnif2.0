@@ -388,6 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Score: {fileID: 59242005}
   Distinction: {fileID: 97160437}
+  ScoreboardEntry: {fileID: 0}
 --- !u!1 &399159729
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,4 +43,9 @@ public class ButtonsScript : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void Scoreboard()
+    {
+        SceneManager.LoadScene(13);
+    }
 }
