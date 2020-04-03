@@ -11,7 +11,7 @@ public class Scoreboard : MonoBehaviour
     float templateHeight = 60f;
     private List<Transform> highscoreEntryTransformList;
 
-    private void Awake()
+    private void Start()
     {
 
         /* List<HighscoreEntry> highlist = new List<HighscoreEntry>() //crée un scoreboard avec 2 entrées pour les tests
@@ -20,13 +20,13 @@ public class Scoreboard : MonoBehaviour
             new HighscoreEntry{score = 13.5f, date = "03/12/1999" },
             new HighscoreEntry{score = 11.0f, date = "01/01/2001"}
         };
-
         Highscores high = new Highscores();
         high.highscoreEntryList = highlist;
         string json = JsonUtility.ToJson(high);
         print("liste avant json: " + json);
         PlayerPrefs.SetString("highscoreTable", json);
         PlayerPrefs.Save(); */
+
 
         entryContainer.gameObject.SetActive(true);
         entryTemplate.gameObject.SetActive(false);
