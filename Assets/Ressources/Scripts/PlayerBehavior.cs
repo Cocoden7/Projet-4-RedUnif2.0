@@ -148,6 +148,10 @@ public class PlayerBehavior : MonoBehaviour
             print("Les gens en Info ne craignent pas les canons, car ils peuvent les pirater");
         }
         // Les tags Fyki, Meca et Math sont geres dans les script Glue, Piston et Reforme respectivement (plus facile comme ça)
+        else if(SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            FindObjectOfType<TutorialManager>().SendMessageUpwards("Mort", SendMessageOptions.DontRequireReceiver);
+        }
         else
         {
             print(SceneManager.GetActiveScene().buildIndex);
