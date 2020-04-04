@@ -26,8 +26,7 @@ public class Scoreboard : MonoBehaviour
         print("liste avant json: " + json);
         PlayerPrefs.SetString("highscoreTable", json);
         PlayerPrefs.Save(); */
-
-
+        
         entryContainer.gameObject.SetActive(true);
         entryTemplate.gameObject.SetActive(false);
 
@@ -117,7 +116,7 @@ public class Scoreboard : MonoBehaviour
 
     public void Retour()
     {
-        SceneManager.LoadScene(12);
+        SceneManager.LoadScene(PlayerPrefs.GetInt("AncienneScene"));
     }
 
     public void Reinitialise()
@@ -127,4 +126,5 @@ public class Scoreboard : MonoBehaviour
         PlayerPrefs.Save();
         entryContainer.gameObject.SetActive(false);
     }
+
 }

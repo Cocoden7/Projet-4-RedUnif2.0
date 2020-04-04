@@ -26,7 +26,7 @@ public class DeadMenu : MonoBehaviour
             MotionsButtons.SetActive(false);
             deadMenuUI.SetActive(true);
             print(text);
-            texte.text = text + ". Les pièges tendus par les professeurs ont eu raison de vous... ";
+            texte.text = text;
             Time.timeScale = 0f; // Freeze le jeu; bien pour le slow mo
             FindObjectOfType<CameraBehavior>().incr = new Vector3(0,0,0); // Arrête la caméra
             gameHasEnded = true;
@@ -47,11 +47,11 @@ public class DeadMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void canon() { text = "Explosion au labo de chimie"; }
-    public void trou() { text = "Vous êtes tombés dans la réforme"; }
-    public void ennemis() { text = "ennemis"; }
-    public void elsecTrap() { text = "Les machines des mécas vous ont électrocuté"; }
-    public void redLine() { text = "Vous avez raté votre examen et avez obtenu 9"; }
+    public void canon() { text = "Explosion au labo de chimie!"; }
+    public void trou() { text = "Vous êtes tombés dans le bas de la ville..."; }
+    public void ennemis() { text = "Les pièges tendus par les professeurs ont eu raison de vous..."; }
+    public void elsecTrap() { text = "Mais faites attention aux courts-cicruits..."; }
+    public void redLine() { text = "Vous avez raté votre examen et avez obtenu 9."; }
 
 
 }

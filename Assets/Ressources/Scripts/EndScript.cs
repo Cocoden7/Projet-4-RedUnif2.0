@@ -67,6 +67,8 @@ public class EndScript : MonoBehaviour
 
     public void Scoreboard()
     {
+        PlayerPrefs.SetInt("AncienneScene", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(13);
     }
 
@@ -109,4 +111,5 @@ public class EndScript : MonoBehaviour
         public float score;
         public string date;
     }
+
 }

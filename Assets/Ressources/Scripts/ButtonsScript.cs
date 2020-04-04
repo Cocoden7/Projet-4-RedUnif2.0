@@ -46,6 +46,8 @@ public class ButtonsScript : MonoBehaviour
 
     public void Scoreboard()
     {
+        PlayerPrefs.SetInt("AncienneScene", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(13);
     }
 }
