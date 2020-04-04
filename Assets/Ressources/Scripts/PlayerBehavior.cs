@@ -14,7 +14,7 @@ public class PlayerBehavior : MonoBehaviour
 	Vector2 movement;
 	private bool dead = false;
 	public int nbCredit = 0;
-    int creditsNeeded = 10;
+    int creditsNeeded = 60;
     public GameObject NextLevelUI;
     private int ratio = 0;
     private int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
@@ -22,9 +22,11 @@ public class PlayerBehavior : MonoBehaviour
 
     string rightScore;
 
+    public Text Credits;
 
     void Start()
     {
+        Credits.text = nbCredit.ToString();
         // Liste des tags possibles : PlayerElec, PlayerMeca, PlayerFyki, PlayerInfo, PlayerMath, PlayerGBio, PlayerGC
         ST.tag = PlayerPrefs.GetString("TSTag", "Untagged");
     }
@@ -32,6 +34,7 @@ public class PlayerBehavior : MonoBehaviour
     // Méthode appelée pour avoir les input du joueur
     void Update()
     {
+        Credits.text = nbCredit.ToString();
         rightScore = "HighScore" + (SceneManager.GetActiveScene().buildIndex).ToString();
         if(!dead)
     	{
@@ -60,9 +63,9 @@ public class PlayerBehavior : MonoBehaviour
     /*
     Fonction qui gère le ramassage des pièces ainsi que la fin du niveau (quand on a assez de pièces)
     */
-    void AddCredit(int nb = 1)
+    void AddCredit()
     {
-    	nbCredit = nbCredit + nb;
+    	nbCredit = nbCredit + 6;
     	if (nbCredit >= creditsNeeded) //si on a ramasse assez de credits
     	{
             print("AllCoins");
@@ -118,10 +121,10 @@ public class PlayerBehavior : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    void OnGUI()
+    /*void OnGUI()
     {
     	GUI.Label(new Rect (10, 10, 100, 20), " Credit : " + nbCredit);
-    }
+    }*/
 
     /*
     Fonction à appeler dès que le joueur meurt !!IMPORTANT, il faut appeler celle-ci
@@ -149,7 +152,7 @@ public class PlayerBehavior : MonoBehaviour
         {
             print(SceneManager.GetActiveScene().buildIndex);
             PlayerPrefs.SetInt("nbMorts", PlayerPrefs.GetInt("nbMorts") + 1);
-            ratio = (nbCredit * 10) / 6;
+            ratio = (nbCredit * 10) / 60;
             if (ratio > PlayerPrefs.GetInt(rightScore, 0))
             {
                 PlayerPrefs.SetInt(rightScore, ratio);

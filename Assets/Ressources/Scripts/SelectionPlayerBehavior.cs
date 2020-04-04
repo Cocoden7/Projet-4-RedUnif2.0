@@ -6,6 +6,15 @@ using UnityEngine.UI;
 
 public class SelectionPlayerBehavior : MonoBehaviour
 {
+    public Text Credits1;
+    public Text Credits2;
+    public Text Credits3;
+    public Text Credits4;
+    public Text Credits5;
+    public Text Credits6;
+    public Text Credits7;
+    public Text Credits8;
+
     public Button bInfo;
     public Text tInfo;
     public Button ButtonBuyInfo;
@@ -36,14 +45,25 @@ public class SelectionPlayerBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("InfoBuy",0);
+        /*PlayerPrefs.SetInt("InfoBuy",0);
         PlayerPrefs.SetInt("ElecBuy",0);
         PlayerPrefs.SetInt("MecaBuy",0);
         PlayerPrefs.SetInt("FykiBuy",0);
         PlayerPrefs.SetInt("MapBuy",0);
         PlayerPrefs.SetInt("GcBuy",0);
         PlayerPrefs.SetInt("GbioBuy",0);
-        PlayerPrefs.SetInt("CreditsStage",61);
+        PlayerPrefs.SetInt("CreditsStage",61);*/
+
+        Credits1.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        Credits2.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        Credits3.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        Credits4.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        Credits5.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        Credits6.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        Credits7.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        Credits8.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+
+
         if(PlayerPrefs.GetInt("InfoBuy",0) == 1){
             GameObject.Find("CreditsInfo").SetActive(false);
             GameObject.Find("ButtonBuyInfo").SetActive(false);
@@ -174,6 +194,15 @@ public class SelectionPlayerBehavior : MonoBehaviour
         {
             ButtonBuyGbio.interactable = false;
         }
+
+        Credits1.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        Credits2.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        Credits3.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        Credits4.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        Credits5.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        Credits6.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        Credits7.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        Credits8.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
     }
 
     public void SelectionInfo()
