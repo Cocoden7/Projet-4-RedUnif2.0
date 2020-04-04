@@ -18,7 +18,7 @@ public class StagePlayerBehavior : PlayerBehavior
 
     void SetUINextLevel()
     { }
-    
+
     void Dead(string mort = "")
     {
 
@@ -41,8 +41,9 @@ public class StagePlayerBehavior : PlayerBehavior
         else
         {
             PlayerPrefs.SetInt("CreditsStage", (PlayerPrefs.GetInt("CreditsStage", 0) + nbCredit));
+            PlayerPrefs.Save();
             dead = true;
-            print("La mort est due à un(e) " + mort);
+            print("La mort est due à un(e) " + mort + " dans le monde stage");
             FindObjectOfType<DeadMenu>().SendMessageUpwards(mort, SendMessageOptions.DontRequireReceiver);
         }
     }
