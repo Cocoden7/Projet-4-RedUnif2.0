@@ -653,7 +653,7 @@ MonoBehaviour:
   rb: {fileID: 134315283}
   ST: {fileID: 1497347254}
   nbCredit: 0
-  NextLevelUI: {fileID: 0}
+  NextLevelUI: {fileID: 374200927}
   Credits: {fileID: 1671706623}
 --- !u!212 &134315285
 SpriteRenderer:
