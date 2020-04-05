@@ -65,7 +65,7 @@ public class PlayerBehavior : MonoBehaviour
     */
     void AddCredit()
     {
-    	nbCredit = nbCredit + 6;
+    	nbCredit = nbCredit + 5;
     	if (nbCredit >= creditsNeeded) //si on a ramasse assez de credits
     	{
             if(rightScore == "HighScore1" && PlayerPrefs.GetInt("WorldPass", 0) < 1)

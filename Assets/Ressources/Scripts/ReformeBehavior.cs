@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ReformeBehavior : MonoBehaviour
 {
-    public int malus = 2;
+    public int malus = 5;
     private ParticleSystem particles;
     void OnTriggerEnter2D(Collider2D col)
     {

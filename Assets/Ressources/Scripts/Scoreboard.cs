@@ -121,10 +121,8 @@ public class Scoreboard : MonoBehaviour
 
     public void Reinitialise()
     {
-        string emptyString = "";
-        PlayerPrefs.SetString("highscoreTable", emptyString);
+        PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
-        entryContainer.gameObject.SetActive(false);
     }
 
 }
