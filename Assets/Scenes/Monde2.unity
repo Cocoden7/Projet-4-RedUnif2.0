@@ -1673,12 +1673,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3312263091234161611}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &296003772 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4153652921633025451, guid: e270ae182ece2f84b92922260f451f66,
-    type: 3}
-  m_PrefabInstance: {fileID: 328750779}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &308014961 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7872897503059531874, guid: 7eca9f1680165df41ac81c680cf7fea7,
@@ -1723,7 +1717,7 @@ MonoBehaviour:
   restartDelay: 1
   deadMenuUI: {fileID: 472559099}
   PauseButton: {fileID: 1042651350}
-  MotionsButtons: {fileID: 296003772}
+  MotionsButtons: {fileID: 0}
 --- !u!4 &313902268
 Transform:
   m_ObjectHideFlags: 0
@@ -2494,6 +2488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c27b7fc7191b0846a68dedc9efb71e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 10
   rb: {fileID: 467681023}
   ST: {fileID: 1799625788}
   nbCredit: 0
