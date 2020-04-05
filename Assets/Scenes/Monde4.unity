@@ -487,7 +487,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Be ready for the last year !
+  m_Text: "Pr\xEAt pour votre derni\xE8re ann\xE9e?"
 --- !u!222 &110629844
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -652,6 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 134315283}
   ST: {fileID: 1497347254}
+  dead: 0
   nbCredit: 0
   NextLevelUI: {fileID: 374200927}
   Credits: {fileID: 1671706623}
@@ -6156,7 +6157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Congratulations ! You passed your first year in master !
+  m_Text: "F\xE9licitation! Vous avez r\xE9ussi votre premi\xE8re ann\xE9e de Master!"
 --- !u!222 &245384245
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -481,7 +481,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 3.36
-  m_Text: You are dead
+  m_Text: "Vous \xEAtes mort!"
 --- !u!222 &48106655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6675,6 +6675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 399726319}
   ST: {fileID: 923927517}
+  dead: 0
   nbCredit: 0
   NextLevelUI: {fileID: 0}
   Credits: {fileID: 811626}
@@ -7852,7 +7853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &763608575
 Transform:
   m_ObjectHideFlags: 0
@@ -10649,7 +10650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1362416880
 MonoBehaviour:
   m_ObjectHideFlags: 0

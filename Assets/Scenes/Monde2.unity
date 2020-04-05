@@ -556,7 +556,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Be ready for the next year !
+  m_Text: "Pr\xEAt pour l'ann\xE9e suivante?"
 --- !u!222 &110629844
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1289,7 +1289,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Congratulations ! You passed your second year !
+  m_Text: "F\xE9licitation! Vous avez r\xE9ussi votre deuxi\xE8me ann\xE9e!"
 --- !u!222 &245384245
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3278,6 +3278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 661924226}
   ST: {fileID: 664183629}
+  dead: 0
   nbCredit: 0
   NextLevelUI: {fileID: 374200927}
   Credits: {fileID: 1855330724}
