@@ -22,7 +22,14 @@ public class PistonBehavior : MonoBehaviour
         rbManche = Manche.GetComponent<Rigidbody2D>();
         rbBout = Bout.GetComponent<Rigidbody2D>();
         colDet = Detecteur.GetComponent<BoxCollider2D>();
-        StartCoroutine(Movement());
+        if (FindObjectOfType<PlayerBehavior>().ST.tag == "PlayerMeca")
+        {
+            print("Les etudiants en meca ne craignent pas les pistons");
+        }
+        else
+        {
+            StartCoroutine(Movement());
+        }
     }
 
     // Update is called once per frame
@@ -33,14 +40,9 @@ public class PistonBehavior : MonoBehaviour
     {
         while (true)
         {
-            if (FindObjectOfType<PlayerBehavior>().ST.tag == "PlayerMeca")
-            {
-                print("Les etudiants en meca ne craignent pas les pistons");
-                StopCoroutine(Movement());
-            }
             // On etend le piston
             yield return new WaitForSeconds(1.0f);
-            colDet.enabled = true;
+            colDet.enabled = false;
             rbBout.MovePosition(rbBout.position += direction);
             rbManche.MovePosition(rbManche.position += (direction - dir16));
             yield return new WaitForSeconds(0.05f);
@@ -48,13 +50,13 @@ public class PistonBehavior : MonoBehaviour
             rbManche.MovePosition(rbManche.position += (direction - dir16));
 
             // Puis on le remet normal
-            colDet.enabled = false;
             yield return new WaitForSeconds(1.0f);
             rbBout.MovePosition(rbBout.position -= direction);
             rbManche.MovePosition(rbManche.position -= (direction - dir16));
             yield return new WaitForSeconds(0.05f);
             rbBout.MovePosition(rbBout.position -= direction);
             rbManche.MovePosition(rbManche.position -= (direction - dir16));
+            colDet.enabled = true;
         }
     }
 
