@@ -18,7 +18,6 @@ public class LevelSelection : MonoBehaviour
     public Button Bac3Button;
     public Button Master1Button;
     public Button Master2Button;
-    public Button StageButton;
 
 
 	public void Start()
@@ -34,7 +33,6 @@ public class LevelSelection : MonoBehaviour
         if(PlayerPrefs.GetInt("WorldPass") >= 3)
         {
             Master1Button.interactable = true;
-            StageButton.interactable = true;
         }
         if(PlayerPrefs.GetInt("WorldPass") >= 4)
         {
@@ -89,8 +87,4 @@ public class LevelSelection : MonoBehaviour
         PlayerPrefs.SetInt("nbMorts",0);
     }
 
-    public void Stage()
-    {
-    	SceneManager.LoadScene(7);
-    }
 }
