@@ -33,7 +33,7 @@ public class RedLineBehavior : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        print("Collision de type : "+ col.tag);
+        print("collisifaezsoidne");
         if (col.tag == "Player")
         {
             print("Vous avez pris trop de retard !");
