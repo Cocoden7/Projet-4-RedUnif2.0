@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Monde5.unity
     guid: 9fd1efbcc92ef5a4180a6cc0e6f5ccda
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelSelection.unity
     guid: d84d34791f6ba6e4d9ea66c50c4e01ed
   - enabled: 1
