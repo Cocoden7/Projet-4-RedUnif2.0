@@ -3066,7 +3066,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Les animaux sons ses amis. R\xE9sultat, les monstres rouges le laisse tranquille"
+  m_Text: "Les animaux sons ses amis. R\xE9sultat, les monstres rouges le laissent
+    tranquille"
 --- !u!222 &457835110
 CanvasRenderer:
   m_ObjectHideFlags: 0
