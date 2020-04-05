@@ -671,10 +671,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 49
+    m_FontSize: 42
     m_FontStyle: 3
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 4
     m_MaxSize: 81
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -682,7 +682,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Be ready for the next year !
+  m_Text: "Pr\xEAt pour l'ann\xE9e suivante?"
 --- !u!222 &110629844
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1385,7 +1385,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Congratulations ! You passed your first year !
+  m_Text: "F\xE9licitation! Vous avez r\xE9ussi votre premi\xE8re ann\xE9e!"
 --- !u!222 &245384245
 CanvasRenderer:
   m_ObjectHideFlags: 0
