@@ -1395,7 +1395,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "F\xE9licitation! Vous "
+  m_Text: "F\xE9licitation! Vous avez r\xE9ussi votre derni\xE8re ann\xE9e!"
 --- !u!222 &245384245
 CanvasRenderer:
   m_ObjectHideFlags: 0
