@@ -10,7 +10,6 @@ using UnityEngine.UI;
 public class ButtonsScript : MonoBehaviour
 {
 	public Text CreditsStage;
-    public Button StageButton;
 
     public void Start()
     {
@@ -25,7 +24,6 @@ public class ButtonsScript : MonoBehaviour
         
     	CreditsStage.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
         if(PlayerPrefs.GetInt("StagePass",0) < 1){
-            StageButton.interactable = false;
             GameObject.Find("StageButton").SetActive(false);
         }
     }
