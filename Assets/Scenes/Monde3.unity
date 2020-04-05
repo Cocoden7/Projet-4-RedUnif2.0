@@ -1833,6 +1833,9 @@ MonoBehaviour:
 =======
   PauseButton: {fileID: 1042651350}
   MotionsButtons: {fileID: 233074128}
+<<<<<<< HEAD
+>>>>>>> parent of 3643d1b... Revert "Ajout de quelques trucs dans les mondes"
+=======
 >>>>>>> parent of 3643d1b... Revert "Ajout de quelques trucs dans les mondes"
 --- !u!4 &313902268
 Transform:

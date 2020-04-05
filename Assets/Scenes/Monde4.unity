@@ -1819,7 +1819,112 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4855502825912505103, guid: 02ac43ba5a6096949a2bb07a45bce77b,
     type: 3}
+<<<<<<< HEAD
   m_PrefabInstance: {fileID: 427807052}
+=======
+  m_PrefabInstance: {fileID: 293606775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &295112192 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7872897503059531874, guid: 7eca9f1680165df41ac81c680cf7fea7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3312263091234161611}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &308014961 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7872897503059531874, guid: 7eca9f1680165df41ac81c680cf7fea7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6840897717327289655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &311082480 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 475703165582314802, guid: 91f107ca9b8e37341a065597e23490a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 3588566878927545458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &313902266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 313902268}
+  - component: {fileID: 313902267}
+  m_Layer: 0
+  m_Name: DeadMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &313902267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313902266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2d478675e852b4084330b8c233a5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restartDelay: 1
+  deadMenuUI: {fileID: 472559099}
+  PauseButton: {fileID: 1042651350}
+  MotionsButtons: {fileID: 946767800}
+--- !u!4 &313902268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313902266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &330801576 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 475703165582314802, guid: 91f107ca9b8e37341a065597e23490a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1161049824727789002}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &334604660 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 475703165582314802, guid: 91f107ca9b8e37341a065597e23490a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 5043381992855548429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &343044870 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7872897503059531874, guid: 7eca9f1680165df41ac81c680cf7fea7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1804536561802995647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &351278862 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9170387437826832086, guid: bd1648ee2135ba848827165efeb494d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 716245550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &357953274 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5407345648347388739, guid: bbfaa073fecadb74d846361a48685e41,
+    type: 3}
+  m_PrefabInstance: {fileID: 9067773043571959168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &365733026 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 475703165582314802, guid: 91f107ca9b8e37341a065597e23490a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 212531468298444548}
+>>>>>>> parent of 3643d1b... Revert "Ajout de quelques trucs dans les mondes"
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &430497796
 PrefabInstance:
@@ -2593,11 +2698,29 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8526284338785452802}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!4 &648374745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7872897503059531874, guid: 7eca9f1680165df41ac81c680cf7fea7,
     type: 3}
   m_PrefabInstance: {fileID: 6237314179096434501}
+=======
+  m_GameObject: {fileID: 467681021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c27b7fc7191b0846a68dedc9efb71e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 467681023}
+  ST: {fileID: 1457720932}
+  nbCredit: 0
+  NextLevelUI: {fileID: 374200927}
+--- !u!212 &467681025
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+>>>>>>> parent of 3643d1b... Revert "Ajout de quelques trucs dans les mondes"
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &660472256 stripped
 Transform:
@@ -4309,8 +4432,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+<<<<<<< HEAD
   m_SourcePrefab: {fileID: 100100000, guid: bbfaa073fecadb74d846361a48685e41, type: 3}
 --- !u!4 &1017783053 stripped
+=======
+  m_SourcePrefab: {fileID: 100100000, guid: e270ae182ece2f84b92922260f451f66, type: 3}
+--- !u!1 &946767800 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4153652921633025451, guid: e270ae182ece2f84b92922260f451f66,
+    type: 3}
+  m_PrefabInstance: {fileID: 946767799}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &961225639 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 475703165582314802, guid: 91f107ca9b8e37341a065597e23490a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 5157903848495338226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &966524821 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 475703165582314802, guid: 91f107ca9b8e37341a065597e23490a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 5060698449219442538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &968294931 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 475703165582314802, guid: 91f107ca9b8e37341a065597e23490a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 9054295795351414965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &971159917 stripped
+>>>>>>> parent of 3643d1b... Revert "Ajout de quelques trucs dans les mondes"
 Transform:
   m_CorrespondingSourceObject: {fileID: 5407345648347388739, guid: bbfaa073fecadb74d846361a48685e41,
     type: 3}

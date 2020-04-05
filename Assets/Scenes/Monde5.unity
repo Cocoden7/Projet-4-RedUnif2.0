@@ -774,7 +774,16 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: e270ae182ece2f84b92922260f451f66, type: 3}
 --- !u!1 &110122266 stripped
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4153652921633025451, guid: e270ae182ece2f84b92922260f451f66,
+    type: 3}
+  m_PrefabInstance: {fileID: 110122265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &110629841
+>>>>>>> parent of 3643d1b... Revert "Ajout de quelques trucs dans les mondes"
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4153652921633025451, guid: e270ae182ece2f84b92922260f451f66,
     type: 3}
@@ -1717,6 +1726,9 @@ MonoBehaviour:
 =======
   PauseButton: {fileID: 1042651350}
   MotionsButtons: {fileID: 110122266}
+<<<<<<< HEAD
+>>>>>>> parent of 3643d1b... Revert "Ajout de quelques trucs dans les mondes"
+=======
 >>>>>>> parent of 3643d1b... Revert "Ajout de quelques trucs dans les mondes"
 --- !u!4 &313902268
 Transform:
