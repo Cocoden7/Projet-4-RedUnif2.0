@@ -12,23 +12,46 @@ public class ButtonsScript : MonoBehaviour
 	public Text CreditsStage;
 
     public void Start()
-    {	
+    {
+        //PlayerPrefs.SetInt("firstCo", 0); // pour reset et avoir le tutoriel
         //PlayerPrefs.DeleteAll();
         //PlayerPrefs.SetInt("WorldPass", 8);
+        if(PlayerPrefs.GetInt("firstCo", 0) == 0)
+        {
+            PlayerPrefs.SetInt("firstCo", 1);
+            SceneManager.LoadScene(9);
+        }
+        
     	CreditsStage.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
-    }
-
-	// OnClick du bouton Play
-    public void play()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        //SceneManager.LoadScene(6);
-        PlayerPrefs.SetInt("nbMorts",0); // remet la variable à 0 dans la bdd (indispensable car pas remis à 0 tout seul)
+        if(PlayerPrefs.GetInt("StagePass",0) < 1){
+            GameObject.Find("StageButton").SetActive(false);
+        }
     }
 
     public void SlidingMenu()
     {
         SceneManager.LoadScene(8);
         PlayerPrefs.SetInt("nbMorts",0); // remet la variable à 0 dans la bdd (indispensable car pas remis à 0 tout seul)
+    }
+    public void Shop()
+    {
+    	SceneManager.LoadScene(11);
+        PlayerPrefs.SetInt("nbMorts",0);
+    }
+    public void Stage()
+    {
+    	SceneManager.LoadScene(7);
+    }
+
+    public void GoToStart()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Scoreboard()
+    {
+        PlayerPrefs.SetInt("AncienneScene", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(13);
     }
 }

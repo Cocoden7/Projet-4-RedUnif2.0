@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Monde5.unity
     guid: 9fd1efbcc92ef5a4180a6cc0e6f5ccda
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelSelection.unity
     guid: d84d34791f6ba6e4d9ea66c50c4e01ed
   - enabled: 1
@@ -44,4 +44,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Intro_scene.unity
     guid: 80ed02a1f57215d46a688c988b591db9
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: c1b1bb9af7ad2c742bb327ed4f659478
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 7c5d2787ca327914c8d562b27347d8f0
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: 5911769c5cbc03b43a1275829e40ad2a
+  - enabled: 1
+    path: Assets/Scenes/Scoreboard.unity
+    guid: 38cba5c9339e2f443adc6e4650c45263
   m_configObjects: {}
