@@ -10,18 +10,23 @@ using UnityEngine.UI;
 public class ButtonsScript : MonoBehaviour
 {
 	public Text CreditsStage;
+    public Button StageButton;
 
     public void Start()
     {
+        //PlayerPrefs.SetInt("firstCo", 0); // pour reset et avoir le tutoriel
+        //PlayerPrefs.DeleteAll();
+        //PlayerPrefs.SetInt("WorldPass", 8);
         if(PlayerPrefs.GetInt("firstCo", 0) == 0)
         {
             PlayerPrefs.SetInt("firstCo", 1);
             SceneManager.LoadScene(9);
         }
-        //PlayerPrefs.SetInt("firstCo", 0); // pour reset et avoir le tutoriel
-        //PlayerPrefs.DeleteAll();
-        //PlayerPrefs.SetInt("WorldPass", 8);
+        
     	CreditsStage.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
+        if(PlayerPrefs.GetInt("StagePass",0) < 1){
+            StageButton.interactable = false;
+        }
     }
 
     public void SlidingMenu()

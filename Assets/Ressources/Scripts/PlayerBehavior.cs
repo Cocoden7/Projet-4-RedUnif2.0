@@ -68,41 +68,96 @@ public class PlayerBehavior : MonoBehaviour
     	nbCredit = nbCredit + 6;
     	if (nbCredit >= creditsNeeded) //si on a ramasse assez de credits
     	{
-            print("AllCoins");
-            if(PlayerPrefs.GetInt("nbMorts",0) > 10) // si on est mort plus de 10 fois
-            {
-                if( 10 > PlayerPrefs.GetInt(rightScore,0)) // si le score est meilleur que le precedent
-                {
-                    PlayerPrefs.SetInt(rightScore, 10);   
-                }
-            }
-            else{
-                print("dans le else");
-                if( 20 - PlayerPrefs.GetInt("nbMorts",0) > PlayerPrefs.GetInt(rightScore,0))
-                {
-                    print("Set HighScore");
-                    PlayerPrefs.SetInt(rightScore, 20 - PlayerPrefs.GetInt("nbMorts",0));   
-                }
-            }
             if(rightScore == "HighScore1" && PlayerPrefs.GetInt("WorldPass", 0) < 1)
             {
                 PlayerPrefs.SetInt("WorldPass", 1);
+                if(PlayerPrefs.GetInt("nbMorts",0) > 10) // si on est mort plus de 10 fois
+                {
+                    if( 10 > PlayerPrefs.GetInt(rightScore,0)) // si le score est meilleur que le precedent
+                    {
+                        PlayerPrefs.SetInt(rightScore, 10);   
+                    }
+                }
+                else
+                {
+                    if( 20 - PlayerPrefs.GetInt("nbMorts",0) > PlayerPrefs.GetInt(rightScore,0))
+                    {
+                        PlayerPrefs.SetInt(rightScore, 20 - PlayerPrefs.GetInt("nbMorts",0));   
+                    }
+                }
             }
             else if(rightScore == "HighScore2" && PlayerPrefs.GetInt("WorldPass", 0) < 2)
             {
-                PlayerPrefs.SetInt("WorldPass", 2);   
+                PlayerPrefs.SetInt("WorldPass", 2);
+                if(PlayerPrefs.GetInt("nbMorts",0) > 10) // si on est mort plus de 10 fois
+                {
+                    if( 10 > PlayerPrefs.GetInt(rightScore,0)) // si le score est meilleur que le precedent
+                    {
+                        PlayerPrefs.SetInt(rightScore, 10);   
+                    }
+                }
+                else
+                {
+                    if( 20 - PlayerPrefs.GetInt("nbMorts",0) > PlayerPrefs.GetInt(rightScore,0))
+                    {
+                        PlayerPrefs.SetInt(rightScore, 20 - PlayerPrefs.GetInt("nbMorts",0));   
+                    }
+                }
             }
             else if(rightScore == "HighScore3" && PlayerPrefs.GetInt("WorldPass", 0) < 3)
             {
                 PlayerPrefs.SetInt("WorldPass", 3);
+                PlayerPrefs.SetInt("StagePass",1);
+                if(PlayerPrefs.GetInt("nbMorts",0) > 10) // si on est mort plus de 10 fois
+                {
+                    if( 10 > PlayerPrefs.GetInt(rightScore,0)) // si le score est meilleur que le precedent
+                    {
+                        PlayerPrefs.SetInt(rightScore, 10);   
+                    }
+                }
+                else
+                {
+                    if( 20 - PlayerPrefs.GetInt("nbMorts",0) > PlayerPrefs.GetInt(rightScore,0))
+                    {
+                        PlayerPrefs.SetInt(rightScore, 20 - PlayerPrefs.GetInt("nbMorts",0));   
+                    }
+                }
             }
             else if(rightScore == "HighScore4" && PlayerPrefs.GetInt("WorldPass", 0) < 4)
             {
                 PlayerPrefs.SetInt("WorldPass", 4);
+                if(PlayerPrefs.GetInt("nbMorts",0) > 10) // si on est mort plus de 10 fois
+                {
+                    if( 10 > PlayerPrefs.GetInt(rightScore,0)) // si le score est meilleur que le precedent
+                    {
+                        PlayerPrefs.SetInt(rightScore, 10);   
+                    }
+                }
+                else
+                {
+                    if( 20 - PlayerPrefs.GetInt("nbMorts",0) > PlayerPrefs.GetInt(rightScore,0))
+                    {
+                        PlayerPrefs.SetInt(rightScore, 20 - PlayerPrefs.GetInt("nbMorts",0));   
+                    }
+                }
             }
             else if(rightScore == "HighScore5")
             {
                 PlayerPrefs.SetInt("WorldPass", 5);
+                if(PlayerPrefs.GetInt("nbMorts",0) > 10) // si on est mort plus de 10 fois
+                {
+                    if( 10 > PlayerPrefs.GetInt(rightScore,0)) // si le score est meilleur que le precedent
+                    {
+                        PlayerPrefs.SetInt(rightScore, 10);   
+                    }
+                }
+                else
+                {
+                    if( 20 - PlayerPrefs.GetInt("nbMorts",0) > PlayerPrefs.GetInt(rightScore,0))
+                    {
+                        PlayerPrefs.SetInt(rightScore, 20 - PlayerPrefs.GetInt("nbMorts",0));   
+                    }
+                }
                 SceneManager.LoadScene(12);
             }
             PlayerPrefs.SetInt("nbMorts",0);

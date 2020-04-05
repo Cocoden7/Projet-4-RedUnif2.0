@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 660960137}
   - component: {fileID: 660960136}
   m_Layer: 5
-  m_Name: Stage
+  m_Name: StageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1507,6 +1507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CreditsStage: {fileID: 380192876}
+  StageButton: {fileID: 660960136}
 --- !u!4 &1886478659
 Transform:
   m_ObjectHideFlags: 0

@@ -11644,7 +11644,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1123306579}
         m_MethodName: OnClickPause
         m_Mode: 1
         m_Arguments:
@@ -12932,6 +12932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1889093547}
   ST: {fileID: 1229184780}
+  dead: 0
   nbCredit: 0
   NextLevelUI: {fileID: 374200927}
   Credits: {fileID: 1956476788}
