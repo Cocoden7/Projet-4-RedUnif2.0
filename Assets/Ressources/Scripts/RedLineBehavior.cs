@@ -22,9 +22,9 @@ public class RedLineBehavior : MonoBehaviour
         Vector3 posPlayer = FindObjectOfType<PlayerBehavior>().transform.position;
 
         // Si la ligne est trop loin derrière du joueur, on la remet à une distance raisonnable du joueur 
-        if (posPlayer.y - transform.position.y > 20)
+        if (posPlayer.y - transform.position.y > 10)
         {
-            transform.position = new Vector2(transform.position.x, posPlayer.y - 20);
+            transform.position = new Vector2(transform.position.x, posPlayer.y - 10);
             print("trop loin");
         }
         transform.position = new Vector3(posPlayer.x, transform.position.y, -5f);
