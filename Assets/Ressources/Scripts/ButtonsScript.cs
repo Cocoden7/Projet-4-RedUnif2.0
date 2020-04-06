@@ -19,7 +19,6 @@ public class ButtonsScript : MonoBehaviour
         //PlayerPrefs.SetInt("WorldPass", 8);
         if(PlayerPrefs.GetInt("firstCo", 0) == 0)
         {
-            PlayerPrefs.SetInt("firstCo", 1);
             SceneManager.LoadScene(9);
         }
         
