@@ -2399,7 +2399,7 @@ MonoBehaviour:
   ST: {fileID: 1245189767}
   dead: 0
   nbCredit: 0
-  creditsNeeded: 10
+  creditsNeeded: 60
   NextLevelUI: {fileID: 374200927}
   Credits: {fileID: 166116150}
 --- !u!212 &467681025
@@ -23911,7 +23911,7 @@ PrefabInstance:
     - target: {fileID: 8680623140174771754, guid: 8e0af1eca4c27324f9057709b69647d6,
         type: 3}
       propertyPath: speed
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8680623140174771755, guid: 8e0af1eca4c27324f9057709b69647d6,
         type: 3}
