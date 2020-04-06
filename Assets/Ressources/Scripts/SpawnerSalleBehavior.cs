@@ -7,7 +7,7 @@ public class SpawnerSalleBehavior : MonoBehaviour
     public int OpeningDirection;
     // 1 => besoin d'un debut a gauche
     // 2 => besoin d'un debut au milieu
-    // 3 => besoin d'un chemin a gauche
+    // 3 => besoin d'un chemin a droite
 
     private CheminTemplate templates;
     private int rand;

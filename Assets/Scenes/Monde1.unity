@@ -1908,7 +1908,6 @@ GameObject:
   - component: {fileID: 374200928}
   - component: {fileID: 374200932}
   - component: {fileID: 374200931}
-  - component: {fileID: 374200930}
   - component: {fileID: 374200929}
   m_Layer: 5
   m_Name: NextLevelUIPanel
@@ -1950,25 +1949,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b38fb9bbd51f246bbc117876da30c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &374200930
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374200927}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4c991c84156b06a4e8bf01f7824af825, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &374200931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2419,6 +2399,7 @@ MonoBehaviour:
   ST: {fileID: 1245189767}
   dead: 0
   nbCredit: 0
+  creditsNeeded: 60
   NextLevelUI: {fileID: 374200927}
   Credits: {fileID: 166116150}
 --- !u!212 &467681025
@@ -23925,6 +23906,11 @@ PrefabInstance:
     - target: {fileID: 8680623140174771751, guid: 8e0af1eca4c27324f9057709b69647d6,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680623140174771754, guid: 8e0af1eca4c27324f9057709b69647d6,
+        type: 3}
+      propertyPath: speed
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8680623140174771755, guid: 8e0af1eca4c27324f9057709b69647d6,

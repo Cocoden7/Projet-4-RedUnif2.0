@@ -14,8 +14,9 @@ public class PlayerBehavior : MonoBehaviour
 	Vector2 movement;
     public bool dead = false;
 	public int nbCredit = 0;
-    int creditsNeeded = 60;
+    public int creditsNeeded = 60;
     public GameObject NextLevelUI;
+    private bool invincible = false;
     private int ratio = 0;
     private int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
     private string direction = "Haut";  // Variable indiquant dans quelle direction le joueur regarde (Haut, Bas, Droite, Gauche)
@@ -42,7 +43,7 @@ public class PlayerBehavior : MonoBehaviour
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
     	}
-        else
+        else if(!invincible)
         {
             movement.x = 0;
             movement.y = 0;
@@ -65,7 +66,7 @@ public class PlayerBehavior : MonoBehaviour
     */
     void AddCredit()
     {
-    	nbCredit = nbCredit + 6;
+    	nbCredit = nbCredit + 5;
     	if (nbCredit >= creditsNeeded) //si on a ramasse assez de credits
     	{
             if(rightScore == "HighScore1" && PlayerPrefs.GetInt("WorldPass", 0) < 1)
@@ -178,10 +179,18 @@ public class PlayerBehavior : MonoBehaviour
     */
     void SetUINextLevel()
     {
+        invincible = true;
         rb.constraints = RigidbodyConstraints2D.FreezePosition;
-        FindObjectOfType<CameraBehavior>().incr = new Vector3(0, 0, 0); // Arrête la caméra
-        NextLevelUI.SetActive(true); // L'appel de la méthode LoadLevel() se fait dans l'animation du UI
-        Time.timeScale = 1.0f;
+        NextLevelUI.SetActive(true);
+        StartCoroutine(LoadLevel());
+    }
+
+
+    public IEnumerator LoadLevel()
+    {
+        yield return new WaitForSeconds(2);
+        invincible = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     /*void OnGUI()
