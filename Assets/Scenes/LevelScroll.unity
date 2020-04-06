@@ -593,6 +593,11 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8734110393598623799, guid: ec7b761be4a8dac46b3a0feea416a9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Master1
+      objectReference: {fileID: 0}
     - target: {fileID: 8734110394236931307, guid: ec7b761be4a8dac46b3a0feea416a9b7,
         type: 3}
       propertyPath: m_Text
@@ -1160,6 +1165,11 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8734110393598623799, guid: ec7b761be4a8dac46b3a0feea416a9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Bac2
+      objectReference: {fileID: 0}
     - target: {fileID: 8734110394236931307, guid: ec7b761be4a8dac46b3a0feea416a9b7,
         type: 3}
       propertyPath: m_Text
@@ -1648,6 +1658,11 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8734110393598623799, guid: ec7b761be4a8dac46b3a0feea416a9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Master2
+      objectReference: {fileID: 0}
     - target: {fileID: 8734110394236931307, guid: ec7b761be4a8dac46b3a0feea416a9b7,
         type: 3}
       propertyPath: m_Text
@@ -1874,7 +1889,6 @@ MonoBehaviour:
   Bac3Button: {fileID: 1336900214}
   Master1Button: {fileID: 1551190441}
   Master2Button: {fileID: 404492014}
-  StageButton: {fileID: 0}
 --- !u!4 &1369392423
 Transform:
   m_ObjectHideFlags: 0
@@ -2406,6 +2420,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Interactable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734110393598623799, guid: ec7b761be4a8dac46b3a0feea416a9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Bac3
       objectReference: {fileID: 0}
     - target: {fileID: 8734110394236931307, guid: ec7b761be4a8dac46b3a0feea416a9b7,
         type: 3}
