@@ -90,6 +90,7 @@ public class TutorialManager : MonoBehaviour
         }
         else if(popUpIndex == 14)
         {
+            PlayerPrefs.SetInt("firstCo", 1);
             SceneManager.LoadScene(0);
         }
     }
