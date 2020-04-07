@@ -27,8 +27,7 @@ public class DeadMenu : MonoBehaviour
             deadMenuUI.SetActive(true);
             print(text);
             texte.text = text;
-            Time.timeScale = 0f; // Freeze le jeu; bien pour le slow mo
-            FindObjectOfType<CameraBehavior>().incr = new Vector3(0,0,0); // Arrête la caméra
+            Time.timeScale = 0f; // Freeze le jeu; bien pour le slow 
             gameHasEnded = true;
         }
     }

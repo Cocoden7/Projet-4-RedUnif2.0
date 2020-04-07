@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ReformeBehavior : MonoBehaviour
 {
@@ -22,6 +20,7 @@ public class ReformeBehavior : MonoBehaviour
                 {
                     particles = GameObject.FindGameObjectWithTag("CoinParticles").GetComponent<ParticleSystem>();
                     particles.Play();
+                    print("REFORMe");
                     player.nbCredit -= malus;
                 }
                 Destroy(gameObject);
