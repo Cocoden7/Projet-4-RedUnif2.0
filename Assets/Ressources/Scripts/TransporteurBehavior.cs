@@ -5,14 +5,15 @@ using UnityEngine;
 public class TransporteurBehavior : MonoBehaviour
 {
     public Rigidbody2D rb;
+    Rigidbody2D playerRb;
     Vector2 movementX;
     Vector2 movementY;
-    Rigidbody2D playerRb;
     List<int> tabl;
     float vitesse;
     int nbCase;
     int joueurPris = 0;  // Nombre de case sur lesquelles le joueur doit encore etre traine
     bool attente = false;  // Boolean pour savoir si on doit attendre avant de remettre le collider
+    bool peutBouger = false;  // Boolean indiquant quand le joueur est centre parrapport au transporteur
     // Start is called before the first frame update
 
     void Start()
@@ -34,6 +35,10 @@ public class TransporteurBehavior : MonoBehaviour
         {
             foreach (var i in tabl)
             {
+                if (joueurPris > 0 && !peutBouger)
+                {
+                    peutBouger = true;
+                }
                 // 1 = droite, 2 = gauche, 3 = haut, 4 = bas
                 if (i == 1)
                 {
@@ -42,9 +47,10 @@ public class TransporteurBehavior : MonoBehaviour
                         yield return new WaitForSeconds(0.05f / vitesse);
                         rb.MovePosition(rb.position += movementX / 20);
                         a++;
-                        if(joueurPris > 0)
+                        if(joueurPris > 0  && peutBouger)
                         {
                             playerRb.MovePosition(playerRb.position += movementX / 20);
+                            joueurPris--;
                         }
                     }
                     a = 0;
@@ -56,9 +62,10 @@ public class TransporteurBehavior : MonoBehaviour
                         yield return new WaitForSeconds(0.05f / vitesse);
                         rb.MovePosition(rb.position -= movementX / 20);
                         a++;
-                        if (joueurPris > 0)
+                        if (joueurPris > 0 && peutBouger)
                         {
                             playerRb.MovePosition(playerRb.position -= movementX / 20);
+                            joueurPris--;
                         }
                     }
                     a = 0;
@@ -70,9 +77,10 @@ public class TransporteurBehavior : MonoBehaviour
                         yield return new WaitForSeconds(0.05f / vitesse);
                         rb.MovePosition(rb.position += movementY / 20);
                         a++;
-                        if (joueurPris > 0)
+                        if (joueurPris > 0 && peutBouger)
                         {
                             playerRb.MovePosition(playerRb.position += movementY / 20);
+                            joueurPris--;
                         }
                     }
                     a = 0;
@@ -84,24 +92,24 @@ public class TransporteurBehavior : MonoBehaviour
                         yield return new WaitForSeconds(0.05f / vitesse);
                         rb.MovePosition(rb.position -= movementY / 20);
                         a++;
-                        if (joueurPris > 0)
+                        if (joueurPris > 0 && peutBouger)
                         {
                             playerRb.MovePosition(playerRb.position -= movementY / 20);
+                            joueurPris--;
                         }
                     }
                     a = 0;
                 }
-                if (joueurPris > 0)
-                    joueurPris--;
                 if (attente)
                 {
                     attente = false;
+                    peutBouger = false;
                     rb.GetComponent<Collider2D>().enabled = true;
                 }
-                if (nbCase == 0 && playerRb != null)
+                if (joueurPris == 0 && playerRb != null)
                 {
                     playerRb.GetComponent<PlayerBehavior>().modifMouvement = 1;
-                    attente = false;
+                    attente = true;
                     playerRb = null;
                 }
             }
@@ -112,10 +120,11 @@ public class TransporteurBehavior : MonoBehaviour
     {
         if (col.tag == "Player")
         {
+            rb.GetComponent<Collider2D>().enabled = false;
             print("collision ennemi");
             playerRb = col.GetComponent<Rigidbody2D>();
-            playerRb.GetComponent<PlayerBehavior>().modifMouvement = 0;
             playerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            playerRb.GetComponent<PlayerBehavior>().modifMouvement = 0;
             rb.GetComponent<Collider2D>().enabled = false;
             joueurPris = nbCase;
         }
@@ -130,14 +139,15 @@ public class TransporteurBehavior : MonoBehaviour
         return 1.0f;
     }
 
+    // Fonction pour savoir sur combien de case le joueur doit être trainé (*20)
     int CombienDeCase()
     {
         if (rb.tag == "Ennemy2" || rb.tag == "Enemy3")
-            return 1;
+            return 20;
         else if (rb.tag == "Ennemy5")
-            return 3;
+            return 60;
         else
-            return 2;
+            return 40;
     }
 
     List<int> QuelTabl()
