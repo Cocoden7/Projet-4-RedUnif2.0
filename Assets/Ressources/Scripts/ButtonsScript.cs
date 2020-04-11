@@ -17,6 +17,7 @@ public class ButtonsScript : MonoBehaviour
         //PlayerPrefs.SetInt("firstCo", 0); // pour reset et avoir le tutoriel
         //PlayerPrefs.DeleteAll();
         //PlayerPrefs.SetInt("WorldPass", 8);
+        PlayerPrefs.SetInt("StagePass", 1);
         if(PlayerPrefs.GetInt("firstCo", 0) == 0)
         {
             SceneManager.LoadScene(9);
