@@ -11,19 +11,18 @@ public class PlayerBehavior : MonoBehaviour
 {
 	public Rigidbody2D rb;
     public GameObject ST;
-	Vector2 movement;
+    public GameObject NextLevelUI;
+    public Text Credits;
     public bool dead = false;
 	public int nbCredit = 0;
     public int creditsNeeded = 60;
-    public GameObject NextLevelUI;
-    private bool invincible = false;
+    public int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
+
+    private bool invincible = false; // Si true, le player ne meurt pas
     private int ratio = 0;
-    private int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
     private string direction = "Haut";  // Variable indiquant dans quelle direction le joueur regarde (Haut, Bas, Droite, Gauche)
-
+    Vector2 movement;
     string rightScore;
-
-    public Text Credits;
 
     void Start()
     {

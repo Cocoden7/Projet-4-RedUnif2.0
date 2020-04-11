@@ -20153,6 +20153,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3158288501403049563, guid: bbe02a8f2dea55f47bacfedcc74615a8,
+        type: 3}
+      propertyPath: speed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8036059513763859691, guid: bbe02a8f2dea55f47bacfedcc74615a8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20161,7 +20166,7 @@ PrefabInstance:
     - target: {fileID: 8036059513763859691, guid: bbe02a8f2dea55f47bacfedcc74615a8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.61
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8036059513763859691, guid: bbe02a8f2dea55f47bacfedcc74615a8,
         type: 3}
@@ -24782,6 +24787,7 @@ MonoBehaviour:
   ST: {fileID: 191205663}
   dead: 0
   nbCredit: 0
+  creditsNeeded: 60
   NextLevelUI: {fileID: 0}
   Credits: {fileID: 0}
 --- !u!212 &1994545248

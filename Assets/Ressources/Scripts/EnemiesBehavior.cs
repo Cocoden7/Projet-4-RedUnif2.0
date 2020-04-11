@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemiesBehavior : MonoBehaviour
 {
-
 	public Rigidbody2D rb;
 	Vector2 movementX;
 	Vector2 movementY;
     // Start is called before the first frame update
+
     void Start()
     {
 		movementX.y = 0.0f;
