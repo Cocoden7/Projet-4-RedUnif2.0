@@ -51,8 +51,8 @@ public class SelectionPlayerBehavior : MonoBehaviour
         PlayerPrefs.SetInt("FykiBuy",0);
         PlayerPrefs.SetInt("MapBuy",0);
         PlayerPrefs.SetInt("GcBuy",0);
-        PlayerPrefs.SetInt("GbioBuy",0);
-        PlayerPrefs.SetInt("CreditsStage",61);*/
+        PlayerPrefs.SetInt("GbioBuy",0);*/
+        //PlayerPrefs.SetInt("CreditsStage",60);
 
         Credits1.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
         Credits2.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
@@ -72,7 +72,7 @@ public class SelectionPlayerBehavior : MonoBehaviour
         {
             bInfo.interactable = false;
             tInfo.text = "";
-            if(PlayerPrefs.GetInt("CreditsStage",0) < 61)
+            if(PlayerPrefs.GetInt("CreditsStage",0) < 60)
             {
                 ButtonBuyInfo.interactable = false;
             }
@@ -86,7 +86,7 @@ public class SelectionPlayerBehavior : MonoBehaviour
         {
             bElec.interactable = false;
             tElec.text = "";
-            if(PlayerPrefs.GetInt("CreditsStage",0) < 61)
+            if(PlayerPrefs.GetInt("CreditsStage",0) < 60)
             {
                 ButtonBuyElec.interactable = false;
             }
@@ -100,7 +100,7 @@ public class SelectionPlayerBehavior : MonoBehaviour
         {
             bMeca.interactable = false;
             tMeca.text = "";
-            if(PlayerPrefs.GetInt("CreditsStage",0) < 61)
+            if(PlayerPrefs.GetInt("CreditsStage",0) < 60)
             {
                 ButtonBuyMeca.interactable = false;
             }
@@ -114,7 +114,7 @@ public class SelectionPlayerBehavior : MonoBehaviour
         {
             bFyki.interactable = false;
             tFyki.text = "";
-            if(PlayerPrefs.GetInt("CreditsStage",0) < 61)
+            if(PlayerPrefs.GetInt("CreditsStage",0) < 60)
             {
                 ButtonBuyFyki.interactable = false;
             }
@@ -128,7 +128,7 @@ public class SelectionPlayerBehavior : MonoBehaviour
         {
             bMap.interactable = false;
             tMap.text = "";
-            if(PlayerPrefs.GetInt("CreditsStage",0) < 61)
+            if(PlayerPrefs.GetInt("CreditsStage",0) < 60)
             {
                 ButtonBuyMap.interactable = false;
             }
@@ -142,7 +142,7 @@ public class SelectionPlayerBehavior : MonoBehaviour
         {
             bGc.interactable = false;
             tGc.text = "";
-            if(PlayerPrefs.GetInt("CreditsStage",0) < 61)
+            if(PlayerPrefs.GetInt("CreditsStage",0) < 60)
             {
                 ButtonBuyGc.interactable = false;
             }
@@ -156,7 +156,7 @@ public class SelectionPlayerBehavior : MonoBehaviour
         {
             bGbio.interactable = false;
             tGbio.text = "";
-            if(PlayerPrefs.GetInt("CreditsStage",0) < 61)
+            if(PlayerPrefs.GetInt("CreditsStage",0) < 60)
             {
                 ButtonBuyGbio.interactable = false;
             }
@@ -166,31 +166,31 @@ public class SelectionPlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        if(PlayerPrefs.GetInt("CreditsStage",0) < 61)
+        if(PlayerPrefs.GetInt("CreditsStage",0) < 60)
         {
             ButtonBuyInfo.interactable = false;
         }
-        if(PlayerPrefs.GetInt("CreditsStage",0) < 61)
+        if(PlayerPrefs.GetInt("CreditsStage",0) < 60)
         {
             ButtonBuyElec.interactable = false;
         }
-        if(PlayerPrefs.GetInt("CreditsStage",0) < 61)
+        if(PlayerPrefs.GetInt("CreditsStage",0) < 60)
         {
             ButtonBuyMeca.interactable = false;
         }
-        if(PlayerPrefs.GetInt("CreditsStage",0) < 61)
+        if(PlayerPrefs.GetInt("CreditsStage",0) < 60)
         {
             ButtonBuyFyki.interactable = false;
         }
-        if(PlayerPrefs.GetInt("CreditsStage",0) < 61)
+        if(PlayerPrefs.GetInt("CreditsStage",0) < 60)
         {
             ButtonBuyMap.interactable = false;
         }
-        if(PlayerPrefs.GetInt("CreditsStage",0) < 61)
+        if(PlayerPrefs.GetInt("CreditsStage",0) < 60)
         {
             ButtonBuyGc.interactable = false;
         }
-        if(PlayerPrefs.GetInt("CreditsStage",0) < 61)
+        if(PlayerPrefs.GetInt("CreditsStage",0) < 60)
         {
             ButtonBuyGbio.interactable = false;
         }

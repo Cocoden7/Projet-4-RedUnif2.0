@@ -51,6 +51,11 @@ public class EndScript : MonoBehaviour
         PlayerPrefs.SetInt("HighScore3", 0);
         PlayerPrefs.SetInt("HighScore4", 0);
         PlayerPrefs.SetInt("HighScore5", 0);
+        PlayerPrefs.SetInt("nbMorts1",0);
+        PlayerPrefs.SetInt("nbMorts2",0);
+        PlayerPrefs.SetInt("nbMorts3",0);
+        PlayerPrefs.SetInt("nbMorts4",0);
+        PlayerPrefs.SetInt("nbMorts5",0);
         PlayerPrefs.SetInt("WorldPass", 0);
         PlayerPrefs.SetFloat("TotalScore", 0.0f);
         PlayerPrefs.Save();
