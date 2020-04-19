@@ -14,8 +14,8 @@ public class TutorialManager : MonoBehaviour
     public Button next;
     public GameObject DeadMenuUi;
     public GameObject Panel;
-
     public Rigidbody2D rb;
+
     private float waitTime = 4.0f;
     private int popUpIndex = 0;
     private Boolean moveDone = false;
