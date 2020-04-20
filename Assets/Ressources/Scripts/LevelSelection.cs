@@ -81,10 +81,4 @@ public class LevelSelection : MonoBehaviour
         PlayerPrefs.SetInt("nbMorts",0);
     }
 
-    public void LevelOne()
-    {
-    	SceneManager.LoadScene(8);
-        PlayerPrefs.SetInt("nbMorts",0);
-    }
-
 }
