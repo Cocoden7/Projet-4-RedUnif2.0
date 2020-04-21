@@ -29,8 +29,7 @@ public class ElecTrap : MonoBehaviour
     public void onCol()
     {
         if (onScreen && offScreen)
-        {
-            print("ACTIVE = " + active);    
+        {  
             electriccol.enabled = true;
             audioSource.Play();
             active = true;
@@ -48,8 +47,6 @@ public class ElecTrap : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-        print(col.tag);
-        print(active);
     	if(active==true && col.tag == "Player")
     	{
             // Appelle la fonction  Dead() de col

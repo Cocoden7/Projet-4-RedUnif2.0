@@ -2472,6 +2472,7 @@ MonoBehaviour:
   nbCredit: 0
   creditsNeeded: 60
   modifMouvement: 1
+  surglace: 0
 --- !u!212 &467681025
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19053,6 +19054,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Transporteur
       objectReference: {fileID: 0}
+    - target: {fileID: 4492674721013206038, guid: 56d2559ba9a75bf4a814e35d346f039a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56d2559ba9a75bf4a814e35d346f039a, type: 3}
 --- !u!1001 &4555621437032475518
@@ -20362,7 +20368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &5244450004035548195
 PrefabInstance:
   m_ObjectHideFlags: 0

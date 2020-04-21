@@ -17,12 +17,14 @@ public class PlayerBehavior : MonoBehaviour
 	public int nbCredit = 0;
     public int creditsNeeded = 60;
     public int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
+    public bool surglace = false;  // pour savoir si il est toujours sur de la glace
 
-    private bool invincible = false; // Si true, le player ne meurt pas
+    private bool invincible = false;  // Si true, le player ne meurt pas
     private int ratio = 0;
     private string direction = "Haut";  // Variable indiquant dans quelle direction le joueur regarde (Haut, Bas, Droite, Gauche)
     Vector2 movement;
     string rightScore;
+    
 
     void Start()
     {
@@ -258,44 +260,60 @@ public class PlayerBehavior : MonoBehaviour
     // Les fonctions de mouvement :
     void MoveUp()
     {
-        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-        rb.MovePosition(rb.position += new Vector2(0, 1 * modifMouvement));
-        direction = "Haut";
-        Centrer();
+        if (modifMouvement != 0)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            rb.MovePosition(rb.position += new Vector2(0, 1 * modifMouvement));
+            direction = "Haut";
+            Centrer();
+        }
     }
 
     void MoveDown()
     {
-        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-        rb.MovePosition(rb.position += new Vector2(0, -1 * modifMouvement));
-        direction = "Bas";
-        Centrer();
+        if (modifMouvement != 0)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            rb.MovePosition(rb.position += new Vector2(0, -1 * modifMouvement));
+            direction = "Bas";
+            Centrer();
+        }
     }
 
     void MoveRight()
     {
-        rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-        rb.MovePosition(rb.position += new Vector2(1 * modifMouvement, 0));
-        direction = "Droite";
-        Centrer();
+        if (modifMouvement != 0)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+            rb.MovePosition(rb.position += new Vector2(1 * modifMouvement, 0));
+            direction = "Droite";
+            Centrer();
+        }
     }
 
     void MoveLeft()
     {
-        rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-        rb.MovePosition(rb.position += new Vector2(-1 * modifMouvement, 0));
-        direction = "Gauche";
-        Centrer();
+        if (modifMouvement != 0)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+            rb.MovePosition(rb.position += new Vector2(-1 * modifMouvement, 0));
+            direction = "Gauche";
+            Centrer();
+        }
     }
 
     void Centrer()
     {
-        RigidbodyConstraints2D constr = rb.constraints;
-        rb.constraints = RigidbodyConstraints2D.None;
-        float x = (float)(System.Math.Round(rb.position.x / 5.0f, 1) * 5.0);
-        float y = (float)(System.Math.Round(rb.position.y / 5.0f, 1) * 5.0);
-        rb.MovePosition(new Vector2(x, y));
-        rb.constraints = constr;
+        if (modifMouvement == 1)
+        {
+            RigidbodyConstraints2D constr = rb.constraints;
+            rb.constraints = RigidbodyConstraints2D.None;
+            float x = (float)(System.Math.Round(rb.position.x / 5.0f, 1) * 5.0);
+            rb.MovePosition(new Vector2(x, rb.position.y));
+            float y = (float)(System.Math.Round(rb.position.y / 5.0f, 1) * 5.0);
+            rb.MovePosition(new Vector2(x, y));
+            rb.constraints = constr;
+        }
     }
 
     // Les fonctions modifiant les deplacements appelees par les pieges sont ici dessous :
@@ -324,6 +342,8 @@ public class PlayerBehavior : MonoBehaviour
     // Fonction pour la glace
     public void Avance()
     {
+        modifMouvement = 0;
+        surglace = true;
         StartCoroutine(Mouvement());
     }
 
@@ -338,28 +358,34 @@ public class PlayerBehavior : MonoBehaviour
     IEnumerator Mouvement()
     {
         yield return new WaitForSeconds(0.1f);
-        int i = 0;
-        while(i < 5)
+        while (surglace)
         {
-            if (direction == "Haut")
+            surglace = false;
+            int i = 0;
+            while (i < 5)
             {
-                rb.MovePosition(rb.position += new Vector2(0, 0.2f));
+                if (direction == "Haut")
+                {
+                    rb.MovePosition(rb.position += new Vector2(0, 0.2f));
+                }
+                else if (direction == "Bas")
+                {
+                    rb.MovePosition(rb.position += new Vector2(0, -0.2f));
+                }
+                else if (direction == "Droite")
+                {
+                    rb.MovePosition(rb.position += new Vector2(0.2f, 0));
+                }
+                else if (direction == "Gauche")
+                {
+                    rb.MovePosition(rb.position += new Vector2(-0.2f, 0));
+                }
+                i++;
+                yield return new WaitForSeconds(0.02f);
             }
-            else if (direction == "Bas")
-            {
-                rb.MovePosition(rb.position += new Vector2(0, -0.2f));
-            }
-            else if (direction == "Droite")
-            {
-                rb.MovePosition(rb.position += new Vector2(0.2f, 0));
-            }
-            else if (direction == "Gauche")
-            {
-                rb.MovePosition(rb.position += new Vector2(-0.2f, 0));
-            }
-            i++;
-            yield return new WaitForSeconds(0.02f);
         }
+        Centrer();
+        modifMouvement = 1;
     }
 
 
