@@ -13094,8 +13094,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Vous avez compris le principe! Vous devez r\xE9colter 60 cr\xE9dits afin
-    de passer \xE0 l'ann\xE9e suivante, et ce en mourant le moins possible."
+  m_Text: "Le but du jeu est de r\xE9colter 60 cr\xE9dits afin de passer \xE0 l'ann\xE9e
+    suivante."
 --- !u!222 &822910524
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14274,7 +14274,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Dans le stage, le nombre de cr\xE9dits est infini, le but est d'en r\xE9colter
-    le plus possible sans mourir."
+    le plus possible sans mourir. Ces cr\xE9dits sont d\xE9pensables dans le magasin."
 --- !u!222 &909365591
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17705,12 +17705,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1300444479}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1318008503 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4153652921633025451, guid: e270ae182ece2f84b92922260f451f66,
-    type: 3}
-  m_PrefabInstance: {fileID: 1770081611}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1324411219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20534,8 +20528,6 @@ MonoBehaviour:
   - {fileID: 1460247461}
   - {fileID: 846245659}
   - {fileID: 1168586422}
-  credit: {fileID: 2040179448}
-  buttons: {fileID: 1318008503}
   text: {fileID: 1667087516}
   next: {fileID: 2079970917}
   DeadMenuUi: {fileID: 870116196}
@@ -22396,7 +22388,7 @@ PrefabInstance:
     - target: {fileID: 4153652921633025451, guid: e270ae182ece2f84b92922260f451f66,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4153652922175139450, guid: e270ae182ece2f84b92922260f451f66,
         type: 3}
@@ -24243,8 +24235,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xC0 la fin de chaque ann\xE9e, vous obtiendrez un score sur 20 d\xE9pendant
-    de votre nombre de morts."
+  m_Text: "\xC0 la fin de chaque ann\xE9e, vous obtiendrez un score sur 20. Chaque
+    fois que vous mourrez vous perdez 1 point."
 --- !u!222 &1946538243
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24760,6 +24752,7 @@ MonoBehaviour:
   nbCredit: 0
   creditsNeeded: 60
   modifMouvement: 1
+  surglace: 0
 --- !u!212 &1994545248
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25148,12 +25141,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8725164dbf2e3141bbce2f0e4ce4784, type: 3}
---- !u!1 &2040179448 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2704639207645830520, guid: f8725164dbf2e3141bbce2f0e4ce4784,
-    type: 3}
-  m_PrefabInstance: {fileID: 2040179447}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2040179449 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2704639207645830524, guid: f8725164dbf2e3141bbce2f0e4ce4784,
@@ -25456,8 +25443,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Vous avez compris comment vous d\xE9placer!\nLe but du jeu est de r\xE9colter
-    les cr\xE9dits, essayez d'en ramasser un."
+  m_Text: "Le but du jeu est de r\xE9colter les cr\xE9dits, essayez d'en ramasser
+    un."
 --- !u!222 &2075648761
 CanvasRenderer:
   m_ObjectHideFlags: 0
