@@ -8,8 +8,6 @@ public class TutorialManager : MonoBehaviour
 {
 
     public GameObject[] popUps;
-    public GameObject credit;
-    public GameObject buttons;
     public GameObject text;
     public Button next;
     public GameObject DeadMenuUi;
@@ -19,8 +17,6 @@ public class TutorialManager : MonoBehaviour
     private float waitTime = 4.0f;
     private int popUpIndex = 0;
     private Boolean moveDone = false;
-    private Boolean coinDone = false;
-    private Boolean coin = true;
     private bool mort = false;
     Vector2 movementY;
 
@@ -44,33 +40,6 @@ public class TutorialManager : MonoBehaviour
             next.interactable = true;
             text.SetActive(true);
         }
-        if(popUpIndex == 2)
-        {
-            buttons.SetActive(true);
-            next.interactable = false;
-            text.SetActive(false);
-            if (moveDone)
-            {
-                DoneMouvement(false);
-                next.interactable = true;
-                popUpIndex++;
-            }
-        }
-        else if(popUpIndex == 3)
-        {
-            next.interactable = false;
-            text.SetActive(false);
-            if (coin)
-            {
-                credit.SetActive(true);
-                coin = false;
-            }
-            if (coinDone)
-            {
-                DoneCredit(false);
-                popUpIndex++;
-            }
-        }
         else if (popUpIndex == 4 || popUpIndex == 6 || popUpIndex == 8)
         {
             next.interactable = true;
@@ -83,7 +52,7 @@ public class TutorialManager : MonoBehaviour
             waitTime -= Time.deltaTime;
             if (waitTime < 0 && mort == false)
             {
-                popUpIndex++;
+                Next();
                 waitTime = 4.0f;
             }
 
@@ -98,16 +67,15 @@ public class TutorialManager : MonoBehaviour
     public void Next()
     {
         popUpIndex++;
+        if(popUpIndex == 1 || popUpIndex == 2 || popUpIndex == 3 || popUpIndex == 6)
+        {
+            Next();
+        }
     }
 
     public void DoneMouvement(Boolean b)
     {
         moveDone = b;
-    }
-
-    public void DoneCredit(Boolean b)
-    {
-        coinDone = b;
     }
     
     public void Mort()
