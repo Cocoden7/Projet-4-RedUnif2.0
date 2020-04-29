@@ -1178,7 +1178,7 @@ PrefabInstance:
     - target: {fileID: 8734110394460347124, guid: ec7b761be4a8dac46b3a0feea416a9b7,
         type: 3}
       propertyPath: m_Text
-      value: "La dexui\xE8me ann\xE9e vous ouvre ses portes mais avec son lot de difficult\xE9s
+      value: "La deuxi\xE8me ann\xE9e vous ouvre ses portes mais avec son lot de difficult\xE9s
         !"
       objectReference: {fileID: 0}
     - target: {fileID: 8734110394658059105, guid: ec7b761be4a8dac46b3a0feea416a9b7,

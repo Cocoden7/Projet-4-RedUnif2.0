@@ -8998,7 +8998,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Les m\xE9langes chimiques n'ayant pas de secrets pour lui, il ne sera jamais
-    ralenti par les glues"
+    bloqu\xE9 par les glues"
 --- !u!222 &1676097870
 CanvasRenderer:
   m_ObjectHideFlags: 0
