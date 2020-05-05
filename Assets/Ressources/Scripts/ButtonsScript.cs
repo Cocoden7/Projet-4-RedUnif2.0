@@ -20,7 +20,7 @@ public class ButtonsScript : MonoBehaviour
         //PlayerPrefs.SetInt("StagePass", 1);
         if(PlayerPrefs.GetInt("firstCo", 0) == 0)
         {
-            SceneManager.LoadScene(10);
+            SceneManager.LoadScene(9);
         }
         
     	CreditsStage.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
