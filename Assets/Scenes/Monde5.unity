@@ -24388,7 +24388,7 @@ PrefabInstance:
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
       propertyPath: debutMilieu.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
@@ -24434,12 +24434,13 @@ PrefabInstance:
         type: 3}
       propertyPath: debutMilieu.Array.data[5]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7885058474565179040, guid: 9d776261be0a21448a1edaac2187690a,
+        type: 3}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
       propertyPath: debutMilieu.Array.data[6]
       value: 
-      objectReference: {fileID: 7478598791857398236, guid: 208b851c07bbbc5448a79312b78eab26,
+      objectReference: {fileID: 7885058474565179040, guid: 9d776261be0a21448a1edaac2187690a,
         type: 3}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
