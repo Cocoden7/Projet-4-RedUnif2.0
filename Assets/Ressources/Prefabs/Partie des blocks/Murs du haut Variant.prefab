@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3155257419392369408, guid: 02ac43ba5a6096949a2bb07a45bce77b,
         type: 3}
       propertyPath: m_Name
-      value: Murs du haut
+      value: Murs du haut Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4855502825912505103, guid: 02ac43ba5a6096949a2bb07a45bce77b,
         type: 3}
@@ -66,6 +66,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163401817096960444, guid: 02ac43ba5a6096949a2bb07a45bce77b,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163401817096960444, guid: 02ac43ba5a6096949a2bb07a45bce77b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02ac43ba5a6096949a2bb07a45bce77b, type: 3}

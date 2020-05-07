@@ -18,6 +18,7 @@ public class PlayerBehavior : MonoBehaviour
     public int creditsNeeded = 60;
     public int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
     public bool surglace = false;  // pour savoir si il est toujours sur de la glace
+    public bool contactMur = false;
     public GameObject GreenEffect;
     Image img;
 
@@ -26,7 +27,6 @@ public class PlayerBehavior : MonoBehaviour
     private string direction = "Haut";  // Variable indiquant dans quelle direction le joueur regarde (Haut, Bas, Droite, Gauche)
     Vector2 movement;
     string rightScore;
-    bool contactMur = false;
     
 
     void Start()
@@ -55,15 +55,6 @@ public class PlayerBehavior : MonoBehaviour
             // Lance la methode GameOver dans GameManager
             FindObjectOfType<DeadMenu>().GameOver();
         }
-    }
-
-    void OnCollisionEnter2D(Collision2D col)
-    { 
-        // Collision avec le vide
-    	if(col.gameObject.CompareTag("mur"))
-    	{
-            contactMur = true;
-    	}
     }
 
     /*
@@ -268,8 +259,16 @@ public class PlayerBehavior : MonoBehaviour
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             rb.MovePosition(rb.position += new Vector2(0, 0.5f * modifMouvement));
-            rb.MovePosition(rb.position += new Vector2(0, 0.5f * modifMouvement));
+            if (contactMur)
+            {
+                rb.MovePosition(rb.position += new Vector2(0, -0.5f * modifMouvement));
+            }
+            else
+            {
+                rb.MovePosition(rb.position += new Vector2(0, 0.5f * modifMouvement));
+            }
             direction = "Haut";
+            contactMur = false;
             Centrer();
         }
     }
@@ -282,6 +281,7 @@ public class PlayerBehavior : MonoBehaviour
             rb.MovePosition(rb.position += new Vector2(0, -0.5f * modifMouvement));
             rb.MovePosition(rb.position += new Vector2(0, -0.5f * modifMouvement));
             direction = "Bas";
+            contactMur = false;
             Centrer();
         }
     }
@@ -294,6 +294,7 @@ public class PlayerBehavior : MonoBehaviour
             rb.MovePosition(rb.position += new Vector2(0.5f * modifMouvement, 0));
             rb.MovePosition(rb.position += new Vector2(0.5f * modifMouvement, 0));
             direction = "Droite";
+            contactMur = false;
             Centrer();
         }
     }
@@ -306,6 +307,7 @@ public class PlayerBehavior : MonoBehaviour
             rb.MovePosition(rb.position += new Vector2(-0.5f * modifMouvement, 0));
             rb.MovePosition(rb.position += new Vector2(-0.5f * modifMouvement, 0));
             direction = "Gauche";
+            contactMur = false;
             Centrer();
         }
     }
@@ -384,7 +386,7 @@ public class PlayerBehavior : MonoBehaviour
     IEnumerator Mouvement()
     {
         yield return new WaitForSeconds(0.1f);
-        while (surglace)
+        while (surglace && contactMur == false)
         {
             surglace = false;
             int i = 0;
@@ -411,6 +413,7 @@ public class PlayerBehavior : MonoBehaviour
             }
         }
         modifMouvement = 1;
+        contactMur = false;
         Centrer();
     }
 
