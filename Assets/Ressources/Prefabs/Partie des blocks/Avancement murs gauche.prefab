@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 911464431170331262}
   m_Layer: 0
   m_Name: Avancement murs gauche
-  m_TagString: Untagged
+  m_TagString: mur
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

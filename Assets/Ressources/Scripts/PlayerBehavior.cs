@@ -24,6 +24,7 @@ public class PlayerBehavior : MonoBehaviour
     private string direction = "Haut";  // Variable indiquant dans quelle direction le joueur regarde (Haut, Bas, Droite, Gauche)
     Vector2 movement;
     string rightScore;
+    bool contactMur = false;
     
 
     void Start()
@@ -56,9 +57,9 @@ public class PlayerBehavior : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     { 
         // Collision avec le vide
-    	if(col.gameObject.CompareTag("vide"))
+    	if(col.gameObject.CompareTag("mur"))
     	{
-            Dead();
+            contactMur = true;
     	}
     }
 
@@ -263,7 +264,8 @@ public class PlayerBehavior : MonoBehaviour
         if (modifMouvement != 0)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-            rb.MovePosition(rb.position += new Vector2(0, 1 * modifMouvement));
+            rb.MovePosition(rb.position += new Vector2(0, 0.5f * modifMouvement));
+            rb.MovePosition(rb.position += new Vector2(0, 0.5f * modifMouvement));
             direction = "Haut";
             Centrer();
         }
@@ -274,7 +276,8 @@ public class PlayerBehavior : MonoBehaviour
         if (modifMouvement != 0)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-            rb.MovePosition(rb.position += new Vector2(0, -1 * modifMouvement));
+            rb.MovePosition(rb.position += new Vector2(0, -0.5f * modifMouvement));
+            rb.MovePosition(rb.position += new Vector2(0, -0.5f * modifMouvement));
             direction = "Bas";
             Centrer();
         }
@@ -285,7 +288,8 @@ public class PlayerBehavior : MonoBehaviour
         if (modifMouvement != 0)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-            rb.MovePosition(rb.position += new Vector2(1 * modifMouvement, 0));
+            rb.MovePosition(rb.position += new Vector2(0.5f * modifMouvement, 0));
+            rb.MovePosition(rb.position += new Vector2(0.5f * modifMouvement, 0));
             direction = "Droite";
             Centrer();
         }
@@ -296,7 +300,8 @@ public class PlayerBehavior : MonoBehaviour
         if (modifMouvement != 0)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-            rb.MovePosition(rb.position += new Vector2(-1 * modifMouvement, 0));
+            rb.MovePosition(rb.position += new Vector2(-0.5f * modifMouvement, 0));
+            rb.MovePosition(rb.position += new Vector2(-0.5f * modifMouvement, 0));
             direction = "Gauche";
             Centrer();
         }
@@ -362,7 +367,7 @@ public class PlayerBehavior : MonoBehaviour
         {
             surglace = false;
             int i = 0;
-            while (i < 5)
+            while (i < 5 && contactMur == false)
             {
                 if (direction == "Haut")
                 {
@@ -384,8 +389,8 @@ public class PlayerBehavior : MonoBehaviour
                 yield return new WaitForSeconds(0.02f);
             }
         }
-        Centrer();
         modifMouvement = 1;
+        Centrer();
     }
 
 
