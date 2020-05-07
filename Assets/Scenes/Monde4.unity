@@ -8722,17 +8722,17 @@ PrefabInstance:
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
       propertyPath: debutMilieu.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
       propertyPath: debutGauche.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
       propertyPath: debutDroite.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
@@ -8780,7 +8780,7 @@ PrefabInstance:
         type: 3}
       propertyPath: debutMilieu.Array.data[7]
       value: 
-      objectReference: {fileID: 259630421270437869, guid: e991c1f960536f84a9de7fea2c434fb8,
+      objectReference: {fileID: 4543661265717582313, guid: c3ba039c59183284f94336d886c488dc,
         type: 3}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
@@ -8823,6 +8823,24 @@ PrefabInstance:
       propertyPath: debutDroite.Array.data[2]
       value: 
       objectReference: {fileID: 6584303841059976484, guid: ec07111ab9f00694a872854153cd7949,
+        type: 3}
+    - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
+        type: 3}
+      propertyPath: debutGauche.Array.data[2]
+      value: 
+      objectReference: {fileID: 2494339887527362687, guid: dc49afdae428dc74e8a2dec333a00da7,
+        type: 3}
+    - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
+        type: 3}
+      propertyPath: debutGauche.Array.data[3]
+      value: 
+      objectReference: {fileID: 5686675043754051580, guid: adb5d180a00d9c541afbf05885fd57d9,
+        type: 3}
+    - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
+        type: 3}
+      propertyPath: debutDroite.Array.data[3]
+      value: 
+      objectReference: {fileID: 3966233816313500886, guid: 5dfcf16b5db1db34cb6c09bebfe4120e,
         type: 3}
     - target: {fileID: 9011964265606663227, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
