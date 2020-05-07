@@ -18,8 +18,10 @@ public class PlayerBehavior : MonoBehaviour
     public int creditsNeeded = 60;
     public int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
     public bool surglace = false;  // pour savoir si il est toujours sur de la glace
+    public GameObject GreenEffect;
+    Image img;
 
-    private bool invincible = false;  // Si true, le player ne meurt pas
+    private bool invincible = true;  // Si true, le player ne meurt pas
     private int ratio = 0;
     private string direction = "Haut";  // Variable indiquant dans quelle direction le joueur regarde (Haut, Bas, Droite, Gauche)
     Vector2 movement;
@@ -32,6 +34,7 @@ public class PlayerBehavior : MonoBehaviour
         Credits.text = nbCredit.ToString();
         // Liste des tags possibles : PlayerElec, PlayerMeca, PlayerFyki, PlayerInfo, PlayerMath, PlayerGBio, PlayerGC
         ST.tag = PlayerPrefs.GetString("TSTag", "Untagged");
+        img = GreenEffect.GetComponent<Image>();
     }
 
     // Méthode appelée pour avoir les input du joueur
@@ -327,7 +330,7 @@ public class PlayerBehavior : MonoBehaviour
     void Bourre()
     {
         modifMouvement = -1;
-        StartCoroutine(Attente(2.0f));
+        StartCoroutine(Attente());
     }
 
     // Fonction pour la glue
@@ -340,7 +343,11 @@ public class PlayerBehavior : MonoBehaviour
         else
         {
             modifMouvement = 0;
-            StartCoroutine(Attente(2.0f));
+            GreenEffect.gameObject.SetActive(true);
+            Color c = img.color;
+            c.a = 1.0f;
+            img.color = c;
+            StartCoroutine(Attente());
         }
     }
 
@@ -354,10 +361,24 @@ public class PlayerBehavior : MonoBehaviour
 
     // Les Coroutine dont ont besoin les pieges sur les deplacement sont ici dessous :
 
-    IEnumerator Attente(float temps)
+    IEnumerator Attente()
     {
-        yield return new WaitForSeconds(temps);
+        yield return new WaitForSeconds(1.3f);
+        StartCoroutine(FadeOut());
+        yield return new WaitForSeconds(0.7f);
+        GreenEffect.gameObject.SetActive(false);
         modifMouvement = 1;
+    }
+
+    IEnumerator FadeOut()
+    {
+        for(float f = 1.0f; f>=0.3f; f -= 0.05f)
+        {
+            Color c = img.color;
+            c.a = f;
+            img.color = c;
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 
     IEnumerator Mouvement()
