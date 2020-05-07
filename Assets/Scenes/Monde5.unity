@@ -24398,7 +24398,7 @@ PrefabInstance:
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
       propertyPath: debutDroite.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
@@ -24488,7 +24488,7 @@ PrefabInstance:
         type: 3}
       propertyPath: debutDroite.Array.data[2]
       value: 
-      objectReference: {fileID: 6742785081584787668, guid: d50a9c777efa0da409dc424bacf69c1d,
+      objectReference: {fileID: 6584303841059976484, guid: ec07111ab9f00694a872854153cd7949,
         type: 3}
     - target: {fileID: 9011964265606663227, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
