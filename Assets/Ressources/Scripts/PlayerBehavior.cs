@@ -18,7 +18,6 @@ public class PlayerBehavior : MonoBehaviour
     public int creditsNeeded = 60;
     public int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
     public bool surglace = false;  // pour savoir si il est toujours sur de la glace
-    public bool contactMur = false;
     public GameObject GreenEffect;
     Image img;
 
@@ -180,18 +179,12 @@ public class PlayerBehavior : MonoBehaviour
         StartCoroutine(LoadLevel());
     }
 
-
     public IEnumerator LoadLevel()
     {
         yield return new WaitForSeconds(2);
         invincible = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
-    /*void OnGUI()
-    {
-    	GUI.Label(new Rect (10, 10, 100, 20), " Credit : " + nbCredit);
-    }*/
 
     /*
     Fonction à appeler dès que le joueur meurt !!IMPORTANT, il faut appeler celle-ci
@@ -259,16 +252,8 @@ public class PlayerBehavior : MonoBehaviour
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             rb.MovePosition(rb.position += new Vector2(0, 0.5f * modifMouvement));
-            if (contactMur)
-            {
-                rb.MovePosition(rb.position += new Vector2(0, -0.5f * modifMouvement));
-            }
-            else
-            {
-                rb.MovePosition(rb.position += new Vector2(0, 0.5f * modifMouvement));
-            }
+            rb.MovePosition(rb.position += new Vector2(0, 0.5f * modifMouvement));
             direction = "Haut";
-            contactMur = false;
             Centrer();
         }
     }
@@ -281,7 +266,6 @@ public class PlayerBehavior : MonoBehaviour
             rb.MovePosition(rb.position += new Vector2(0, -0.5f * modifMouvement));
             rb.MovePosition(rb.position += new Vector2(0, -0.5f * modifMouvement));
             direction = "Bas";
-            contactMur = false;
             Centrer();
         }
     }
@@ -294,7 +278,6 @@ public class PlayerBehavior : MonoBehaviour
             rb.MovePosition(rb.position += new Vector2(0.5f * modifMouvement, 0));
             rb.MovePosition(rb.position += new Vector2(0.5f * modifMouvement, 0));
             direction = "Droite";
-            contactMur = false;
             Centrer();
         }
     }
@@ -307,7 +290,6 @@ public class PlayerBehavior : MonoBehaviour
             rb.MovePosition(rb.position += new Vector2(-0.5f * modifMouvement, 0));
             rb.MovePosition(rb.position += new Vector2(-0.5f * modifMouvement, 0));
             direction = "Gauche";
-            contactMur = false;
             Centrer();
         }
     }
@@ -321,7 +303,8 @@ public class PlayerBehavior : MonoBehaviour
             float x = (float)(System.Math.Round(rb.position.x / 5.0f, 1) * 5.0);
             rb.MovePosition(new Vector2(x, rb.position.y));
             float y = (float)(System.Math.Round(rb.position.y / 5.0f, 1) * 5.0);
-            rb.MovePosition(new Vector2(x, y));
+            rb.MovePosition(new Vector2(x, rb.position.y));
+            rb.MovePosition(new Vector2(rb.position.x, y));
             rb.constraints = constr;
         }
     }
@@ -386,11 +369,11 @@ public class PlayerBehavior : MonoBehaviour
     IEnumerator Mouvement()
     {
         yield return new WaitForSeconds(0.1f);
-        while (surglace && contactMur == false)
+        while (surglace)
         {
             surglace = false;
             int i = 0;
-            while (i < 5 && contactMur == false)
+            while (i < 5)
             {
                 if (direction == "Haut")
                 {
@@ -411,9 +394,9 @@ public class PlayerBehavior : MonoBehaviour
                 i++;
                 yield return new WaitForSeconds(0.02f);
             }
+            Centrer();
         }
         modifMouvement = 1;
-        contactMur = false;
         Centrer();
     }
 

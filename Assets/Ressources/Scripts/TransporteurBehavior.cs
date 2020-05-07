@@ -143,7 +143,7 @@ public class TransporteurBehavior : MonoBehaviour
     int CombienDeCase()
     {
         if (rb.tag == "Ennemy2" || rb.tag == "Enemy3")
-            return 20;
+            return 50;
         else if (rb.tag == "Ennemy5")
             return 60;
         else
