@@ -35,6 +35,7 @@ TagManager:
   - TeleportParticles
   - TP1
   - mur
+  - IntroMusic
   layers:
   - Default
   - TransparentFX
