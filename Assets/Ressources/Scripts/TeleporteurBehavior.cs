@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class TeleporteurBehavior : MonoBehaviour
 {
+    public GameObject end;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
@@ -15,7 +16,8 @@ public class TeleporteurBehavior : MonoBehaviour
             }
             StartCoroutine(Corout());
             Rigidbody2D playerRb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
-            playerRb.position = GameObject.FindGameObjectWithTag("TP2").transform.position;
+            // playerRb.position = GameObject.FindGameObjectWithTag("TP2").transform.position;
+            playerRb.position = end.transform.position;
         }
     }
 
