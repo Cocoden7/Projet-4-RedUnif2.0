@@ -9,6 +9,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBehavior : MonoBehaviour
 {
+    public Sprite SpriteInfo;
+    public Sprite SpriteMeca;
+    public Sprite SpriteElec;
+    public Sprite SpriteGc;
+    public Sprite SpriteGbio;
+    public Sprite SpriteMap;
+    public Sprite SpriteFyki;
 	public Rigidbody2D rb;
     public GameObject ST;
     public GameObject NextLevelUI;
@@ -29,10 +36,40 @@ public class PlayerBehavior : MonoBehaviour
     string rightScore;
     Quaternion rot;
 
+    
 
 
     void Start()
     {
+        //this.GetComponent<SpriteRenderer>().sprite = NewSprite;
+        if(PlayerPrefs.GetString("TSTag","Untagged") == "PlayerInfo")
+        {
+            this.GetComponent<SpriteRenderer>().sprite = SpriteInfo;
+        }
+        else if(PlayerPrefs.GetString("TSTag","Untagged") == "PlayerElec")
+        {
+            this.GetComponent<SpriteRenderer>().sprite = SpriteElec;
+        }
+        else if(PlayerPrefs.GetString("TSTag","Untagged") == "PlayerMeca")
+        {
+            this.GetComponent<SpriteRenderer>().sprite = SpriteMeca;
+        }
+        else if(PlayerPrefs.GetString("TSTag","Untagged") == "PlayerFyki")
+        {
+            this.GetComponent<SpriteRenderer>().sprite = SpriteFyki;
+        }
+        else if(PlayerPrefs.GetString("TSTag","Untagged") == "PlayerMath")
+        {
+            this.GetComponent<SpriteRenderer>().sprite = SpriteMap;
+        }
+        else if(PlayerPrefs.GetString("TSTag","Untagged") == "PlayerGBio")
+        {
+            this.GetComponent<SpriteRenderer>().sprite = SpriteGbio;
+        }
+        else if(PlayerPrefs.GetString("TSTag","Untagged") == "PlayerGC")
+        {
+            this.GetComponent<SpriteRenderer>().sprite = SpriteGc;
+        }
         Credits.text = nbCredit.ToString();
         // Liste des tags possibles : PlayerElec, PlayerMeca, PlayerFyki, PlayerInfo, PlayerMath, PlayerGBio, PlayerGC
         ST.tag = PlayerPrefs.GetString("TSTag", "Untagged");

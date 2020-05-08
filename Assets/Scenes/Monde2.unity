@@ -3348,6 +3348,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c27b7fc7191b0846a68dedc9efb71e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpriteInfo: {fileID: 21300000, guid: 7270c45efe8206c4bbead2e47d110497, type: 3}
+  SpriteMeca: {fileID: 21300000, guid: f2e51e6688941f14488f68e5d59d0434, type: 3}
+  SpriteElec: {fileID: 21300000, guid: e68dd6fb5200caa4ea049e6fe9206583, type: 3}
+  SpriteGc: {fileID: 21300000, guid: 426b3d1f92b524448b0d01550321f998, type: 3}
+  SpriteGbio: {fileID: 21300000, guid: 543d1b8b4ec6f2a4489c9d587872e284, type: 3}
+  SpriteMap: {fileID: 21300000, guid: b300ffe948c03cb419e0f17c9880606f, type: 3}
+  SpriteFyki: {fileID: 21300000, guid: d2e7d45dc44ea974882d4384f70a5907, type: 3}
   rb: {fileID: 661924226}
   ST: {fileID: 664183629}
   NextLevelUI: {fileID: 374200927}

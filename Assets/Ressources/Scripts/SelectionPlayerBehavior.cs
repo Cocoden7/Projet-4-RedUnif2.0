@@ -52,7 +52,7 @@ public class SelectionPlayerBehavior : MonoBehaviour
         PlayerPrefs.SetInt("MapBuy",0);
         PlayerPrefs.SetInt("GcBuy",0);
         PlayerPrefs.SetInt("GbioBuy",0);*/
-        //PlayerPrefs.SetInt("CreditsStage",60);
+        //PlayerPrefs.SetInt("CreditsStage",600);
 
         Credits1.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
         Credits2.text = PlayerPrefs.GetInt("CreditsStage", 0).ToString();
