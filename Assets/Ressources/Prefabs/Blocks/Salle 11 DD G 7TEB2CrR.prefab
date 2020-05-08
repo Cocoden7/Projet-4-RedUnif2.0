@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43cccddc7416cd84fbd28321127ff57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OpeningDirection: 1
+  OpeningDirection: 3
 --- !u!50 &5130420401028337176
 Rigidbody2D:
   serializedVersion: 4
