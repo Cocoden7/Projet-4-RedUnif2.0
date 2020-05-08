@@ -22,12 +22,14 @@ public class PlayerBehavior : MonoBehaviour
     Image img;
     GameObject cam;
 
-    private bool invincible = true;  // Si true, le player ne meurt pas
+    private bool invincible = false;  // Si true, le player ne meurt pas
     private int ratio = 0;
     private string direction = "Haut";  // Variable indiquant dans quelle direction le joueur regarde (Haut, Bas, Droite, Gauche)
     Vector2 movement;
     string rightScore;
-    
+    Quaternion rot;
+
+
 
     void Start()
     {
@@ -36,6 +38,7 @@ public class PlayerBehavior : MonoBehaviour
         ST.tag = PlayerPrefs.GetString("TSTag", "Untagged");
         img = GreenEffect.GetComponent<Image>();
         cam = GameObject.FindGameObjectWithTag("MainCamera");
+        rot = cam.transform.rotation;
     }
 
     // Méthode appelée pour avoir les input du joueur
@@ -255,7 +258,10 @@ public class PlayerBehavior : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             rb.MovePosition(rb.position += new Vector2(0, 0.5f * modifMouvement));
             rb.MovePosition(rb.position += new Vector2(0, 0.5f * modifMouvement));
-            direction = "Haut";
+            if (modifMouvement == 1)
+                direction = "Haut";
+            else
+                direction = "Bas";
             Centrer();
         }
     }
@@ -267,7 +273,10 @@ public class PlayerBehavior : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             rb.MovePosition(rb.position += new Vector2(0, -0.5f * modifMouvement));
             rb.MovePosition(rb.position += new Vector2(0, -0.5f * modifMouvement));
-            direction = "Bas";
+            if (modifMouvement == 1)
+                direction = "Bas";
+            else
+                direction = "Haut";
             Centrer();
         }
     }
@@ -279,7 +288,10 @@ public class PlayerBehavior : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
             rb.MovePosition(rb.position += new Vector2(0.5f * modifMouvement, 0));
             rb.MovePosition(rb.position += new Vector2(0.5f * modifMouvement, 0));
-            direction = "Droite";
+            if (modifMouvement == 1)
+                direction = "Droite";
+            else
+                direction = "Gauche";
             Centrer();
         }
     }
@@ -291,7 +303,10 @@ public class PlayerBehavior : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
             rb.MovePosition(rb.position += new Vector2(-0.5f * modifMouvement, 0));
             rb.MovePosition(rb.position += new Vector2(-0.5f * modifMouvement, 0));
-            direction = "Gauche";
+            if (modifMouvement == 1)
+                direction = "Gauche";
+            else
+                direction = "Droite";
             Centrer();
         }
     }
@@ -329,6 +344,7 @@ public class PlayerBehavior : MonoBehaviour
         }
         else
         {
+            cam.transform.SetPositionAndRotation(cam.transform.position, rot);
             modifMouvement = 0;
             GreenEffect.gameObject.SetActive(true);
             Color c = img.color;
@@ -341,6 +357,7 @@ public class PlayerBehavior : MonoBehaviour
     // Fonction pour la glace
     public void Avance()
     {
+        cam.transform.SetPositionAndRotation(cam.transform.position, rot);
         modifMouvement = 0;
         surglace = true;
         StartCoroutine(Mouvement());
@@ -370,7 +387,6 @@ public class PlayerBehavior : MonoBehaviour
 
     IEnumerator TourneCam()
     {
-        Quaternion rot = cam.transform.rotation;
         int i = 0;
         int a = 0;
         while (i < 12)
