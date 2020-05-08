@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4783062181591766022}
   m_Layer: 0
   m_Name: Coin haut gauche
-  m_TagString: Untagged
+  m_TagString: mur
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

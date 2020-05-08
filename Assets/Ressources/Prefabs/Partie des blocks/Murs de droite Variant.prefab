@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Murs de droite Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3592915296605033765, guid: 67d3c93457769d945987e819d81de4a1,
+        type: 3}
+      propertyPath: m_TagString
+      value: mur
+      objectReference: {fileID: 0}
     - target: {fileID: 6446646212145841450, guid: 67d3c93457769d945987e819d81de4a1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -76,6 +81,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_EdgeRadius
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754051498885394329, guid: 67d3c93457769d945987e819d81de4a1,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754051498885394329, guid: 67d3c93457769d945987e819d81de4a1,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754051498885394329, guid: 67d3c93457769d945987e819d81de4a1,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d3c93457769d945987e819d81de4a1, type: 3}

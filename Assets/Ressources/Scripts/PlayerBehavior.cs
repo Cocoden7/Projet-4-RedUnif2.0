@@ -20,13 +20,16 @@ public class PlayerBehavior : MonoBehaviour
     public bool surglace = false;  // pour savoir si il est toujours sur de la glace
     public GameObject GreenEffect;
     Image img;
+    GameObject cam;
 
     private bool invincible = false;  // Si true, le player ne meurt pas
     private int ratio = 0;
     private string direction = "Haut";  // Variable indiquant dans quelle direction le joueur regarde (Haut, Bas, Droite, Gauche)
     Vector2 movement;
     string rightScore;
-    
+    Quaternion rot;
+
+
 
     void Start()
     {
@@ -34,6 +37,8 @@ public class PlayerBehavior : MonoBehaviour
         // Liste des tags possibles : PlayerElec, PlayerMeca, PlayerFyki, PlayerInfo, PlayerMath, PlayerGBio, PlayerGC
         ST.tag = PlayerPrefs.GetString("TSTag", "Untagged");
         img = GreenEffect.GetComponent<Image>();
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
+        rot = cam.transform.rotation;
     }
 
     // Méthode appelée pour avoir les input du joueur
@@ -54,15 +59,6 @@ public class PlayerBehavior : MonoBehaviour
             // Lance la methode GameOver dans GameManager
             FindObjectOfType<DeadMenu>().GameOver();
         }
-    }
-
-    void OnCollisionEnter2D(Collision2D col)
-    { 
-        // Collision avec le vide
-    	if(col.gameObject.CompareTag("vide"))
-    	{
-            Dead();
-    	}
     }
 
     /*
@@ -188,18 +184,12 @@ public class PlayerBehavior : MonoBehaviour
         StartCoroutine(LoadLevel());
     }
 
-
     public IEnumerator LoadLevel()
     {
         yield return new WaitForSeconds(2);
         invincible = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
-    /*void OnGUI()
-    {
-    	GUI.Label(new Rect (10, 10, 100, 20), " Credit : " + nbCredit);
-    }*/
 
     /*
     Fonction à appeler dès que le joueur meurt !!IMPORTANT, il faut appeler celle-ci
@@ -266,8 +256,12 @@ public class PlayerBehavior : MonoBehaviour
         if (modifMouvement != 0)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-            rb.MovePosition(rb.position += new Vector2(0, 1 * modifMouvement));
-            direction = "Haut";
+            rb.MovePosition(rb.position += new Vector2(0, 0.5f * modifMouvement));
+            rb.MovePosition(rb.position += new Vector2(0, 0.5f * modifMouvement));
+            if (modifMouvement == 1)
+                direction = "Haut";
+            else
+                direction = "Bas";
             Centrer();
         }
     }
@@ -277,8 +271,12 @@ public class PlayerBehavior : MonoBehaviour
         if (modifMouvement != 0)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-            rb.MovePosition(rb.position += new Vector2(0, -1 * modifMouvement));
-            direction = "Bas";
+            rb.MovePosition(rb.position += new Vector2(0, -0.5f * modifMouvement));
+            rb.MovePosition(rb.position += new Vector2(0, -0.5f * modifMouvement));
+            if (modifMouvement == 1)
+                direction = "Bas";
+            else
+                direction = "Haut";
             Centrer();
         }
     }
@@ -288,8 +286,12 @@ public class PlayerBehavior : MonoBehaviour
         if (modifMouvement != 0)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-            rb.MovePosition(rb.position += new Vector2(1 * modifMouvement, 0));
-            direction = "Droite";
+            rb.MovePosition(rb.position += new Vector2(0.5f * modifMouvement, 0));
+            rb.MovePosition(rb.position += new Vector2(0.5f * modifMouvement, 0));
+            if (modifMouvement == 1)
+                direction = "Droite";
+            else
+                direction = "Gauche";
             Centrer();
         }
     }
@@ -299,8 +301,12 @@ public class PlayerBehavior : MonoBehaviour
         if (modifMouvement != 0)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-            rb.MovePosition(rb.position += new Vector2(-1 * modifMouvement, 0));
-            direction = "Gauche";
+            rb.MovePosition(rb.position += new Vector2(-0.5f * modifMouvement, 0));
+            rb.MovePosition(rb.position += new Vector2(-0.5f * modifMouvement, 0));
+            if (modifMouvement == 1)
+                direction = "Gauche";
+            else
+                direction = "Droite";
             Centrer();
         }
     }
@@ -314,7 +320,8 @@ public class PlayerBehavior : MonoBehaviour
             float x = (float)(System.Math.Round(rb.position.x / 5.0f, 1) * 5.0);
             rb.MovePosition(new Vector2(x, rb.position.y));
             float y = (float)(System.Math.Round(rb.position.y / 5.0f, 1) * 5.0);
-            rb.MovePosition(new Vector2(x, y));
+            rb.MovePosition(new Vector2(x, rb.position.y));
+            rb.MovePosition(new Vector2(rb.position.x, y));
             rb.constraints = constr;
         }
     }
@@ -325,7 +332,7 @@ public class PlayerBehavior : MonoBehaviour
     void Bourre()
     {
         modifMouvement = -1;
-        StartCoroutine(Attente());
+        StartCoroutine(TourneCam());
     }
 
     // Fonction pour la glue
@@ -337,6 +344,7 @@ public class PlayerBehavior : MonoBehaviour
         }
         else
         {
+            cam.transform.SetPositionAndRotation(cam.transform.position, rot);
             modifMouvement = 0;
             GreenEffect.gameObject.SetActive(true);
             Color c = img.color;
@@ -349,6 +357,7 @@ public class PlayerBehavior : MonoBehaviour
     // Fonction pour la glace
     public void Avance()
     {
+        cam.transform.SetPositionAndRotation(cam.transform.position, rot);
         modifMouvement = 0;
         surglace = true;
         StartCoroutine(Mouvement());
@@ -373,6 +382,135 @@ public class PlayerBehavior : MonoBehaviour
             c.a = f;
             img.color = c;
             yield return new WaitForSeconds(0.05f);
+        }
+    }
+
+    IEnumerator TourneCam()
+    {
+        int i = 0;
+        int a = 0;
+        while (i < 12)
+        {
+            cam.transform.Rotate(0, 0, a * 0.1f);
+            yield return new WaitForSeconds(0.01f);
+            if (i < 6)
+                a++;
+            else
+                a--;
+            i++;
+        }
+        i = 0;
+        a = 0;
+        while (i < 25)
+        {
+            cam.transform.Rotate(0, 0, -a*0.1f);
+            yield return new WaitForSeconds(0.01f);
+            if (i < 6)
+                a++;
+            else if (i > 18)
+                a--;
+            i++;
+        }
+        i = 0;
+        a = 0;
+        while (i < 25)
+        {
+            cam.transform.Rotate(0, 0, a*0.1f);
+            yield return new WaitForSeconds(0.01f);
+            if (i < 6)
+                a++;
+            else if (i > 18)
+                a--;
+            i++;
+        }
+        i = 0;
+        a = 0;
+        while (i < 25)
+        {
+            cam.transform.Rotate(0, 0, -a * 0.1f);
+            yield return new WaitForSeconds(0.01f);
+            if (i < 6)
+                a++;
+            else if (i > 18)
+                a--;
+            i++;
+        }
+        i = 0;
+        a = 0;
+        while (i < 25)
+        {
+            cam.transform.Rotate(0, 0, a * 0.1f);
+            yield return new WaitForSeconds(0.01f);
+            if (i < 6)
+                a++;
+            else if (i > 18)
+                a--;
+            i++;
+        }
+        i = 0;
+        a = 0;
+        while (i < 25)
+        {
+            cam.transform.Rotate(0, 0, -a * 0.1f);
+            yield return new WaitForSeconds(0.01f);
+            if (i < 6)
+                a++;
+            else if (i > 18)
+                a--;
+            i++;
+        }
+        i = 0;
+        a = 0;
+        while (i < 25)
+        {
+            cam.transform.Rotate(0, 0, a * 0.1f);
+            yield return new WaitForSeconds(0.01f);
+            if (i < 6)
+                a++;
+            else if (i > 18)
+                a--;
+            i++;
+        }
+        i = 0;
+        a = 0;
+        while (i < 25)
+        {
+            cam.transform.Rotate(0, 0, -a * 0.1f);
+            yield return new WaitForSeconds(0.01f);
+            if (i < 6)
+                a++;
+            else if (i > 18)
+                a--;
+            i++;
+        }
+        i = 0;
+        a = 0;
+        while (i < 25)
+        {
+            cam.transform.Rotate(0, 0, a * 0.1f);
+            yield return new WaitForSeconds(0.01f);
+            if (i < 6)
+                a++;
+            else if (i > 18)
+                a--;
+            i++;
+        }
+        i = 0;
+        a = 0;
+        while (i < 12)
+        {
+            cam.transform.Rotate(0, 0, -a*0.1f);
+            yield return new WaitForSeconds(0.01f);
+            if (i < 6)
+                a++;
+            else
+                a--;
+            i++;
+        }
+        cam.transform.SetPositionAndRotation(cam.transform.position, rot);
+        if (modifMouvement == -1)
+        {
+            modifMouvement = 1;
         }
     }
 
@@ -404,9 +542,10 @@ public class PlayerBehavior : MonoBehaviour
                 i++;
                 yield return new WaitForSeconds(0.02f);
             }
+            Centrer();
         }
-        Centrer();
         modifMouvement = 1;
+        Centrer();
     }
 
 

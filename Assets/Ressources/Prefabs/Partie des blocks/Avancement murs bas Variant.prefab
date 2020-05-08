@@ -65,7 +65,12 @@ PrefabInstance:
     - target: {fileID: 5619962097436131456, guid: 1d71027be36c069429045d35dd03fe98,
         type: 3}
       propertyPath: m_Name
-      value: Avancement murs bas
+      value: Avancement murs bas Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619962097436131456, guid: 1d71027be36c069429045d35dd03fe98,
+        type: 3}
+      propertyPath: m_TagString
+      value: mur
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d71027be36c069429045d35dd03fe98, type: 3}

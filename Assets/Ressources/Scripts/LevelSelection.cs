@@ -22,7 +22,7 @@ public class LevelSelection : MonoBehaviour
 
 	public void Start()
 	{
-        if(PlayerPrefs.GetInt("WorldPass") >= 1)
+        if (PlayerPrefs.GetInt("WorldPass") >= 1)
         {
             Bac2Button.interactable = true;
         }
