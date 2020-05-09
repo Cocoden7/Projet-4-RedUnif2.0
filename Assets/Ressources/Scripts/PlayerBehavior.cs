@@ -29,7 +29,7 @@ public class PlayerBehavior : MonoBehaviour
     Image img;
     GameObject cam;
 
-    private bool invincible = true;  // Si true, le player ne meurt pas
+    private bool invincible = false;  // Si true, le player ne meurt pas
     private int ratio = 0;
     private string direction = "Haut";  // Variable indiquant dans quelle direction le joueur regarde (Haut, Bas, Droite, Gauche)
     Vector2 movement;
