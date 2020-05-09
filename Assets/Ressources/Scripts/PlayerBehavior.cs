@@ -41,7 +41,6 @@ public class PlayerBehavior : MonoBehaviour
 
     void Start()
     {
-        //this.GetComponent<SpriteRenderer>().sprite = NewSprite;
         if(PlayerPrefs.GetString("TSTag","Untagged") == "PlayerInfo")
         {
             this.GetComponent<SpriteRenderer>().sprite = SpriteInfo;
