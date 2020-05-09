@@ -522,8 +522,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.000018, y: 336.99988}
-  m_SizeDelta: {x: 791.2, y: 108.7}
+  m_AnchoredPosition: {x: 4.400002, y: 336.67}
+  m_SizeDelta: {x: 791.2, y: 168.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &48804388
 MonoBehaviour:
@@ -548,7 +548,7 @@ MonoBehaviour:
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 7
+    m_MinSize: 6
     m_MaxSize: 91
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -556,7 +556,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Option : Physique/Chimie app.'
+  m_Text: "Option : \nPhysique/Chimie app."
 --- !u!222 &48804389
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9544,7 +9544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.9999647, y: 78.00003}
+  m_AnchoredPosition: {x: 2, y: 59}
   m_SizeDelta: {x: 724.1, y: 386.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1676097869
