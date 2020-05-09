@@ -9,6 +9,7 @@ public class EndScript : MonoBehaviour
 
     public Text Score;
     public Text Distinction;
+    public GameObject PopUp;
     private float points;
 
     // Start is called before the first frame update
@@ -45,6 +46,11 @@ public class EndScript : MonoBehaviour
 
     public void Restart()
     {
+        PopUp.SetActive(true);
+    }
+
+    public void Continue()
+    {
         SceneManager.LoadScene(0);
         PlayerPrefs.SetInt("HighScore1", 0);
         PlayerPrefs.SetInt("HighScore2", 0);
@@ -59,6 +65,11 @@ public class EndScript : MonoBehaviour
         PlayerPrefs.SetInt("WorldPass", 0);
         PlayerPrefs.SetFloat("TotalScore", 0.0f);
         PlayerPrefs.Save();
+    }
+
+    public void Annule()
+    {
+        PopUp.SetActive(false);
     }
 
     public void Scoreboard()
