@@ -29,7 +29,7 @@ public class PlayerBehavior : MonoBehaviour
     Image img;
     GameObject cam;
 
-    private bool invincible = false;  // Si true, le player ne meurt pas
+    private bool invincible = true;  // Si true, le player ne meurt pas
     private int ratio = 0;
     private string direction = "Haut";  // Variable indiquant dans quelle direction le joueur regarde (Haut, Bas, Droite, Gauche)
     Vector2 movement;
@@ -205,7 +205,7 @@ public class PlayerBehavior : MonoBehaviour
                 PlayerPrefs.SetFloat("TotalScore", (score1 + score2 + score3 + score4 + score5) / 5.0f);
                 string date = System.DateTime.UtcNow.ToString("dd/MM/yyyy");
                 AddEntry(PlayerPrefs.GetFloat("TotalScore"), date);
-                SceneManager.LoadScene(12);
+                SceneManager.LoadScene(13);
             }
             SetUINextLevel();
         }

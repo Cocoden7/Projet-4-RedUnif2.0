@@ -54,6 +54,6 @@ public class ButtonsScript : MonoBehaviour
     {
         PlayerPrefs.SetInt("AncienneScene", SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.Save();
-        SceneManager.LoadScene(13);
+        SceneManager.LoadScene(12);
     }
 }
