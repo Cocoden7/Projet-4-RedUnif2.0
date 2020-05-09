@@ -28898,12 +28898,12 @@ PrefabInstance:
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
       propertyPath: debutMilieu.Array.size
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
       propertyPath: debutGauche.Array.size
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
@@ -28968,7 +28968,7 @@ PrefabInstance:
         type: 3}
       propertyPath: debutMilieu.Array.data[9]
       value: 
-      objectReference: {fileID: 2161107217601238655, guid: c92d265b435303544ad83c805b4df07e,
+      objectReference: {fileID: 161238857646845670, guid: 688673be71a0a1a40b50db510d1fa64f,
         type: 3}
     - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
@@ -29029,6 +29029,35 @@ PrefabInstance:
       propertyPath: debutDroite.Array.data[3]
       value: 
       objectReference: {fileID: 3966233816313500886, guid: 5dfcf16b5db1db34cb6c09bebfe4120e,
+        type: 3}
+    - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
+        type: 3}
+      propertyPath: debutGauche.Array.data[6]
+      value: 
+      objectReference: {fileID: 6723021451446376524, guid: 40e08393c040a994eb7d06e9b4f30cb7,
+        type: 3}
+    - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
+        type: 3}
+      propertyPath: debutGauche.Array.data[7]
+      value: 
+      objectReference: {fileID: 4122758088771060884, guid: c2fd57750c91e0a4da8db509f13fe06c,
+        type: 3}
+    - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
+        type: 3}
+      propertyPath: debutGauche.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
+        type: 3}
+      propertyPath: debutMilieu.Array.data[10]
+      value: 
+      objectReference: {fileID: 6353142658748144998, guid: 169a190475665a74fbea76d40a24f626,
+        type: 3}
+    - target: {fileID: 9011964265606663226, guid: 616156816ddcd8e44bb17ada970991f5,
+        type: 3}
+      propertyPath: debutMilieu.Array.data[11]
+      value: 
+      objectReference: {fileID: 3254254244961316102, guid: d13d2f5c2c8cd7346aa8b653487387b6,
         type: 3}
     - target: {fileID: 9011964265606663227, guid: 616156816ddcd8e44bb17ada970991f5,
         type: 3}
