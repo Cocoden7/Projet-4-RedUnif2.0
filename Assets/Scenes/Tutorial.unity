@@ -21106,8 +21106,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 187, y: 301.26}
-  m_SizeDelta: {x: 471.1, y: 54.80005}
+  m_AnchoredPosition: {x: 172.5, y: 301.26}
+  m_SizeDelta: {x: 503.4, y: 54.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1667087518
 MonoBehaviour:
@@ -21140,7 +21140,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Apuyez pour continuer.
+  m_Text: Appuyez pour continuer.
 --- !u!222 &1667087519
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24744,6 +24744,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c27b7fc7191b0846a68dedc9efb71e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpriteInfo: {fileID: 0}
+  SpriteMeca: {fileID: 0}
+  SpriteElec: {fileID: 0}
+  SpriteGc: {fileID: 0}
+  SpriteGbio: {fileID: 0}
+  SpriteMap: {fileID: 0}
+  SpriteFyki: {fileID: 0}
   rb: {fileID: 1994545246}
   ST: {fileID: 191205663}
   NextLevelUI: {fileID: 0}
@@ -24753,6 +24760,7 @@ MonoBehaviour:
   creditsNeeded: 60
   modifMouvement: 1
   surglace: 0
+  GreenEffect: {fileID: 0}
 --- !u!212 &1994545248
 SpriteRenderer:
   m_ObjectHideFlags: 0
