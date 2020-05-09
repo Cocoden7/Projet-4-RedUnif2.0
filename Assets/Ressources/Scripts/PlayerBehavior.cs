@@ -82,7 +82,9 @@ public class PlayerBehavior : MonoBehaviour
     {
         Credits.text = nbCredit.ToString();
         rightScore = "HighScore" + (SceneManager.GetActiveScene().buildIndex).ToString();
-        if(!dead)
+        if(modifMouvement == 1)
+            cam.transform.SetPositionAndRotation(cam.transform.position, rot);
+        if (!dead)
     	{
             // Retourne -1 ou 1
             movement.x = Input.GetAxisRaw("Horizontal");
