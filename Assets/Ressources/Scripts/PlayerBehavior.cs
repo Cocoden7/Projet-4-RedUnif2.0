@@ -285,6 +285,7 @@ public class PlayerBehavior : MonoBehaviour
             dead = true;
             print("La mort est due à un(e) " + mort);
             FindObjectOfType<DeadMenu>().SendMessageUpwards(mort, SendMessageOptions.DontRequireReceiver);
+            GreenEffect.gameObject.SetActive(false);
         }
     }
 
