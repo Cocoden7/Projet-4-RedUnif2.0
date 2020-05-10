@@ -7,9 +7,6 @@ using UnityEngine.UI;
 
 public class GlueBehavior : MonoBehaviour
 {
-    private Collider2D player;
-
-
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Player")
