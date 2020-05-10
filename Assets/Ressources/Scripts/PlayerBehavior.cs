@@ -29,16 +29,14 @@ public class PlayerBehavior : MonoBehaviour
     Image img;
     GameObject cam;
 
-    private bool invincible = false;  // Si true, le player ne meurt pas
+    private bool invincible = true;  // Si true, le player ne meurt pas
     private int ratio = 0;
     private string direction = "Haut";  // Variable indiquant dans quelle direction le joueur regarde (Haut, Bas, Droite, Gauche)
     Vector2 movement;
     string rightScore;
     Quaternion rot;
 
-    
-
-
+  
     void Start()
     {
         if(PlayerPrefs.GetString("TSTag","Untagged") == "PlayerInfo")
@@ -96,6 +94,14 @@ public class PlayerBehavior : MonoBehaviour
             movement.y = 0;
             // Lance la methode GameOver dans GameManager
             FindObjectOfType<DeadMenu>().GameOver();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag != "glace" && col.tag !="transporteur" && col.tag != "TP1")
+        {
+            Centrer();
         }
     }
 
@@ -352,15 +358,16 @@ public class PlayerBehavior : MonoBehaviour
 
     void Centrer()
     {
-        if (modifMouvement == 1)
+        if (modifMouvement == 1 || modifMouvement == -1)
         {
             RigidbodyConstraints2D constr = rb.constraints;
             rb.constraints = RigidbodyConstraints2D.None;
-            float x = (float)(System.Math.Round(rb.position.x / 5.0f, 1) * 5.0);
-            rb.MovePosition(new Vector2(x, rb.position.y));
-            float y = (float)(System.Math.Round(rb.position.y / 5.0f, 1) * 5.0);
-            rb.MovePosition(new Vector2(x, rb.position.y));
-            rb.MovePosition(new Vector2(rb.position.x, y));
+            //float x = (float)(System.Math.Round(rb.position.x / 5.0f, 1) * 5.0);
+            int x = (int)rb.position.x;
+            rb.MovePosition(new Vector2(((float)x) + 0.5f, rb.position.y));
+            //float y = (float)(System.Math.Round(rb.position.y / 5.0f, 1) * 5.0);
+            int y = (int)rb.position.y;
+            rb.MovePosition(new Vector2(((float)x) + 0.5f, ((float)y) + 0.5f));
             rb.constraints = constr;
         }
     }

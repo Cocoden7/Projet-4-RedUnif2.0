@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 4738804730373370859}
   m_Layer: 0
   m_Name: Bout Piston
-  m_TagString: Untagged
+  m_TagString: boutPiston
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -456,7 +456,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0.01
+  m_EdgeRadius: 0
 --- !u!1 &5858908928082979172
 GameObject:
   m_ObjectHideFlags: 0

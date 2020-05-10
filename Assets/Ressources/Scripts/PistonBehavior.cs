@@ -21,7 +21,10 @@ public class PistonBehavior : MonoBehaviour
         rbManche = Manche.GetComponent<Rigidbody2D>();
         rbBout = Bout.GetComponent<Rigidbody2D>();
         colDet = Detecteur.GetComponent<BoxCollider2D>();
-        StartCoroutine(Movement());
+        if (FindObjectOfType<PlayerBehavior>().ST.tag != "PlayerMeca")
+        {
+            StartCoroutine(Movement());
+        }
     }
 
     // Update is called once per frame
