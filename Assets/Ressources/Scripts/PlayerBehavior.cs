@@ -20,13 +20,16 @@ public class PlayerBehavior : MonoBehaviour
     public GameObject ST;
     public GameObject NextLevelUI;
     public Text Credits;
+    public Text Morts;
     public bool dead = false;
 	public int nbCredit = 0;
     public int creditsNeeded = 60;
     public int modifMouvement = 1;  // Variable pour modifié les déplacement du joueur (1 = normal, 0 = immobile, -1 = commandes inversees)
     public bool surglace = false;  // pour savoir si il est toujours sur de la glace
     public GameObject GreenEffect;
-    Image img;
+    public GameObject YellowEffect;
+    Image imgV;
+    Image imgJ;
     GameObject cam;
 
     private bool invincible = true;  // Si true, le player ne meurt pas
@@ -68,11 +71,20 @@ public class PlayerBehavior : MonoBehaviour
             this.GetComponent<SpriteRenderer>().sprite = SpriteGc;
         }
         Credits.text = nbCredit.ToString();
+
         // Liste des tags possibles : PlayerElec, PlayerMeca, PlayerFyki, PlayerInfo, PlayerMath, PlayerGBio, PlayerGC
         ST.tag = PlayerPrefs.GetString("TSTag", "Untagged");
-        img = GreenEffect.GetComponent<Image>();
+        imgV = GreenEffect.GetComponent<Image>();
+        imgJ = YellowEffect.GetComponent<Image>();
         cam = GameObject.FindGameObjectWithTag("MainCamera");
         rot = cam.transform.rotation;
+
+        //Affiche le nombre de morts
+        if (SceneManager.GetActiveScene().name != "MondeStage" && SceneManager.GetActiveScene().name != "Tutorial")
+        {
+            string nbMorts = "nbMorts" + SceneManager.GetActiveScene().name[5];
+            Morts.text = PlayerPrefs.GetInt(nbMorts, 0).ToString();
+        }
     }
 
     // Méthode appelée pour avoir les input du joueur
@@ -292,6 +304,7 @@ public class PlayerBehavior : MonoBehaviour
             print("La mort est due à un(e) " + mort);
             FindObjectOfType<DeadMenu>().SendMessageUpwards(mort, SendMessageOptions.DontRequireReceiver);
             GreenEffect.gameObject.SetActive(false);
+            YellowEffect.gameObject.SetActive(false);
         }
     }
 
@@ -378,7 +391,11 @@ public class PlayerBehavior : MonoBehaviour
     void Bourre()
     {
         modifMouvement = -1;
-        StartCoroutine(TourneCam());
+        YellowEffect.gameObject.SetActive(true);
+        Color c = imgJ.color;
+        c.a = 1.0f;
+        imgJ.color = c;
+        StartCoroutine(Attente(imgJ));
     }
 
     // Fonction pour la glue
@@ -393,10 +410,10 @@ public class PlayerBehavior : MonoBehaviour
             cam.transform.SetPositionAndRotation(cam.transform.position, rot);
             modifMouvement = 0;
             GreenEffect.gameObject.SetActive(true);
-            Color c = img.color;
+            Color c = imgV.color;
             c.a = 1.0f;
-            img.color = c;
-            StartCoroutine(Attente());
+            imgV.color = c;
+            StartCoroutine(Attente(imgV));
         }
     }
 
@@ -411,152 +428,24 @@ public class PlayerBehavior : MonoBehaviour
 
     // Les Coroutine dont ont besoin les pieges sur les deplacement sont ici dessous :
 
-    IEnumerator Attente()
+    IEnumerator Attente(Image pic)
     {
         yield return new WaitForSeconds(1.3f);
-        StartCoroutine(FadeOut());
+        StartCoroutine(FadeOut(pic));
         yield return new WaitForSeconds(0.7f);
         GreenEffect.gameObject.SetActive(false);
+        YellowEffect.gameObject.SetActive(false);
         modifMouvement = 1;
     }
 
-    IEnumerator FadeOut()
+    IEnumerator FadeOut(Image pic)
     {
         for(float f = 1.0f; f>=0.3f; f -= 0.05f)
         {
-            Color c = img.color;
+            Color c = pic.color;
             c.a = f;
-            img.color = c;
+            pic.color = c;
             yield return new WaitForSeconds(0.05f);
-        }
-    }
-
-    IEnumerator TourneCam()
-    {
-        int i = 0;
-        int a = 0;
-        while (i < 12)
-        {
-            cam.transform.Rotate(0, 0, a * 0.1f);
-            yield return new WaitForSeconds(0.01f);
-            if (i < 6)
-                a++;
-            else
-                a--;
-            i++;
-        }
-        i = 0;
-        a = 0;
-        while (i < 25)
-        {
-            cam.transform.Rotate(0, 0, -a*0.1f);
-            yield return new WaitForSeconds(0.01f);
-            if (i < 6)
-                a++;
-            else if (i > 18)
-                a--;
-            i++;
-        }
-        i = 0;
-        a = 0;
-        while (i < 25)
-        {
-            cam.transform.Rotate(0, 0, a*0.1f);
-            yield return new WaitForSeconds(0.01f);
-            if (i < 6)
-                a++;
-            else if (i > 18)
-                a--;
-            i++;
-        }
-        i = 0;
-        a = 0;
-        while (i < 25)
-        {
-            cam.transform.Rotate(0, 0, -a * 0.1f);
-            yield return new WaitForSeconds(0.01f);
-            if (i < 6)
-                a++;
-            else if (i > 18)
-                a--;
-            i++;
-        }
-        i = 0;
-        a = 0;
-        while (i < 25)
-        {
-            cam.transform.Rotate(0, 0, a * 0.1f);
-            yield return new WaitForSeconds(0.01f);
-            if (i < 6)
-                a++;
-            else if (i > 18)
-                a--;
-            i++;
-        }
-        i = 0;
-        a = 0;
-        while (i < 25)
-        {
-            cam.transform.Rotate(0, 0, -a * 0.1f);
-            yield return new WaitForSeconds(0.01f);
-            if (i < 6)
-                a++;
-            else if (i > 18)
-                a--;
-            i++;
-        }
-        i = 0;
-        a = 0;
-        while (i < 25)
-        {
-            cam.transform.Rotate(0, 0, a * 0.1f);
-            yield return new WaitForSeconds(0.01f);
-            if (i < 6)
-                a++;
-            else if (i > 18)
-                a--;
-            i++;
-        }
-        i = 0;
-        a = 0;
-        while (i < 25)
-        {
-            cam.transform.Rotate(0, 0, -a * 0.1f);
-            yield return new WaitForSeconds(0.01f);
-            if (i < 6)
-                a++;
-            else if (i > 18)
-                a--;
-            i++;
-        }
-        i = 0;
-        a = 0;
-        while (i < 25)
-        {
-            cam.transform.Rotate(0, 0, a * 0.1f);
-            yield return new WaitForSeconds(0.01f);
-            if (i < 6)
-                a++;
-            else if (i > 18)
-                a--;
-            i++;
-        }
-        i = 0;
-        a = 0;
-        while (i < 12)
-        {
-            cam.transform.Rotate(0, 0, -a*0.1f);
-            yield return new WaitForSeconds(0.01f);
-            if (i < 6)
-                a++;
-            else
-                a--;
-            i++;
-        }
-        cam.transform.SetPositionAndRotation(cam.transform.position, rot);
-        if (modifMouvement == -1)
-        {
-            modifMouvement = 1;
         }
     }
 
