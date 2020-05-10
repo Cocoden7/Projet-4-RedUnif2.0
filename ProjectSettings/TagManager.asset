@@ -36,6 +36,9 @@ TagManager:
   - TP1
   - mur
   - IntroMusic
+  - glace
+  - boutPiston
+  - transporteur
   layers:
   - Default
   - TransparentFX
